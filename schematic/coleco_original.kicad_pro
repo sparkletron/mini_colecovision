@@ -655,32 +655,12 @@
       "video"
     ],
     [
-      "00000000-0000-0000-0000-00006262cd5c",
-      "clock_reset_misc_logic"
-    ],
-    [
       "e4e06c1d-a786-4d3d-bc60-24b1ad1e3a25",
       "io_ports"
     ],
     [
-      "209bcd49-5218-4a3a-835e-04ab78c027d2",
-      "controller"
-    ],
-    [
-      "a929da8d-0ff1-4556-90a6-ec5a0a125157",
-      "decoder_logic"
-    ],
-    [
-      "d7e08e46-990d-4e27-b9cb-1b29fb4b0562",
-      "rf_mod"
-    ],
-    [
-      "90d81fee-5b02-4f66-adf4-b1217f22fc02",
-      "sub_rf_mod"
-    ],
-    [
-      "d51f3d17-483b-4d70-9878-f090be2a8e26",
-      "ext_psu"
+      "3558c718-2222-493c-b2cb-6973deed0f63",
+      "GLUE"
     ]
   ],
   "text_variables": {}
