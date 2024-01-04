@@ -9,4 +9,6 @@
   (lib (name "5530841-2")(type "KiCad")(uri "${KIPRJMOD}/lib/TE_5530841-2/5530841-2.kicad_sym")(options "")(descr ""))
   (lib (name "logos")(type "KiCad")(uri "${KIPRJMOD}/lib/LOGOS/logos.kicad_sym")(options "")(descr ""))
   (lib (name "CPLD")(type "KiCad")(uri "${KIPRJMOD}/lib/CPLD/CPLD.kicad_sym")(options "")(descr ""))
+  (lib (name "CPU_EXT")(type "KiCad")(uri "${KIPRJMOD}/lib/CPU_EXT/CPU_EXT.kicad_sym")(options "")(descr ""))
+  (lib (name "ROM_EXT")(type "KiCad")(uri "${KIPRJMOD}/lib/ROM_EXT/ROM_EXT.kicad_sym")(options "")(descr ""))
 )

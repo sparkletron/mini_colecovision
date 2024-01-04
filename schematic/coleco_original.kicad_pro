@@ -56,16 +56,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "copper_sliver|123450481|205930538|00000000-0000-0000-0000-000000000000|B.Cu",
-        "lib_footprint_mismatch|106426000|43632750|79cef10a-66fd-4b4f-9702-79eb6e3a5e51|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|132120167|38239000|0f18331e-ea4b-43f8-aa0a-a238b967d23f|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|153128000|268004000|29d7f682-3880-47d5-82b8-6e3fb1f65396|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|154557750|35256500|4d4ebb26-dbb5-4e23-a42e-4b80572c1349|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|220483440|301020000|94342b8f-58cd-411c-9102-91cbfe1bb012|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|65324750|267921178|281844e6-c3f3-43e3-b0a3-0dce7e13381b|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|73956964|301508750|73cd68e1-45fe-4e46-b37d-90a77ecbdee3|00000000-0000-0000-0000-000000000000"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -426,7 +417,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.3048,
+        "clearance": 0.254,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -437,64 +428,13 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3048,
-        "via_diameter": 1.27,
-        "via_drill": 0.5588,
+        "via_diameter": 0.8128,
+        "via_drill": 0.4572,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.3048,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "GND",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 1.524,
-        "via_diameter": 1.524,
-        "via_drill": 0.8128,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.381,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "main_5v_power",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 2.54,
-        "via_diameter": 2.286,
-        "via_drill": 1.143,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.381,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "main_power",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 1.27,
-        "via_diameter": 2.286,
-        "via_drill": 1.143,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.3048,
+        "clearance": 0.254,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -504,9 +444,9 @@
         "name": "power",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 1.016,
-        "via_diameter": 1.524,
-        "via_drill": 0.8128,
+        "track_width": 0.4572,
+        "via_diameter": 1.27,
+        "via_drill": 0.5588,
         "wire_width": 6
       }
     ],
@@ -517,60 +457,8 @@
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "GND",
-        "pattern": "GND"
-      },
-      {
-        "netclass": "main_5v_power",
-        "pattern": "+5C"
-      },
-      {
-        "netclass": "main_5v_power",
-        "pattern": "/psu/+5NF"
-      },
-      {
-        "netclass": "main_power",
-        "pattern": "+12C"
-      },
-      {
-        "netclass": "main_power",
-        "pattern": "/psu/+12NF"
-      },
-      {
-        "netclass": "power",
-        "pattern": "+12VL"
-      },
-      {
         "netclass": "power",
         "pattern": "+5V"
-      },
-      {
-        "netclass": "power",
-        "pattern": "+5VD"
-      },
-      {
-        "netclass": "power",
-        "pattern": "-5C"
-      },
-      {
-        "netclass": "power",
-        "pattern": "-5VL"
-      },
-      {
-        "netclass": "power",
-        "pattern": "/rf_mod/sub_rf_mod/VDDF_JP"
-      },
-      {
-        "netclass": "power",
-        "pattern": "GNDD"
-      },
-      {
-        "netclass": "power",
-        "pattern": "VDDA"
-      },
-      {
-        "netclass": "power",
-        "pattern": "VDDF"
       }
     ]
   },
@@ -657,6 +545,10 @@
     [
       "e4e06c1d-a786-4d3d-bc60-24b1ad1e3a25",
       "io_ports"
+    ],
+    [
+      "ebfedf81-c577-48d2-9dda-bc832656750a",
+      "controller"
     ],
     [
       "3558c718-2222-493c-b2cb-6973deed0f63",

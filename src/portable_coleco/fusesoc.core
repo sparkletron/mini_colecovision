@@ -1,0 +1,27 @@
+CAPI=2:
+
+name: sparkletron:glue:portable_coleco:1.0.0
+description: Glue logic for coleco that only impliments the 1st player controller, no expansion port.
+
+filesets:
+  src:
+    files:
+      - src/porta_glue_coleco.v : { file_type: verilogSource }
+
+  constr:
+    files:
+      - constr/porta_glue_coleco.sdc : { file_type: SDC }
+
+  tb:
+    files:
+      - tb/tb_porta_glue_coleco.v : { file_type: verilogSource }
+
+
+targets:
+  default: &default
+    filesets: [src, constr]
+
+  sim:
+    default_tool: icarus
+    filesets_append: [src, tb]
+    toplevel: tb_porta_glue_console
