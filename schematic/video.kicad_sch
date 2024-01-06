@@ -1998,7 +1998,7 @@
   (symbol (lib_id "Device:R") (at 130.429 148.717 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 465d435c-008c-420c-851a-94561faed30c)
-    (property "Reference" "R4" (at 135.509 151.257 90)
+    (property "Reference" "R4" (at 136.779 151.257 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100R" (at 131.699 151.257 90)

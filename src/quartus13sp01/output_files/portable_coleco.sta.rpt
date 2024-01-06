@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for portable_coleco
-Wed Jan  3 10:35:34 2024
+Thu Jan  4 17:48:04 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -90,7 +90,7 @@ applicable agreement for further details.
 +-------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                   ; Status ; Read at                  ;
 +-------------------------------------------------+--------+--------------------------+
-; ../portable_coleco/constr/porta_glue_coleco.sdc ; OK     ; Wed Jan  3 10:35:34 2024 ;
+; ../portable_coleco/constr/porta_glue_coleco.sdc ; OK     ; Thu Jan  4 17:48:04 2024 ;
 +-------------------------------------------------+--------+--------------------------+
 
 
@@ -189,7 +189,6 @@ No paths to report.
 ; 64.365  ; WRn               ; SND_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
 ; 64.365  ; IORQn             ; SND_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
 ; 67.682  ; M1n               ; r_wait            ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 86.683  ; reset_counter[21] ; RESETn            ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 11.500     ;
 ; 92.682  ; RESETn_SW         ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
 ; 92.682  ; RESETn_SW         ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
 ; 92.682  ; RESETn_SW         ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
@@ -212,6 +211,7 @@ No paths to report.
 ; 92.682  ; RESETn_SW         ; reset_counter[20] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
 ; 92.682  ; RESETn_SW         ; reset_counter[21] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
 ; 92.682  ; RESETn_SW         ; reset_counter[0]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 94.683  ; reset_counter[21] ; RESETn            ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 3.500      ;
 ; 95.565  ; A[5]              ; C2_4              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 18.800     ;
 ; 96.365  ; A[7]              ; C2_7              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 18.000     ;
 ; 96.365  ; A[7]              ; C2_4              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 18.000     ;
@@ -230,13 +230,13 @@ No paths to report.
 ; 104.365 ; A[7]              ; CSRn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
 ; 104.365 ; A[5]              ; CSWn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
 ; 104.365 ; A[7]              ; CSWn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 105.565 ; WRn               ; C2_4              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 18.800     ;
 ; 105.565 ; IORQn             ; C2_7              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 18.800     ;
+; 106.365 ; WRn               ; C2_4              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 18.000     ;
 ; 106.365 ; IORQn             ; C2_4              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 18.000     ;
 ; 106.365 ; WRn               ; C2_7              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 18.000     ;
 ; 106.683 ; r_wait            ; WAITn             ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 11.500     ;
-; 113.565 ; WRn               ; C1_4              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.800     ;
 ; 113.565 ; IORQn             ; C1_7              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.800     ;
+; 114.365 ; WRn               ; C1_4              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
 ; 114.365 ; IORQn             ; C1_4              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
 ; 114.365 ; WRn               ; C1_7              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
 ; 114.365 ; WRn               ; CSRn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
@@ -268,26 +268,32 @@ No paths to report.
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 ; 5.000 ; r_wait            ; r_wait            ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[0]  ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[2]  ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[0]  ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[3]  ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[2]  ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[0]  ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[4]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[3]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[2]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[0]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[5]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[4]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[3]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[2]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[0]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[6]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[5]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[4]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[3]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
@@ -295,6 +301,7 @@ No paths to report.
 ; 5.000 ; reset_counter[0]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[7]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[6]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[5]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[4]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
@@ -303,6 +310,7 @@ No paths to report.
 ; 5.000 ; reset_counter[0]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[8]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[6]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[7]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[4]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
@@ -312,6 +320,7 @@ No paths to report.
 ; 5.000 ; reset_counter[0]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[9]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[8]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[6]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[7]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
@@ -322,6 +331,7 @@ No paths to report.
 ; 5.000 ; reset_counter[0]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[10] ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[9]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[8]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[6]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
@@ -333,6 +343,7 @@ No paths to report.
 ; 5.000 ; reset_counter[0]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[11] ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[10] ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[9]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[8]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
@@ -345,6 +356,7 @@ No paths to report.
 ; 5.000 ; reset_counter[0]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[1]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[12] ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; reset_counter[21] ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[11] ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[10] ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[9]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
@@ -354,18 +366,6 @@ No paths to report.
 ; 5.000 ; reset_counter[4]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[5]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; reset_counter[2]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[13] ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[12] ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[11] ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[10] ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[9]  ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[8]  ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[6]  ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[7]  ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -496,7 +496,7 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; RESETn    ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
+; RESETn    ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
 ; WAITn     ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
 +-----------+------------+--------+--------+------------+-----------------+
 
@@ -506,7 +506,7 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; RESETn    ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
+; RESETn    ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
 ; WAITn     ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
 +-----------+------------+--------+--------+------------+-----------------+
 
@@ -522,9 +522,9 @@ No paths to report.
 ; A[1]       ; D[3]        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
 ; A[1]       ; D[5]        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
 ; A[1]       ; D[6]        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
-; A[5]       ; C1_4        ; 10.800 ; 10.000 ; 10.000 ; 10.800 ;
+; A[5]       ; C1_4        ; 10.800 ;        ;        ; 10.800 ;
 ; A[5]       ; C1_7        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
-; A[5]       ; C2_4        ; 18.800 ; 18.000 ; 18.000 ; 18.800 ;
+; A[5]       ; C2_4        ; 18.800 ;        ;        ; 18.800 ;
 ; A[5]       ; C2_7        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
 ; A[5]       ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
 ; A[5]       ; CSWn        ; 10.000 ;        ;        ; 10.000 ;
@@ -624,9 +624,9 @@ No paths to report.
 ; RFSH       ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
 ; RFSH       ; RAM_CSn     ; 10.000 ;        ;        ; 10.000 ;
 ; RFSH       ; ROM_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; WRn        ; C1_4        ; 10.800 ; 10.000 ; 10.000 ; 10.800 ;
+; WRn        ; C1_4        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
 ; WRn        ; C1_7        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
-; WRn        ; C2_4        ; 18.800 ; 18.000 ; 18.000 ; 18.800 ;
+; WRn        ; C2_4        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
 ; WRn        ; C2_7        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
 ; WRn        ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
 ; WRn        ; CSWn        ;        ; 10.000 ; 10.000 ;        ;
@@ -653,9 +653,9 @@ No paths to report.
 ; A[1]       ; D[3]        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
 ; A[1]       ; D[5]        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
 ; A[1]       ; D[6]        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
-; A[5]       ; C1_4        ; 10.800 ; 10.000 ; 10.000 ; 10.800 ;
+; A[5]       ; C1_4        ; 10.800 ;        ;        ; 10.800 ;
 ; A[5]       ; C1_7        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
-; A[5]       ; C2_4        ; 18.800 ; 18.000 ; 18.000 ; 18.800 ;
+; A[5]       ; C2_4        ; 18.800 ;        ;        ; 18.800 ;
 ; A[5]       ; C2_7        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
 ; A[5]       ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
 ; A[5]       ; CSWn        ; 10.000 ;        ;        ; 10.000 ;
@@ -755,9 +755,9 @@ No paths to report.
 ; RFSH       ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
 ; RFSH       ; RAM_CSn     ; 10.000 ;        ;        ; 10.000 ;
 ; RFSH       ; ROM_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; WRn        ; C1_4        ; 10.800 ; 10.000 ; 10.000 ; 10.800 ;
+; WRn        ; C1_4        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
 ; WRn        ; C1_7        ; 10.000 ; 10.000 ; 10.000 ; 10.000 ;
-; WRn        ; C2_4        ; 18.800 ; 18.000 ; 18.000 ; 18.800 ;
+; WRn        ; C2_4        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
 ; WRn        ; C2_7        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
 ; WRn        ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
 ; WRn        ; CSWn        ;        ; 10.000 ; 10.000 ;        ;
@@ -778,7 +778,7 @@ No paths to report.
 +------------+------------+----------+----------+----------+----------+
 ; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------+----------+----------+----------+----------+
-; ntsc_clock ; ntsc_clock ; 211      ; 2        ; 45       ; 297      ;
+; ntsc_clock ; ntsc_clock ; 205      ; 2        ; 45       ; 297      ;
 +------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -788,7 +788,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+------------+----------+----------+----------+----------+
 ; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------+----------+----------+----------+----------+
-; ntsc_clock ; ntsc_clock ; 211      ; 2        ; 45       ; 297      ;
+; ntsc_clock ; ntsc_clock ; 205      ; 2        ; 45       ; 297      ;
 +------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -825,7 +825,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jan  3 10:35:34 2024
+    Info: Processing started: Thu Jan  4 17:48:03 2024
 Info: Command: quartus_sta portable_coleco -c portable_coleco
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -865,8 +865,8 @@ Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 13 warnings
     Info: Peak virtual memory: 477 megabytes
-    Info: Processing ended: Wed Jan  3 10:35:34 2024
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Thu Jan  4 17:48:04 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

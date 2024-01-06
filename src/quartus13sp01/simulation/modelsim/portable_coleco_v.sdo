@@ -24,22 +24,13 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "porta_glue_coleco")
-  (DATE "01/03/2024 10:35:35")
+  (DATE "01/04/2024 17:48:05")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition")
   (DIVIDER .)
   (TIMESCALE 1 ps)
 
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE clk\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH padio dataout (1500:1500:1500) (1500:1500:1500))
-      )
-    )
-  )
   (CELL
     (CELLTYPE "max_asynch_io")
     (INSTANCE A\[15\]\~I.asynch_inst)
@@ -319,8 +310,6 @@
       (ABSOLUTE
         (IOPATH pterm1[0] pexpout (5000:5000:5000) (5000:5000:5000))
         (IOPATH pterm1[1] pexpout (5000:5000:5000) (5000:5000:5000))
-        (IOPATH pterm2[0] pexpout (5000:5000:5000) (5000:5000:5000))
-        (IOPATH pterm2[1] pexpout (5000:5000:5000) (5000:5000:5000))
       )
     )
   )
@@ -338,7 +327,6 @@
         (IOPATH pterm2[1] combout (7000:7000:7000) (7000:7000:7000))
         (IOPATH pterm3[0] combout (7000:7000:7000) (7000:7000:7000))
         (IOPATH pterm3[1] combout (7000:7000:7000) (7000:7000:7000))
-        (IOPATH pterm3[2] combout (7000:7000:7000) (7000:7000:7000))
         (IOPATH pterm4[0] combout (7000:7000:7000) (7000:7000:7000))
         (IOPATH pterm4[1] combout (7000:7000:7000) (7000:7000:7000))
         (IOPATH pterm4[2] combout (7000:7000:7000) (7000:7000:7000))
@@ -643,6 +631,15 @@
     (DELAY
       (ABSOLUTE
         (IOPATH pterm1[0] combout (7000:7000:7000) (7000:7000:7000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE clk\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1500:1500:1500) (1500:1500:1500))
       )
     )
   )
@@ -1479,15 +1476,6 @@
     (TIMINGCHECK
       (SETUP datain (posedge clk) (2000:2000:2000))
       (HOLD datain (posedge clk) (3000:3000:3000))
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_mcell")
-    (INSTANCE reset_counter\[21\]\~170.pcom)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH pterm1[0] combout (7000:7000:7000) (7000:7000:7000))
-      )
     )
   )
   (CELL
