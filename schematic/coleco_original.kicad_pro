@@ -61,8 +61,8 @@
         "lib_footprint_mismatch|126949200|130517200|7b2d5870-8953-49da-9eb3-3c748b7e9ae1|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|155702000|57695400|0845d55b-3ccd-4184-bce8-4533363e83d9|00000000-0000-0000-0000-000000000000",
         "silk_edge_clearance|81915000|101008200|ed626710-99fa-4f05-8577-b106675770e3|4a7bf456-8615-4752-924a-d9400929452e",
-        "silk_edge_clearance|81915000|133435600|ed626710-99fa-4f05-8577-b106675770e3|68e95710-bd6a-4ac1-bfa4-07db0db2bb91",
-        "silk_edge_clearance|81915000|142635600|ed626710-99fa-4f05-8577-b106675770e3|0e942717-5524-45e9-ace1-1913b9f8ebfc",
+        "silk_edge_clearance|81915000|134247400|ed626710-99fa-4f05-8577-b106675770e3|68e95710-bd6a-4ac1-bfa4-07db0db2bb91",
+        "silk_edge_clearance|81915000|143447400|ed626710-99fa-4f05-8577-b106675770e3|0e942717-5524-45e9-ace1-1913b9f8ebfc",
         "silk_edge_clearance|81915000|70038200|ed626710-99fa-4f05-8577-b106675770e3|3a11f987-4d65-483a-9dac-eb3621522208"
       ],
       "meta": {
@@ -436,8 +436,8 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2032,
-        "via_diameter": 0.6604,
-        "via_drill": 0.4064,
+        "via_diameter": 0.762,
+        "via_drill": 0.3556,
         "wire_width": 6
       },
       {
