@@ -187,7 +187,7 @@ module porta_glue_coleco
   assign D[4] = (~s_ctrl_readn & ~A[1] ? 1'b1 : 1'bz); //feedback isn't used for standard controller
   assign D[5] = (~s_ctrl_readn & ~A[1] ? C1P6 : 1'bz);
   assign D[6] = (~s_ctrl_readn & ~A[1] ? C1P5 : 1'bz);
-  assign D[7] = (~s_ctrl_readn & ~A[1] ? 1'b0 : 1'bz); //feedback isn't used for standard controller
+  assign D[7] = (~s_ctrl_readn & ~A[1] ? 1'b1 : 1'bz); //feedback isn't used for standard controller
 
   //player 2
   assign D[0] = (~s_ctrl_readn & A[1] ? C2P0 : 1'bz);
@@ -197,30 +197,20 @@ module porta_glue_coleco
   assign D[4] = (~s_ctrl_readn & A[1] ? 1'b1 : 1'bz); //feedback isn't used for standard controller
   assign D[5] = (~s_ctrl_readn & A[1] ? C2P6 : 1'bz);
   assign D[6] = (~s_ctrl_readn & A[1] ? C2P5 : 1'bz);
-  assign D[7] = (~s_ctrl_readn & A[1] ? 1'b0 : 1'bz); //feedback isn't used for standard controller
+  assign D[7] = (~s_ctrl_readn & A[1] ? 1'b1 : 1'bz); //feedback isn't used for standard controller
 	
   //emulation of feedback nand, hold last state by default.
   //00 is a invalid state.
-  //always @(s_ctrl_en_1n or s_ctrl_en_2n)
   always @(negedge clk) //probably fast enough that it doesn't matter.
   begin
-    case({s_ctrl_en_1n, s_ctrl_en_2n})
-      2'b01:
-      begin
-        r_ctrl_arm  <= 1'b1;
-        r_ctrl_fire <= 1'b0;
-      end
-      2'b10:
-      begin
-        r_ctrl_arm  <= 1'b0;
-        r_ctrl_fire <= 1'b1;
-      end
-      default:
-      begin
-        r_ctrl_arm  <= r_ctrl_arm;
-        r_ctrl_fire <= r_ctrl_fire;
-      end
-    endcase
+    r_ctrl_arm  <= r_ctrl_arm;
+    r_ctrl_fire <= r_ctrl_fire;
+
+    if((s_ctrl_en_1n ^ s_ctrl_en_2n) == 1'b1)
+    begin
+      r_ctrl_arm  <= ~s_ctrl_en_1n;
+      r_ctrl_fire <= ~s_ctrl_en_2n;
+    end
   end
 
 endmodule
