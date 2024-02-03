@@ -57,7 +57,7 @@
  ---------------------------------------------------------------------------------
 
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-CHIP  "portable_coleco"  ASSIGNED TO AN: EPM7064SLC84-10
+CHIP  "portable_coleco"  ASSIGNED TO AN: EPM7128SLC84-10
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
@@ -96,12 +96,12 @@ GND                          : 32        : gnd    :                   :         
 A[1]                         : 33        : input  : TTL               :         :           : Y              
 A[0]                         : 34        : input  : TTL               :         :           : Y              
 M1n                          : 35        : input  : TTL               :         :           : Y              
-RFSH                         : 36        : input  : TTL               :         :           : Y              
+RFSHn                        : 36        : input  : TTL               :         :           : Y              
 RESETn                       : 37        : output : TTL               :         :           : Y              
 VCCIO                        : 38        : power  :                   : 5.0V    :           :                
 WAITn                        : 39        : output : TTL               :         :           : Y              
-BUSRQn                       : 40        : output : TTL               :         :           : Y              
-BUSAKn                       : 41        : input  : TTL               :         :           : Y              
+RDn                          : 40        : input  : TTL               :         :           : Y              
+RAM_OEn                      : 41        : output : TTL               :         :           : Y              
 GND                          : 42        : gnd    :                   :         :           :                
 VCCINT                       : 43        : power  :                   : 5.0V    :           :                
 IORQn                        : 44        : input  : TTL               :         :           : Y              
@@ -120,8 +120,8 @@ ROM_ENABLEn                  : 56        : output : TTL               :         
 RAM_CSn                      : 57        : output : TTL               :         :           : Y              
 SND_ENABLEn                  : 58        : output : TTL               :         :           : Y              
 GND                          : 59        : gnd    :                   :         :           :                
-RX                           : 60        : input  : TTL               :         :           : Y              
-TX                           : 61        : output : TTL               :         :           : Y              
+VDP_RESETn                   : 60        : output : TTL               :         :           : Y              
+INTn                         : 61        : output : TTL               :         :           : Y              
 TCK                          : 62        : input  : TTL               :         :           : N              
 CS_hC000n                    : 63        : output : TTL               :         :           : Y              
 CS_hA000n                    : 64        : output : TTL               :         :           : Y              

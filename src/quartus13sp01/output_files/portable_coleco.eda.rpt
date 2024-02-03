@@ -1,5 +1,5 @@
 EDA Netlist Writer report for portable_coleco
-Thu Jan  4 17:48:05 2024
+Fri Feb  2 19:03:59 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Jan  4 17:48:05 2024 ;
+; EDA Netlist Writer Status ; Successful - Fri Feb  2 19:03:59 2024 ;
 ; Revision Name             ; portable_coleco                       ;
 ; Top-level Entity Name     ; porta_glue_coleco                     ;
 ; Family                    ; MAX7000S                              ;
@@ -82,12 +82,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jan  4 17:48:05 2024
+    Info: Processing started: Fri Feb  2 19:03:59 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off portable_coleco -c portable_coleco
 Info (204018): Generated files "portable_coleco.vo" and "portable_coleco_v.sdo" in directory "/home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/quartus13sp01/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 765 megabytes
-    Info: Processing ended: Thu Jan  4 17:48:05 2024
+    Info: Processing ended: Fri Feb  2 19:03:59 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for portable_coleco
-Thu Jan  4 17:48:00 2024
+Fri Feb  2 19:03:54 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0
- 10. Analysis & Synthesis Messages
+  8. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0
+  9. Analysis & Synthesis Messages
+ 10. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -41,7 +41,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Jan  4 17:48:00 2024           ;
+; Analysis & Synthesis Status ; Successful - Fri Feb  2 19:03:54 2024           ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name               ; portable_coleco                                 ;
 ; Top-level Entity Name       ; porta_glue_coleco                               ;
@@ -56,7 +56,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+-------------------+-----------------+
 ; Option                                                                     ; Setting           ; Default Value   ;
 +----------------------------------------------------------------------------+-------------------+-----------------+
-; Device                                                                     ; EPM7064SLC84-10   ;                 ;
+; Device                                                                     ; EPM7128SLC84-10   ;                 ;
 ; Top-level entity name                                                      ; porta_glue_coleco ; portable_coleco ;
 ; Family name                                                                ; MAX7000S          ; Cyclone IV GX   ;
 ; Use smart compilation                                                      ; Off               ; Off             ;
@@ -159,13 +159,12 @@ applicable agreement for further details.
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
 ; Logic cells          ; 49                   ;
-; Total registers      ; 23                   ;
+; Total registers      ; 27                   ;
 ; I/O pins             ; 64                   ;
-; Parallel expanders   ; 2                    ;
-; Maximum fan-out node ; reset_counter[21]    ;
-; Maximum fan-out      ; 23                   ;
-; Total fan-out        ; 471                  ;
-; Average fan-out      ; 4.17                 ;
+; Maximum fan-out node ; clk                  ;
+; Maximum fan-out      ; 27                   ;
+; Total fan-out        ; 423                  ;
+; Average fan-out      ; 3.74                 ;
 +----------------------+----------------------+
 
 
@@ -176,18 +175,6 @@ applicable agreement for further details.
 +----------------------------+------------+------+---------------------+--------------+
 ; |porta_glue_coleco         ; 49         ; 64   ; |porta_glue_coleco  ; work         ;
 +----------------------------+------------+------+---------------------+--------------+
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; r_ctrl_arm                                         ; WideNor0            ; yes                    ;
-; r_ctrl_fire                                        ; WideNor0            ; yes                    ;
-; Number of user-specified and inferred latches = 2  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-------------------------------------------------------------------+
@@ -224,19 +211,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jan  4 17:48:00 2024
+    Info: Processing started: Fri Feb  2 19:03:54 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off portable_coleco -c portable_coleco
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/portable_coleco/src/porta_glue_coleco.v
     Info (12023): Found entity 1: porta_glue_coleco
 Info (12127): Elaborating entity "porta_glue_coleco" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at porta_glue_coleco.v(200): variable "r_ctrl_arm" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at porta_glue_coleco.v(201): variable "r_ctrl_fire" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info (10264): Verilog HDL Case Statement information at porta_glue_coleco.v(187): all case item expressions in this case statement are onehot
-Warning (10240): Verilog HDL Always Construct warning at porta_glue_coleco.v(185): inferring latch(es) for variable "r_ctrl_arm", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at porta_glue_coleco.v(185): inferring latch(es) for variable "r_ctrl_fire", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "r_ctrl_fire" at porta_glue_coleco.v(185)
-Info (10041): Inferred latch for "r_ctrl_arm" at porta_glue_coleco.v(185)
+Warning (10036): Verilog HDL or VHDL warning at porta_glue_coleco.v(66): object "ctrl_readn" assigned a value but never read
+Info (10264): Verilog HDL Case Statement information at porta_glue_coleco.v(206): all case item expressions in this case statement are onehot
 Info (278001): Inferred 1 megafunctions from design logic
     Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add0"
 Info (12130): Elaborated megafunction instantiation "lpm_add_sub:Add0"
@@ -253,12 +235,11 @@ Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:r
 Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
 Info (13014): Ignored 22 buffer(s)
     Info (13019): Ignored 22 SOFT buffer(s)
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "TX" is stuck at GND
 Info (280013): Promoted pin-driven signal(s) to global signal
     Info (280014): Promoted clock signal driven by pin "clk" to global clock signal
-Warning (21074): Design contains 13 input pin(s) that do not drive logic
+Warning (21074): Design contains 24 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "A[0]"
+    Warning (15610): No output dependent on input pin "A[1]"
     Warning (15610): No output dependent on input pin "A[2]"
     Warning (15610): No output dependent on input pin "A[3]"
     Warning (15610): No output dependent on input pin "A[4]"
@@ -267,18 +248,35 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "A[10]"
     Warning (15610): No output dependent on input pin "A[11]"
     Warning (15610): No output dependent on input pin "A[12]"
-    Warning (15610): No output dependent on input pin "BUSAKn"
+    Warning (15610): No output dependent on input pin "C1_0"
+    Warning (15610): No output dependent on input pin "C1_1"
+    Warning (15610): No output dependent on input pin "C1_2"
+    Warning (15610): No output dependent on input pin "C1_3"
+    Warning (15610): No output dependent on input pin "C1_5"
+    Warning (15610): No output dependent on input pin "C1_6"
     Warning (15610): No output dependent on input pin "C1_8"
+    Warning (15610): No output dependent on input pin "C2_0"
+    Warning (15610): No output dependent on input pin "C2_1"
+    Warning (15610): No output dependent on input pin "C2_2"
+    Warning (15610): No output dependent on input pin "C2_3"
+    Warning (15610): No output dependent on input pin "C2_5"
+    Warning (15610): No output dependent on input pin "C2_6"
     Warning (15610): No output dependent on input pin "C2_8"
-    Warning (15610): No output dependent on input pin "RX"
 Info (21057): Implemented 113 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 39 input pins
-    Info (21059): Implemented 25 output pins
+    Info (21058): Implemented 38 input pins
+    Info (21059): Implemented 26 output pins
     Info (21063): Implemented 49 macrocells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 20 warnings
+Info (144001): Generated suppressed messages file /home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/quartus13sp01/output_files/portable_coleco.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 568 megabytes
-    Info: Processing ended: Thu Jan  4 17:48:00 2024
+    Info: Processing ended: Fri Feb  2 19:03:54 2024
     Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/quartus13sp01/output_files/portable_coleco.map.smsg.
 
 

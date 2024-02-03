@@ -15,8 +15,6 @@
 # Clock constraints
 # 3.579545 MHz
 create_clock -name "ntsc_clock" -period 279.365ns [get_ports {clk}]
-# serial baud rate for 115200 Hz
-create_clock -name "baud_rate" -period 8.680us
 
 # Automatically constrain PLL and other generated clocks
 derive_pll_clocks -create_base_clocks
@@ -48,13 +46,11 @@ set_input_delay -clock "ntsc_clock" 65.000ns [get_ports {M1n}]
  
 set_input_delay -clock "ntsc_clock" 55.000ns [get_ports {WRn}]
 
+set_input_delay -clock "ntsc_clock" 55.000ns [get_ports {RDn}]
+
 set_input_delay -clock "ntsc_clock" 40.000ns [get_ports {RESETn_SW}]
 
-set_input_delay -clock "ntsc_clock" 80.000ns [get_ports {RFSH}]
-
-# set_input_delay -clock "ntsc_clock" 70.000ns [get_ports {BUSAKn}]
-
-# set_input_delay -clock "baud_rate" 100.000ns [get_ports {RX}]
+set_input_delay -clock "ntsc_clock" 80.000ns [get_ports {RFSHn}]
 
 # output delays
 set_output_delay -clock "ntsc_clock" -min 0.000ns [get_ports {D[*]}]
@@ -77,7 +73,12 @@ set_output_delay -clock "ntsc_clock" 10.000ns [get_ports {RAM_CSn}]
 set_output_delay -clock "ntsc_clock" -min 10.000ns [get_ports {RESETn}]
 set_output_delay -clock "ntsc_clock" -max 40.000ns [get_ports {RESETn}]
 
+set_output_delay -clock "ntsc_clock" -min 10.000ns [get_ports {VDP_RESETn}]
+set_output_delay -clock "ntsc_clock" -max 40.000ns [get_ports {VDP_RESETn}]
+
 set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {ROM_ENABLEn}]
+
+set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {RAM_OEn}]
 
 set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {CS_*}]
 
@@ -85,8 +86,3 @@ set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {SND_ENABLEn}]
 
 set_output_delay -clock "ntsc_clock" -min 10.000ns [get_ports {WAITn}]
 set_output_delay -clock "ntsc_clock" -max 20.000ns [get_ports {WAITn}]
-
-set_output_delay -clock "ntsc_clock" -min 10.000ns [get_ports {BUSRQn}]
-set_output_delay -clock "ntsc_clock" -max 30.000ns [get_ports {BUSRQn}]
-
-set_output_delay -clock "baud_rate" 100.000ns [get_ports {TX}]

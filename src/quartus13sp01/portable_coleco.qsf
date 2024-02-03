@@ -37,7 +37,7 @@
 
 
 set_global_assignment -name FAMILY MAX7000S
-set_global_assignment -name DEVICE "EPM7064SLC84-10"
+set_global_assignment -name DEVICE "EPM7128SLC84-10"
 set_global_assignment -name TOP_LEVEL_ENTITY porta_glue_coleco
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:47:30  DECEMBER 31, 2023"
@@ -68,8 +68,6 @@ set_location_assignment PIN_30 -to A[3]
 set_location_assignment PIN_31 -to A[2]
 set_location_assignment PIN_33 -to A[1]
 set_location_assignment PIN_34 -to A[0]
-set_location_assignment PIN_41 -to BUSAKn
-set_location_assignment PIN_40 -to BUSRQn
 set_location_assignment PIN_2 -to C1_0
 set_location_assignment PIN_4 -to C1_1
 set_location_assignment PIN_5 -to C1_2
@@ -106,13 +104,16 @@ set_location_assignment PIN_45 -to MREQn
 set_location_assignment PIN_57 -to RAM_CSn
 set_location_assignment PIN_37 -to RESETn
 set_location_assignment PIN_1 -to RESETn_SW
-set_location_assignment PIN_36 -to RFSH
+set_location_assignment PIN_36 -to RFSHn
 set_location_assignment PIN_56 -to ROM_ENABLEn
-set_location_assignment PIN_60 -to RX
 set_location_assignment PIN_58 -to SND_ENABLEn
-set_location_assignment PIN_61 -to TX
+set_location_assignment PIN_61 -to INTn
 set_location_assignment PIN_39 -to WAITn
 set_location_assignment PIN_84 -to WRn
 set_location_assignment PIN_83 -to clk
 set_location_assignment PIN_12 -to C1_8
 set_location_assignment PIN_81 -to C2_8
+
+set_location_assignment PIN_60 -to VDP_RESETn
+set_location_assignment PIN_41 -to RAM_OEn
+set_location_assignment PIN_40 -to RDn

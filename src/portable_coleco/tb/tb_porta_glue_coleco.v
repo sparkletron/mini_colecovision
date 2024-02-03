@@ -22,9 +22,10 @@ module tb_porta_glue_console
   reg [5:0] C2 = 0;
   reg       MREQn = 1'b1;
   reg       IORQn = 1'b1;
-  reg       RFSH  = 1'b0;
+  reg       RFSHn = 1'b0;
   reg       M1n   = 1'b1;
   reg       WRn   = 1'b1;
+  reg       RDn   = 1'b0;
 
   wire [7:0]  data_bus;
   wire        ctrl1_fire;
@@ -42,12 +43,13 @@ module tb_porta_glue_console
   wire        vdp_rn;
   wire        cpu_waitn;
   wire        cpu_resetn;
+  wire        vdp_resetn;
 
   porta_glue_coleco dut
   (
     .clk(clkv),
     .A({A15,A14,A13,{5{1'b0}},A7,A6,A5,{3{1'b0}},A1,1'b0}),
-    .BUSAKn(1'b1),
+    .RDn(RDn),
     .C1_0(C1[0]),
     .C1_1(C1[1]),
     .C1_2(C1[2]),
@@ -64,11 +66,10 @@ module tb_porta_glue_console
     .C2_8(1'b1),
     .MREQn(MREQn),
     .IORQn(IORQn),
-    .RFSH(RFSH),
+    .RFSHn(RFSHn),
     .M1n(M1n),
     .WRn(WRn),
     .RESETn_SW(resetn_sw),
-    .RX(1'b1),
     .C1_4(ctrl1_arm),
     .C1_7(ctrl1_fire),
     .C2_4(ctrl2_arm),
@@ -85,8 +86,8 @@ module tb_porta_glue_console
     .CSRn(vdp_rn),
     .WAITn(cpu_waitn),
     .RESETn(cpu_resetn),
-    .BUSRQn(),
-    .TX()
+    .VDP_RESETn(vdp_resetn),
+    .RAM_OEn()
   );
 
     // fst dump command
@@ -119,7 +120,7 @@ module tb_porta_glue_console
     #1000000000;
     //check decoder U5
     //enable
-    RFSH  <= 1'b1;
+    RFSHn <= 1'b1;
     MREQn <= 1'b0;
     #50000;
     //ROM
@@ -147,7 +148,7 @@ module tb_porta_glue_console
     A13 <= 1'b1;
     #50000;
     //disable
-    RFSH  <= 1'b0;
+    RFSHn <= 1'b0;
     MREQn <= 1'b1;
     #50000;
     //deassert address lines
