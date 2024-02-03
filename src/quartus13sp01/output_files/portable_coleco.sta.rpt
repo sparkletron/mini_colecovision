@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for portable_coleco
-Sat Feb  3 09:12:02 2024
+Sat Feb  3 12:29:58 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -76,12 +76,11 @@ applicable agreement for further details.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-16        ;   0.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -90,7 +89,7 @@ applicable agreement for further details.
 +-------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                   ; Status ; Read at                  ;
 +-------------------------------------------------+--------+--------------------------+
-; ../portable_coleco/constr/porta_glue_coleco.sdc ; OK     ; Sat Feb  3 09:12:02 2024 ;
+; ../portable_coleco/constr/porta_glue_coleco.sdc ; OK     ; Sat Feb  3 12:29:58 2024 ;
 +-------------------------------------------------+--------+--------------------------+
 
 
@@ -191,18 +190,18 @@ No paths to report.
 ; 50.365 ; A[7]         ; SND_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
 ; 60.365 ; WRn          ; SND_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
 ; 60.365 ; IORQn        ; SND_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C2_0         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C2_3         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C2_1         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C2_2         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C2_6         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C2_5         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C1_0         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C1_3         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C1_1         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C1_2         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C1_6         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
-; 65.365 ; C1_5         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2P0         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2P3         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2P1         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2P2         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2P6         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2P5         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1P0         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1P3         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1P1         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1P2         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1P6         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1P5         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
 ; 67.682 ; M1n          ; r_wait              ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
 ; 67.682 ; A[6]         ; r_ctrl_fire         ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
 ; 67.682 ; A[5]         ; r_ctrl_fire         ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
@@ -586,18 +585,18 @@ No paths to report.
 ; A[15]      ; RAM_CSn     ;        ; 14.000 ; 14.000 ;        ;
 ; A[15]      ; RAM_OEn     ;        ; 14.000 ; 14.000 ;        ;
 ; A[15]      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
-; C1_0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
 ; IORQn      ; CSRn        ;        ; 14.000 ; 14.000 ;        ;
 ; IORQn      ; CSWn        ;        ; 14.000 ; 14.000 ;        ;
 ; IORQn      ; D[0]        ;        ; 28.500 ; 28.500 ;        ;
@@ -703,18 +702,18 @@ No paths to report.
 ; A[15]      ; RAM_CSn     ;        ; 14.000 ; 14.000 ;        ;
 ; A[15]      ; RAM_OEn     ;        ; 14.000 ; 14.000 ;        ;
 ; A[15]      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
-; C1_0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
-; C1_6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
-; C2_6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; C1P6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; C2P6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
 ; IORQn      ; CSRn        ;        ; 14.000 ; 14.000 ;        ;
 ; IORQn      ; CSWn        ;        ; 14.000 ; 14.000 ;        ;
 ; IORQn      ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
@@ -807,7 +806,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Feb  3 09:12:02 2024
+    Info: Processing started: Sat Feb  3 12:29:58 2024
 Info: Command: quartus_sta portable_coleco -c portable_coleco
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -838,7 +837,7 @@ Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 477 megabytes
-    Info: Processing ended: Sat Feb  3 09:12:02 2024
+    Info: Processing ended: Sat Feb  3 12:29:58 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

@@ -24,7 +24,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "porta_glue_coleco")
-  (DATE "02/03/2024 09:12:04")
+  (DATE "02/03/2024 12:29:59")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition")
@@ -407,7 +407,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C2_0\~I.asynch_inst)
+    (INSTANCE C2P0\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -425,7 +425,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C1_0\~I.asynch_inst)
+    (INSTANCE C1P0\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (1500:1500:1500) (1500:1500:1500))
@@ -456,7 +456,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C2_3\~I.asynch_inst)
+    (INSTANCE C2P3\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -465,7 +465,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C1_3\~I.asynch_inst)
+    (INSTANCE C1P3\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -496,7 +496,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C2_1\~I.asynch_inst)
+    (INSTANCE C2P1\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -505,7 +505,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C1_1\~I.asynch_inst)
+    (INSTANCE C1P1\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -536,7 +536,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C2_2\~I.asynch_inst)
+    (INSTANCE C2P2\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -545,7 +545,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C1_2\~I.asynch_inst)
+    (INSTANCE C1P2\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -576,7 +576,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C2_6\~I.asynch_inst)
+    (INSTANCE C2P6\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -585,7 +585,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C1_6\~I.asynch_inst)
+    (INSTANCE C1P6\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -616,7 +616,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C2_5\~I.asynch_inst)
+    (INSTANCE C2P5\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -625,7 +625,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE C1_5\~I.asynch_inst)
+    (INSTANCE C1P5\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH padio dataout (500:500:500) (500:500:500))
@@ -1282,6 +1282,15 @@
   (CELL
     (CELLTYPE "max_asynch_io")
     (INSTANCE TX\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1500:1500:1500) (1500:1500:1500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE BUSREQn\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1500:1500:1500) (1500:1500:1500))

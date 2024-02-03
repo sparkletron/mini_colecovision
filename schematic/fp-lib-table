@@ -11,4 +11,5 @@
   (lib (name "1101M2S3ABE2")(type "KiCad")(uri "${KIPRJMOD}/lib/1101M2S3ABE2")(options "")(descr ""))
   (lib (name "GF-626")(type "KiCad")(uri "${KIPRJMOD}/lib/MODELS/GF-626")(options "")(descr ""))
   (lib (name "MHPS2273")(type "KiCad")(uri "${KIPRJMOD}/lib/MODELS/MHPS2273")(options "")(descr ""))
+  (lib (name "RV100F-30")(type "KiCad")(uri "${KIPRJMOD}/lib/RV100F-30")(options "")(descr ""))
 )

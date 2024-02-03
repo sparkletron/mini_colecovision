@@ -22,14 +22,12 @@ module porta_glue_coleco
     input         C1P3,
     input         C1P5,
     input         C1P6,
-    input         C1P8,
     input         C2P0,
     input         C2P1,
     input         C2P2,
     input         C2P3,
     input         C2P5,
     input         C2P6,
-    input         C2P8,
     input         MREQn,
     input         IORQn,
     input         RFSHn,
@@ -38,6 +36,7 @@ module porta_glue_coleco
     input         RESETn_SW,
     input         RDn,
     input         RX,
+    input         BUSAKn,
     output        C4_ARM,
     output        C7_FIRE,
     output [7:0]  D,
@@ -55,7 +54,8 @@ module porta_glue_coleco
     output        RESETn,
     output        VDP_RESETn,
     output        INTn,
-    output        TX
+    output        TX,
+    output        BUSREQn
   );
 
   //decoder logic
@@ -67,21 +67,23 @@ module porta_glue_coleco
   wire s_ram_csn;
 
   //wait d flip flop
-  reg r_wait = 1'b0;
+  reg         r_wait          = 1'b0;
 
   //timed reset circuit counter
-  reg [15:0] r_reset_counter = 0;
-  reg r_resetn = 0;
-  reg r_vdp_resetn = 0;
+  reg [15:0]  r_reset_counter = 0;
+  reg         r_resetn        = 0;
+  reg         r_vdp_resetn    = 0;
 
   //emulate feedback nand circuit
-  reg r_ctrl_fire = 1'b0;
-  reg r_ctrl_arm  = 1'b1;
+  reg         r_ctrl_fire     = 1'b0;
+  reg         r_ctrl_arm      = 1'b1;
 
   //dangling outputs
-  assign INTn = 1'bz;
+  assign INTn     = 1'bz;
 
-  assign TX = 1'bz;
+  assign TX       = 1'bz;
+
+  assign BUSREQn  = 1'bz;
 
   //****************************************************************************
   /// RAM Output enable when read is needed.
@@ -154,14 +156,14 @@ module porta_glue_coleco
 
     if(r_reset_counter[`DEF_RESET_BINARY_DELAY] == 1'b1)
     begin
-      r_resetn <= 1'b1;
+      r_resetn        <= 1'b1;
       r_reset_counter <= r_reset_counter;
     end
 
     if(RESETn_SW == 1'b0)
     begin
-      r_resetn <= 1'b0;
-      r_vdp_resetn <= 1'b0;
+      r_resetn        <= 1'b0;
+      r_vdp_resetn    <= 1'b0;
       r_reset_counter <= 0;
     end
   end

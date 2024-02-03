@@ -62,17 +62,17 @@ CHIP  "portable_coleco"  ASSIGNED TO AN: EPM7128SLC84-10
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 RESETn_SW                    : 1         : input  : TTL               :         :           : Y              
-C1_0                         : 2         : input  : TTL               :         :           : Y              
+C1P0                         : 2         : input  : TTL               :         :           : Y              
 VCCINT                       : 3         : power  :                   : 5.0V    :           :                
-C1_1                         : 4         : input  : TTL               :         :           : Y              
-C1_2                         : 5         : input  : TTL               :         :           : Y              
-C1_3                         : 6         : input  : TTL               :         :           : Y              
+C1P1                         : 4         : input  : TTL               :         :           : Y              
+C1P2                         : 5         : input  : TTL               :         :           : Y              
+C1P3                         : 6         : input  : TTL               :         :           : Y              
 GND                          : 7         : gnd    :                   :         :           :                
-C4_ARM                       : 8         : output : TTL               :         :           : Y              
-C1_5                         : 9         : input  : TTL               :         :           : Y              
-C1_6                         : 10        : input  : TTL               :         :           : Y              
-C7_FIRE                      : 11        : output : TTL               :         :           : Y              
-C1_8                         : 12        : input  : TTL               :         :           : Y              
+C1P5                         : 8         : input  : TTL               :         :           : Y              
+C1P6                         : 9         : input  : TTL               :         :           : Y              
+BUSAKn                       : 10        : input  : TTL               :         :           : N              
+C4_ARM                       : 11        : output : TTL               :         :           : Y              
+C7_FIRE                      : 12        : output : TTL               :         :           : Y              
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
 A[15]                        : 15        : input  : TTL               :         :           : Y              
@@ -130,18 +130,18 @@ VCCIO                        : 66        : power  :                   : 5.0V    
 CS_hE000n                    : 67        : output : TTL               :         :           : Y              
 CSRn                         : 68        : output : TTL               :         :           : Y              
 CSWn                         : 69        : output : TTL               :         :           : Y              
-C2_0                         : 70        : input  : TTL               :         :           : Y              
+C2P0                         : 70        : input  : TTL               :         :           : Y              
 TDO                          : 71        : output : TTL               :         :           : N              
 GND                          : 72        : gnd    :                   :         :           :                
-C2_1                         : 73        : input  : TTL               :         :           : Y              
-C2_2                         : 74        : input  : TTL               :         :           : Y              
-C2_3                         : 75        : input  : TTL               :         :           : Y              
-RX                           : 76        : input  : TTL               :         :           : Y              
-C2_5                         : 77        : input  : TTL               :         :           : Y              
+C2P1                         : 73        : input  : TTL               :         :           : Y              
+C2P2                         : 74        : input  : TTL               :         :           : Y              
+C2P3                         : 75        : input  : TTL               :         :           : Y              
+C2P5                         : 76        : input  : TTL               :         :           : Y              
+C2P6                         : 77        : input  : TTL               :         :           : Y              
 VCCIO                        : 78        : power  :                   : 5.0V    :           :                
-C2_6                         : 79        : input  : TTL               :         :           : Y              
-TX                           : 80        : output : TTL               :         :           : Y              
-C2_8                         : 81        : input  : TTL               :         :           : Y              
+BUSREQn                      : 79        : output : TTL               :         :           : N              
+RX                           : 80        : input  : TTL               :         :           : Y              
+TX                           : 81        : output : TTL               :         :           : Y              
 GND                          : 82        : gnd    :                   :         :           :                
 clk                          : 83        : input  : TTL               :         :           : Y              
 WRn                          : 84        : input  : TTL               :         :           : Y              
