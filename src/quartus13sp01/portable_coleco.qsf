@@ -82,8 +82,8 @@ set_location_assignment PIN_75 -to C2P3
 set_location_assignment PIN_76 -to C2P5
 set_location_assignment PIN_77 -to C2P6
 set_location_assignment PIN_79 -to C2P8
-set_location_assignment PIN_11 -to C7_FIRE
-set_location_assignment PIN_8  -to C4_ARM
+set_location_assignment PIN_12 -to C7_FIRE
+set_location_assignment PIN_11  -to C4_ARM
 set_location_assignment PIN_68 -to CSRn
 set_location_assignment PIN_69 -to CSWn
 set_location_assignment PIN_65 -to CS_h8000n
