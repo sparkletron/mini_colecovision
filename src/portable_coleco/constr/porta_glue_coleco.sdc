@@ -22,21 +22,21 @@ create_clock -name "baud_clock" -period 8.680us
 derive_pll_clocks -create_base_clocks
 
 # input delays
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_0}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_1}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_2}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_3}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_5}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_6}]
-# set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_8}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P0}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P1}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P2}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P3}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P5}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P6}]
+# set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P8}]
 
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_0}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_1}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_2}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_3}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_5}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_6}]
-# set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_8}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P0}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P1}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P2}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P3}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P5}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P6}]
+# set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P8}]
 
 set_input_delay -clock "ntsc_clock" 65.000ns [get_ports {A*}]
 

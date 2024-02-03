@@ -1,17 +1,17 @@
 # -------------------------------------------------------------------------- #
 #
 # Copyright (C) 1991-2013 Altera Corporation
-# Your use of Altera Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Altera Program License 
-# Subscription Agreement, Altera MegaCore Function License 
-# Agreement, or other applicable license agreement, including, 
-# without limitation, that your use is for the sole purpose of 
-# programming logic devices manufactured by Altera and sold by 
-# Altera or its authorized distributors.  Please refer to the 
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
 # applicable agreement for further details.
 #
 # -------------------------------------------------------------------------- #
@@ -68,20 +68,20 @@ set_location_assignment PIN_30 -to A[3]
 set_location_assignment PIN_31 -to A[2]
 set_location_assignment PIN_33 -to A[1]
 set_location_assignment PIN_34 -to A[0]
-set_location_assignment PIN_2 -to C1_0
-set_location_assignment PIN_4 -to C1_1
-set_location_assignment PIN_5 -to C1_2
-set_location_assignment PIN_6 -to C1_3
-set_location_assignment PIN_9 -to C1_5
-set_location_assignment PIN_10 -to C1_6
-set_location_assignment PIN_12 -to C1_8
-set_location_assignment PIN_70 -to C2_0
-set_location_assignment PIN_73 -to C2_1
-set_location_assignment PIN_74 -to C2_2
-set_location_assignment PIN_75 -to C2_3
-set_location_assignment PIN_77 -to C2_5
-set_location_assignment PIN_79 -to C2_6
-set_location_assignment PIN_81 -to C2_8
+set_location_assignment PIN_2  -to C1P0
+set_location_assignment PIN_4  -to C1P1
+set_location_assignment PIN_5  -to C1P2
+set_location_assignment PIN_6  -to C1P3
+set_location_assignment PIN_8  -to C1P5
+set_location_assignment PIN_9  -to C1P6
+set_location_assignment PIN_10 -to C1P8
+set_location_assignment PIN_70 -to C2P0
+set_location_assignment PIN_73 -to C2P1
+set_location_assignment PIN_74 -to C2P2
+set_location_assignment PIN_75 -to C2P3
+set_location_assignment PIN_76 -to C2P5
+set_location_assignment PIN_77 -to C2P6
+set_location_assignment PIN_79 -to C2P8
 set_location_assignment PIN_11 -to C7_FIRE
 set_location_assignment PIN_8  -to C4_ARM
 set_location_assignment PIN_68 -to CSRn
@@ -111,10 +111,11 @@ set_location_assignment PIN_61 -to INTn
 set_location_assignment PIN_39 -to WAITn
 set_location_assignment PIN_84 -to WRn
 set_location_assignment PIN_83 -to clk
-set_location_assignment PIN_80 -to TX
-set_location_assignment PIN_76 -to RX
+set_location_assignment PIN_81 -to TX
+set_location_assignment PIN_80 -to RX
 set_location_assignment PIN_60 -to VDP_RESETn
 set_location_assignment PIN_41 -to RAM_OEn
 set_location_assignment PIN_40 -to RDn
 
 set_global_assignment -name SLOW_SLEW_RATE ON
+
