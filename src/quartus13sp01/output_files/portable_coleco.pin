@@ -68,10 +68,10 @@ C1_1                         : 4         : input  : TTL               :         
 C1_2                         : 5         : input  : TTL               :         :           : Y              
 C1_3                         : 6         : input  : TTL               :         :           : Y              
 GND                          : 7         : gnd    :                   :         :           :                
-C1_4                         : 8         : output : TTL               :         :           : Y              
+C4_ARM                       : 8         : output : TTL               :         :           : Y              
 C1_5                         : 9         : input  : TTL               :         :           : Y              
 C1_6                         : 10        : input  : TTL               :         :           : Y              
-C1_7                         : 11        : output : TTL               :         :           : Y              
+C7_FIRE                      : 11        : output : TTL               :         :           : Y              
 C1_8                         : 12        : input  : TTL               :         :           : Y              
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
@@ -136,11 +136,11 @@ GND                          : 72        : gnd    :                   :         
 C2_1                         : 73        : input  : TTL               :         :           : Y              
 C2_2                         : 74        : input  : TTL               :         :           : Y              
 C2_3                         : 75        : input  : TTL               :         :           : Y              
-C2_4                         : 76        : output : TTL               :         :           : Y              
+RX                           : 76        : input  : TTL               :         :           : Y              
 C2_5                         : 77        : input  : TTL               :         :           : Y              
 VCCIO                        : 78        : power  :                   : 5.0V    :           :                
 C2_6                         : 79        : input  : TTL               :         :           : Y              
-C2_7                         : 80        : output : TTL               :         :           : Y              
+TX                           : 80        : output : TTL               :         :           : Y              
 C2_8                         : 81        : input  : TTL               :         :           : Y              
 GND                          : 82        : gnd    :                   :         :           :                
 clk                          : 83        : input  : TTL               :         :           : Y              

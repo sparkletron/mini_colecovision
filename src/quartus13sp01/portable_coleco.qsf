@@ -72,18 +72,18 @@ set_location_assignment PIN_2 -to C1_0
 set_location_assignment PIN_4 -to C1_1
 set_location_assignment PIN_5 -to C1_2
 set_location_assignment PIN_6 -to C1_3
-set_location_assignment PIN_8 -to C1_4
 set_location_assignment PIN_9 -to C1_5
 set_location_assignment PIN_10 -to C1_6
-set_location_assignment PIN_11 -to C1_7
+set_location_assignment PIN_12 -to C1_8
 set_location_assignment PIN_70 -to C2_0
 set_location_assignment PIN_73 -to C2_1
 set_location_assignment PIN_74 -to C2_2
 set_location_assignment PIN_75 -to C2_3
-set_location_assignment PIN_76 -to C2_4
 set_location_assignment PIN_77 -to C2_5
 set_location_assignment PIN_79 -to C2_6
-set_location_assignment PIN_80 -to C2_7
+set_location_assignment PIN_81 -to C2_8
+set_location_assignment PIN_11 -to C7_FIRE
+set_location_assignment PIN_8  -to C4_ARM
 set_location_assignment PIN_68 -to CSRn
 set_location_assignment PIN_69 -to CSWn
 set_location_assignment PIN_65 -to CS_h8000n
@@ -103,7 +103,7 @@ set_location_assignment PIN_35 -to M1n
 set_location_assignment PIN_45 -to MREQn
 set_location_assignment PIN_57 -to RAM_CSn
 set_location_assignment PIN_37 -to RESETn
-set_location_assignment PIN_1 -to RESETn_SW
+set_location_assignment PIN_1  -to RESETn_SW
 set_location_assignment PIN_36 -to RFSHn
 set_location_assignment PIN_56 -to ROM_ENABLEn
 set_location_assignment PIN_58 -to SND_ENABLEn
@@ -111,9 +111,10 @@ set_location_assignment PIN_61 -to INTn
 set_location_assignment PIN_39 -to WAITn
 set_location_assignment PIN_84 -to WRn
 set_location_assignment PIN_83 -to clk
-set_location_assignment PIN_12 -to C1_8
-set_location_assignment PIN_81 -to C2_8
-
+set_location_assignment PIN_80 -to TX
+set_location_assignment PIN_76 -to RX
 set_location_assignment PIN_60 -to VDP_RESETn
 set_location_assignment PIN_41 -to RAM_OEn
 set_location_assignment PIN_40 -to RDn
+
+set_global_assignment -name SLOW_SLEW_RATE ON

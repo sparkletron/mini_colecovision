@@ -1,0 +1,89 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: /home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/quartus13sp01/portable_coleco.csv
+# Generated on: Fri Feb  2 19:24:18 2024
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,Fitter Location,Reserved
+A[15],Input,PIN_15,PIN_15,
+A[14],Input,PIN_16,PIN_16,
+A[13],Input,PIN_17,PIN_17,
+A[12],Input,PIN_18,PIN_18,
+A[11],Input,PIN_20,PIN_20,
+A[10],Input,PIN_21,PIN_21,
+A[9],Input,PIN_22,PIN_22,
+A[8],Input,PIN_24,PIN_24,
+A[7],Input,PIN_25,PIN_25,
+A[6],Input,PIN_27,PIN_27,
+A[5],Input,PIN_28,PIN_28,
+A[4],Input,PIN_29,PIN_29,
+A[3],Input,PIN_30,PIN_30,
+A[2],Input,PIN_31,PIN_31,
+A[1],Input,PIN_33,PIN_33,
+A[0],Input,PIN_34,PIN_34,
+C1_0,Input,PIN_2,PIN_2,
+C1_1,Input,PIN_4,PIN_4,
+C1_2,Input,PIN_5,PIN_5,
+C1_3,Input,PIN_6,PIN_6,
+C1_4,Output,PIN_8,PIN_8,
+C1_5,Input,PIN_9,PIN_9,
+C1_6,Input,PIN_10,PIN_10,
+C1_7,Output,PIN_11,PIN_11,
+C1_8,Input,PIN_12,PIN_12,
+C2_0,Input,PIN_70,PIN_70,
+C2_1,Input,PIN_73,PIN_73,
+C2_2,Input,PIN_74,PIN_74,
+C2_3,Input,PIN_75,PIN_75,
+C2_4,Output,PIN_76,PIN_76,
+C2_5,Input,PIN_77,PIN_77,
+C2_6,Input,PIN_79,PIN_79,
+C2_7,Output,PIN_80,PIN_80,
+C2_8,Input,PIN_81,PIN_81,
+CSRn,Output,PIN_68,PIN_68,
+CSWn,Output,PIN_69,PIN_69,
+CS_h8000n,Output,PIN_65,PIN_65,
+CS_hA000n,Output,PIN_64,PIN_64,
+CS_hC000n,Output,PIN_63,PIN_63,
+CS_hE000n,Output,PIN_67,PIN_67,
+D[7],Output,PIN_49,PIN_49,
+D[6],Output,PIN_51,PIN_51,
+D[5],Output,PIN_52,PIN_52,
+D[4],Output,PIN_54,PIN_54,
+D[3],Output,PIN_55,PIN_55,
+D[2],Output,PIN_50,PIN_50,
+D[1],Output,PIN_48,PIN_48,
+D[0],Output,PIN_46,PIN_46,
+INTn,Output,PIN_61,PIN_61,
+IORQn,Input,PIN_44,PIN_44,
+M1n,Input,PIN_35,PIN_35,
+MREQn,Input,PIN_45,PIN_45,
+RAM_CSn,Output,PIN_57,PIN_57,
+RAM_OEn,Output,PIN_41,PIN_41,
+RDn,Input,PIN_40,PIN_40,
+RESETn,Output,PIN_37,PIN_37,
+RESETn_SW,Input,PIN_1,PIN_1,
+RFSHn,Input,PIN_36,PIN_36,
+ROM_ENABLEn,Output,PIN_56,PIN_56,
+SND_ENABLEn,Output,PIN_58,PIN_58,
+TCK,Input,,PIN_62,
+TDI,Input,,PIN_14,
+TDO,Output,,PIN_71,
+TMS,Input,,PIN_23,
+VDP_RESETn,Output,PIN_60,PIN_60,
+WAITn,Output,PIN_39,PIN_39,
+WRn,Input,PIN_84,PIN_84,
+clk,Input,PIN_83,PIN_83,

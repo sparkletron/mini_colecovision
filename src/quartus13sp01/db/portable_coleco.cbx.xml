@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="portable_coleco">
-		<CBX_INST_ENTRY INSTANCE_NAME="|porta_glue_coleco|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_8ph.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|porta_glue_coleco|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_aph.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

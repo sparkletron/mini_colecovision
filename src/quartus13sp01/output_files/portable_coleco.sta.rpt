@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for portable_coleco
-Fri Feb  2 19:03:58 2024
+Sat Feb  3 09:12:02 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -90,26 +90,27 @@ applicable agreement for further details.
 +-------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                   ; Status ; Read at                  ;
 +-------------------------------------------------+--------+--------------------------+
-; ../portable_coleco/constr/porta_glue_coleco.sdc ; OK     ; Fri Feb  2 19:03:58 2024 ;
+; ../portable_coleco/constr/porta_glue_coleco.sdc ; OK     ; Sat Feb  3 09:12:02 2024 ;
 +-------------------------------------------------+--------+--------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                            ;
-+------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
-; Clock Name ; Type ; Period  ; Frequency ; Rise  ; Fall    ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
-+------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
-; ntsc_clock ; Base ; 279.365 ; 3.58 MHz  ; 0.000 ; 139.682 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
-+------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                 ;
++------------+---------+----------+-----------+-------+----------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type    ; Period   ; Frequency ; Rise  ; Fall     ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+---------+----------+-----------+-------+----------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; baud_clock ; Virtual ; 8680.000 ; 0.12 MHz  ; 0.000 ; 4340.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { }     ;
+; ntsc_clock ; Base    ; 279.365  ; 3.58 MHz  ; 0.000 ; 139.682  ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+---------+----------+-----------+-------+----------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
 
 
-+------------------------------------------------+
-; Fmax Summary                                   ;
-+----------+-----------------+------------+------+
-; Fmax     ; Restricted Fmax ; Clock Name ; Note ;
-+----------+-----------------+------------+------+
-; 4.17 MHz ; 4.17 MHz        ; ntsc_clock ;      ;
-+----------+-----------------+------------+------+
++-----------------------------------------------+
+; Fmax Summary                                  ;
++---------+-----------------+------------+------+
+; Fmax    ; Restricted Fmax ; Clock Name ; Note ;
++---------+-----------------+------------+------+
+; 4.1 MHz ; 4.1 MHz         ; ntsc_clock ;      ;
++---------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -152,328 +153,314 @@ No paths to report.
 +------------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Setup: 'ntsc_clock'                                                                                                   ;
-+---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; Slack   ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 26.683  ; r_ctrl_arm        ; C2_4              ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 11.500     ;
-; 26.683  ; r_ctrl_fire       ; C2_7              ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 11.500     ;
-; 34.683  ; r_ctrl_arm        ; C1_4              ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 3.500      ;
-; 34.683  ; r_ctrl_fire       ; C1_7              ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 3.500      ;
-; 39.365  ; RFSHn             ; CS_h8000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 39.365  ; RFSHn             ; CS_hA000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 39.365  ; RFSHn             ; CS_hC000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 39.365  ; RFSHn             ; CS_hE000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 39.365  ; RFSHn             ; RAM_OEn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 39.365  ; RFSHn             ; ROM_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[6]              ; SND_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[15]             ; CS_h8000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; MREQn             ; CS_h8000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[13]             ; CS_h8000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[14]             ; CS_h8000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[14]             ; CS_hA000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[13]             ; CS_hA000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[15]             ; CS_hA000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; MREQn             ; CS_hA000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[13]             ; CS_hC000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[14]             ; CS_hC000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[15]             ; CS_hC000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; MREQn             ; CS_hC000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[14]             ; CS_hE000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[13]             ; CS_hE000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[15]             ; CS_hE000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; MREQn             ; CS_hE000n         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[13]             ; RAM_OEn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[14]             ; RAM_OEn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[15]             ; RAM_OEn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; MREQn             ; RAM_OEn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[15]             ; ROM_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; MREQn             ; ROM_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[13]             ; ROM_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[14]             ; ROM_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[5]              ; SND_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 54.365  ; A[7]              ; SND_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 64.365  ; RDn               ; RAM_OEn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 64.365  ; WRn               ; SND_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 64.365  ; IORQn             ; SND_ENABLEn       ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 67.682  ; M1n               ; r_wait            ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 67.682  ; A[6]              ; r_ctrl_arm        ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 67.682  ; A[5]              ; r_ctrl_arm        ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 67.682  ; A[7]              ; r_ctrl_arm        ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 67.682  ; A[6]              ; r_ctrl_fire       ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 67.682  ; A[5]              ; r_ctrl_fire       ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 67.682  ; A[7]              ; r_ctrl_fire       ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 77.682  ; WRn               ; r_ctrl_arm        ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 77.682  ; IORQn             ; r_ctrl_arm        ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 77.682  ; WRn               ; r_ctrl_fire       ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 77.682  ; IORQn             ; r_ctrl_fire       ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[14] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[15] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[16] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[17] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[18] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[19] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[20] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[21] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; reset_counter[0]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; r_vdp_resetn      ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 92.682  ; RESETn_SW         ; r_resetn          ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
-; 94.683  ; r_resetn          ; RESETn            ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 3.500      ;
-; 94.683  ; r_vdp_resetn      ; VDP_RESETn        ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 3.500      ;
-; 104.365 ; A[5]              ; CSRn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 104.365 ; A[6]              ; CSWn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 104.365 ; A[6]              ; CSRn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 104.365 ; A[7]              ; CSRn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 104.365 ; A[5]              ; CSWn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 104.365 ; A[7]              ; CSWn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 106.683 ; r_wait            ; WAITn             ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 11.500     ;
-; 114.365 ; WRn               ; CSRn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 114.365 ; IORQn             ; CSRn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 114.365 ; WRn               ; CSWn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 114.365 ; IORQn             ; CSWn              ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 179.365 ; RFSHn             ; RAM_CSn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 194.365 ; A[13]             ; RAM_CSn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 194.365 ; A[14]             ; RAM_CSn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 194.365 ; A[15]             ; RAM_CSn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 194.365 ; MREQn             ; RAM_CSn           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 10.000     ;
-; 269.365 ; r_wait            ; r_wait            ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 8.000      ;
-; 269.365 ; reset_counter[1]  ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 8.000      ;
-; 269.365 ; reset_counter[21] ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 8.000      ;
-; 269.365 ; reset_counter[0]  ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 8.000      ;
-; 269.365 ; reset_counter[2]  ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 8.000      ;
-; 269.365 ; reset_counter[21] ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 8.000      ;
-; 269.365 ; reset_counter[0]  ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 8.000      ;
-+---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Setup: 'ntsc_clock'                                                                                               ;
++--------+--------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+---------------------+--------------+-------------+--------------+------------+------------+
+; 26.683 ; r_wait       ; WAITn               ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 11.500     ;
+; 30.683 ; r_ctrl_arm   ; C4_ARM              ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 7.500      ;
+; 30.683 ; r_ctrl_fire  ; C7_FIRE             ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 7.500      ;
+; 35.365 ; RFSHn        ; CS_h8000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 35.365 ; RFSHn        ; CS_hA000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 35.365 ; RFSHn        ; CS_hC000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 35.365 ; RFSHn        ; CS_hE000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 35.365 ; RFSHn        ; ROM_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[6]         ; SND_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[15]        ; CS_h8000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; MREQn        ; CS_h8000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[13]        ; CS_h8000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[14]        ; CS_h8000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[14]        ; CS_hA000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[13]        ; CS_hA000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[15]        ; CS_hA000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; MREQn        ; CS_hA000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[13]        ; CS_hC000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[14]        ; CS_hC000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[15]        ; CS_hC000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; MREQn        ; CS_hC000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[14]        ; CS_hE000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[13]        ; CS_hE000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[15]        ; CS_hE000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; MREQn        ; CS_hE000n           ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[15]        ; ROM_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; MREQn        ; ROM_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[13]        ; ROM_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[14]        ; ROM_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[5]         ; SND_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 50.365 ; A[7]         ; SND_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 60.365 ; WRn          ; SND_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 60.365 ; IORQn        ; SND_ENABLEn         ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2_0         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2_3         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2_1         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2_2         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2_6         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C2_5         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1_0         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1_3         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1_1         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1_2         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1_6         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 65.365 ; C1_5         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 67.682 ; M1n          ; r_wait              ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 67.682 ; A[6]         ; r_ctrl_fire         ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 67.682 ; A[5]         ; r_ctrl_fire         ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 67.682 ; A[7]         ; r_ctrl_fire         ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 67.682 ; A[6]         ; r_ctrl_arm          ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 67.682 ; A[5]         ; r_ctrl_arm          ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 67.682 ; A[7]         ; r_ctrl_arm          ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 77.682 ; WRn          ; r_ctrl_fire         ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 77.682 ; IORQn        ; r_ctrl_fire         ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 77.682 ; WRn          ; r_ctrl_arm          ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 77.682 ; IORQn        ; r_ctrl_arm          ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 85.365 ; RFSHn        ; RAM_CSn             ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 85.365 ; RFSHn        ; RAM_OEn             ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 14.000     ;
+; 85.865 ; A[6]         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[6]         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[6]         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[6]         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[6]         ; D[4]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[6]         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[6]         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[5]         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[7]         ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[5]         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[7]         ; D[1]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[5]         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[7]         ; D[2]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[5]         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[7]         ; D[3]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[5]         ; D[4]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[7]         ; D[4]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[5]         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[7]         ; D[5]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[5]         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 85.865 ; A[7]         ; D[6]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
+; 90.683 ; r_resetn     ; RESETn              ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 7.500      ;
+; 90.683 ; r_vdp_resetn ; VDP_RESETn          ; ntsc_clock   ; ntsc_clock  ; 139.683      ; -1.500     ; 7.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[13] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[14] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[15] ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_reset_counter[0]  ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_vdp_resetn        ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 92.682 ; RESETn_SW    ; r_resetn            ; ntsc_clock   ; ntsc_clock  ; 139.682      ; 1.500      ; 6.500      ;
+; 95.865 ; WRn          ; D[0]                ; ntsc_clock   ; ntsc_clock  ; 279.365      ; 0.000      ; 28.500     ;
++--------+--------------+---------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Hold: 'ntsc_clock'                                                                                                  ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 5.000 ; r_wait            ; r_wait            ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[5]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[6]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[5]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[7]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[6]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[5]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[8]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[6]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[7]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[5]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[9]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[8]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[6]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[7]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[5]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[10] ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[9]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[8]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[6]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[7]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[5]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[11] ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[10] ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[9]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[8]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[6]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[7]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[5]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[3]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[0]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[1]  ; reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[12] ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[21] ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[11] ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[10] ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[9]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[8]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[6]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[7]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[4]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[5]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; reset_counter[2]  ; reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'ntsc_clock'                                                                                                      ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; 5.000 ; r_wait              ; r_wait              ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[1]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[2]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[3]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[4]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[5]  ; r_reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[5]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[6]  ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[5]  ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[6]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[7]  ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[6]  ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[5]  ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[7]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[8]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[6]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[7]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[5]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[8]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[9]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[8]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[6]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[7]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[5]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[9]  ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[10] ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[9]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[8]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[6]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[7]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[5]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[10] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[11] ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[10] ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[9]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[8]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[6]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[7]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[5]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[3]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[0]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[1]  ; r_reset_counter[11] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[12] ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[15] ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[11] ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[10] ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[9]  ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[8]  ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[6]  ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[7]  ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[4]  ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[5]  ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; r_reset_counter[2]  ; r_reset_counter[12] ; ntsc_clock   ; ntsc_clock  ; 0.000        ; 0.000      ; 8.000      ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Minimum Pulse Width: 'ntsc_clock'                                                                            ;
-+---------+--------------+----------------+------------------+------------+------------+-----------------------+
-; Slack   ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target                ;
-+---------+--------------+----------------+------------------+------------+------------+-----------------------+
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_ctrl_arm            ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_ctrl_fire           ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_resetn              ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_vdp_resetn          ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_wait                ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[0]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[10]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[11]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[12]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[13]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[14]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[15]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[16]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[17]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[18]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[19]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[1]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[20]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[21]     ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[2]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[3]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[4]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[5]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[6]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[7]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[8]      ;
-; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; reset_counter[9]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_ctrl_arm            ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_ctrl_fire           ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_resetn              ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_vdp_resetn          ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_wait                ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[0]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[10]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[11]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[12]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[13]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[14]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[15]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[16]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[17]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[18]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[19]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[1]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[20]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[21]     ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[2]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[3]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[4]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[5]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[6]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[7]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[8]      ;
-; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; reset_counter[9]      ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; clk|dataout           ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_ctrl_arm|clk        ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_ctrl_fire|clk       ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_resetn|clk          ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_vdp_resetn|clk      ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_wait|clk            ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[0]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[10]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[11]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[12]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[13]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[14]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[15]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[16]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[17]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[18]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[19]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[1]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[20]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[21]|clk ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[2]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[3]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[4]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[5]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[6]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[7]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[8]|clk  ;
-; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; reset_counter[9]|clk  ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; clk|dataout           ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_ctrl_arm|clk        ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_ctrl_fire|clk       ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_resetn|clk          ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_vdp_resetn|clk      ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_wait|clk            ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[0]|clk  ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[10]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[11]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[12]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[13]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[14]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[15]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[16]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[17]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[18]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[19]|clk ;
-; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; reset_counter[1]|clk  ;
-+---------+--------------+----------------+------------------+------------+------------+-----------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'ntsc_clock'                                                                              ;
++---------+--------------+----------------+------------------+------------+------------+-------------------------+
+; Slack   ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target                  ;
++---------+--------------+----------------+------------------+------------+------------+-------------------------+
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_ctrl_arm              ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_ctrl_fire             ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[0]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[10]     ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[11]     ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[12]     ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[13]     ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[14]     ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[15]     ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[1]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[2]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[3]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[4]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[5]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[6]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[7]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[8]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_reset_counter[9]      ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_resetn                ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_vdp_resetn            ;
+; 135.682 ; 139.682      ; 4.000          ; Low Pulse Width  ; ntsc_clock ; Fall       ; r_wait                  ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_ctrl_arm              ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_ctrl_fire             ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[0]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[10]     ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[11]     ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[12]     ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[13]     ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[14]     ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[15]     ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[1]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[2]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[3]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[4]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[5]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[6]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[7]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[8]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_reset_counter[9]      ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_resetn                ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_vdp_resetn            ;
+; 135.683 ; 139.683      ; 4.000          ; High Pulse Width ; ntsc_clock ; Fall       ; r_wait                  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; clk|dataout             ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_ctrl_arm|clk          ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_ctrl_fire|clk         ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[0]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[10]|clk ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[11]|clk ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[12]|clk ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[13]|clk ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[14]|clk ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[15]|clk ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[1]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[2]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[3]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[4]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[5]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[6]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[7]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[8]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_reset_counter[9]|clk  ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_resetn|clk            ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_vdp_resetn|clk        ;
+; 139.682 ; 139.682      ; 0.000          ; High Pulse Width ; ntsc_clock ; Rise       ; r_wait|clk              ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; clk|dataout             ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_ctrl_arm|clk          ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_ctrl_fire|clk         ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[0]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[10]|clk ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[11]|clk ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[12]|clk ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[13]|clk ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[14]|clk ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[15]|clk ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[1]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[2]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[3]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[4]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[5]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[6]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[7]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[8]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_reset_counter[9]|clk  ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_resetn|clk            ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_vdp_resetn|clk        ;
+; 139.683 ; 139.683      ; 0.000          ; Low Pulse Width  ; ntsc_clock ; Rise       ; r_wait|clk              ;
++---------+--------------+----------------+------------------+------------+------------+-------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -513,12 +500,10 @@ No paths to report.
 +------------+------------+--------+--------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
-; C1_4       ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
-; C1_7       ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
-; C2_4       ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
-; C2_7       ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
-; RESETn     ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
-; VDP_RESETn ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
+; C4_ARM     ; ntsc_clock ; 9.000  ; 9.000  ; Fall       ; ntsc_clock      ;
+; C7_FIRE    ; ntsc_clock ; 9.000  ; 9.000  ; Fall       ; ntsc_clock      ;
+; RESETn     ; ntsc_clock ; 9.000  ; 9.000  ; Fall       ; ntsc_clock      ;
+; VDP_RESETn ; ntsc_clock ; 9.000  ; 9.000  ; Fall       ; ntsc_clock      ;
 ; WAITn      ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
 +------------+------------+--------+--------+------------+-----------------+
 
@@ -528,12 +513,10 @@ No paths to report.
 +------------+------------+--------+--------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
-; C1_4       ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
-; C1_7       ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
-; C2_4       ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
-; C2_7       ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
-; RESETn     ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
-; VDP_RESETn ; ntsc_clock ; 5.000  ; 5.000  ; Fall       ; ntsc_clock      ;
+; C4_ARM     ; ntsc_clock ; 9.000  ; 9.000  ; Fall       ; ntsc_clock      ;
+; C7_FIRE    ; ntsc_clock ; 9.000  ; 9.000  ; Fall       ; ntsc_clock      ;
+; RESETn     ; ntsc_clock ; 9.000  ; 9.000  ; Fall       ; ntsc_clock      ;
+; VDP_RESETn ; ntsc_clock ; 9.000  ; 9.000  ; Fall       ; ntsc_clock      ;
 ; WAITn      ; ntsc_clock ; 13.000 ; 13.000 ; Fall       ; ntsc_clock      ;
 +------------+------------+--------+--------+------------+-----------------+
 
@@ -543,57 +526,115 @@ No paths to report.
 +------------+-------------+--------+--------+--------+--------+
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
-; A[5]       ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
-; A[5]       ; CSWn        ; 10.000 ;        ;        ; 10.000 ;
-; A[5]       ; SND_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; A[6]       ; CSRn        ;        ; 10.000 ; 10.000 ;        ;
-; A[6]       ; CSWn        ;        ; 10.000 ; 10.000 ;        ;
-; A[6]       ; SND_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; A[7]       ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
-; A[7]       ; CSWn        ; 10.000 ;        ;        ; 10.000 ;
-; A[7]       ; SND_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; CS_h8000n   ;        ; 10.000 ; 10.000 ;        ;
-; A[13]      ; CS_hA000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; CS_hC000n   ;        ; 10.000 ; 10.000 ;        ;
-; A[13]      ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; RAM_CSn     ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; RAM_OEn     ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; ROM_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; A[14]      ; CS_h8000n   ;        ; 10.000 ; 10.000 ;        ;
-; A[14]      ; CS_hA000n   ;        ; 10.000 ; 10.000 ;        ;
-; A[14]      ; CS_hC000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[14]      ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[14]      ; RAM_CSn     ; 10.000 ;        ;        ; 10.000 ;
-; A[14]      ; RAM_OEn     ; 10.000 ;        ;        ; 10.000 ;
-; A[14]      ; ROM_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; A[15]      ; CS_h8000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[15]      ; CS_hA000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[15]      ; CS_hC000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[15]      ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[15]      ; RAM_CSn     ;        ; 10.000 ; 10.000 ;        ;
-; A[15]      ; RAM_OEn     ;        ; 10.000 ; 10.000 ;        ;
-; A[15]      ; ROM_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; IORQn      ; CSRn        ;        ; 10.000 ; 10.000 ;        ;
-; IORQn      ; CSWn        ;        ; 10.000 ; 10.000 ;        ;
-; IORQn      ; SND_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; CS_h8000n   ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; CS_hA000n   ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; CS_hC000n   ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; CS_hE000n   ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; RAM_CSn     ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; RAM_OEn     ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; ROM_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; RDn        ; RAM_OEn     ;        ; 10.000 ; 10.000 ;        ;
-; RFSHn      ; CS_h8000n   ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; CS_hA000n   ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; CS_hC000n   ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; RAM_CSn     ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; RAM_OEn     ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; ROM_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; WRn        ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
-; WRn        ; CSWn        ;        ; 10.000 ; 10.000 ;        ;
-; WRn        ; SND_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
+; A[1]       ; D[0]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[1]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[2]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[3]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[5]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[6]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[5]       ; CSRn        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; CSWn        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; D[0]        ; 28.500 ;        ;        ; 28.500 ;
+; A[5]       ; D[1]        ; 28.500 ;        ;        ; 28.500 ;
+; A[5]       ; D[2]        ; 28.500 ;        ;        ; 28.500 ;
+; A[5]       ; D[3]        ; 28.500 ;        ;        ; 28.500 ;
+; A[5]       ; D[4]        ; 28.500 ;        ;        ; 28.500 ;
+; A[5]       ; D[5]        ; 28.500 ;        ;        ; 28.500 ;
+; A[5]       ; D[6]        ; 28.500 ;        ;        ; 28.500 ;
+; A[5]       ; D[7]        ; 10.000 ;        ;        ; 10.000 ;
+; A[5]       ; SND_ENABLEn ; 14.000 ;        ;        ; 14.000 ;
+; A[6]       ; CSRn        ;        ; 14.000 ; 14.000 ;        ;
+; A[6]       ; CSWn        ;        ; 14.000 ; 14.000 ;        ;
+; A[6]       ; D[0]        ; 28.500 ;        ;        ; 28.500 ;
+; A[6]       ; D[1]        ; 28.500 ;        ;        ; 28.500 ;
+; A[6]       ; D[2]        ; 28.500 ;        ;        ; 28.500 ;
+; A[6]       ; D[3]        ; 28.500 ;        ;        ; 28.500 ;
+; A[6]       ; D[4]        ; 28.500 ;        ;        ; 28.500 ;
+; A[6]       ; D[5]        ; 28.500 ;        ;        ; 28.500 ;
+; A[6]       ; D[6]        ; 28.500 ;        ;        ; 28.500 ;
+; A[6]       ; D[7]        ; 10.000 ;        ;        ; 10.000 ;
+; A[6]       ; SND_ENABLEn ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; CSRn        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; CSWn        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; D[0]        ; 28.500 ;        ;        ; 28.500 ;
+; A[7]       ; D[1]        ; 28.500 ;        ;        ; 28.500 ;
+; A[7]       ; D[2]        ; 28.500 ;        ;        ; 28.500 ;
+; A[7]       ; D[3]        ; 28.500 ;        ;        ; 28.500 ;
+; A[7]       ; D[4]        ; 28.500 ;        ;        ; 28.500 ;
+; A[7]       ; D[5]        ; 28.500 ;        ;        ; 28.500 ;
+; A[7]       ; D[6]        ; 28.500 ;        ;        ; 28.500 ;
+; A[7]       ; D[7]        ; 10.000 ;        ;        ; 10.000 ;
+; A[7]       ; SND_ENABLEn ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; CS_h8000n   ;        ; 14.000 ; 14.000 ;        ;
+; A[13]      ; CS_hA000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; CS_hC000n   ;        ; 14.000 ; 14.000 ;        ;
+; A[13]      ; CS_hE000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; RAM_CSn     ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; RAM_OEn     ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; A[14]      ; CS_h8000n   ;        ; 14.000 ; 14.000 ;        ;
+; A[14]      ; CS_hA000n   ;        ; 14.000 ; 14.000 ;        ;
+; A[14]      ; CS_hC000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[14]      ; CS_hE000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[14]      ; RAM_CSn     ; 14.000 ;        ;        ; 14.000 ;
+; A[14]      ; RAM_OEn     ; 14.000 ;        ;        ; 14.000 ;
+; A[14]      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; A[15]      ; CS_h8000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[15]      ; CS_hA000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[15]      ; CS_hC000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[15]      ; CS_hE000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[15]      ; RAM_CSn     ;        ; 14.000 ; 14.000 ;        ;
+; A[15]      ; RAM_OEn     ;        ; 14.000 ; 14.000 ;        ;
+; A[15]      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; C1_0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; CSRn        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; CSWn        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; D[0]        ;        ; 28.500 ; 28.500 ;        ;
+; IORQn      ; D[1]        ;        ; 28.500 ; 28.500 ;        ;
+; IORQn      ; D[2]        ;        ; 28.500 ; 28.500 ;        ;
+; IORQn      ; D[3]        ;        ; 28.500 ; 28.500 ;        ;
+; IORQn      ; D[4]        ;        ; 28.500 ; 28.500 ;        ;
+; IORQn      ; D[5]        ;        ; 28.500 ; 28.500 ;        ;
+; IORQn      ; D[6]        ;        ; 28.500 ; 28.500 ;        ;
+; IORQn      ; D[7]        ;        ; 10.000 ; 10.000 ;        ;
+; IORQn      ; SND_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; CS_h8000n   ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; CS_hA000n   ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; CS_hC000n   ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; CS_hE000n   ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; RAM_CSn     ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; RAM_OEn     ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; RDn        ; RAM_OEn     ;        ; 14.000 ; 14.000 ;        ;
+; RFSHn      ; CS_h8000n   ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; CS_hA000n   ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; CS_hC000n   ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; CS_hE000n   ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; RAM_CSn     ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; RAM_OEn     ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; ROM_ENABLEn ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; CSRn        ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; CSWn        ;        ; 14.000 ; 14.000 ;        ;
+; WRn        ; D[0]        ; 28.500 ;        ;        ; 28.500 ;
+; WRn        ; D[1]        ; 28.500 ;        ;        ; 28.500 ;
+; WRn        ; D[2]        ; 28.500 ;        ;        ; 28.500 ;
+; WRn        ; D[3]        ; 28.500 ;        ;        ; 28.500 ;
+; WRn        ; D[4]        ; 28.500 ;        ;        ; 28.500 ;
+; WRn        ; D[5]        ; 28.500 ;        ;        ; 28.500 ;
+; WRn        ; D[6]        ; 28.500 ;        ;        ; 28.500 ;
+; WRn        ; D[7]        ; 10.000 ;        ;        ; 10.000 ;
+; WRn        ; SND_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
 +------------+-------------+--------+--------+--------+--------+
 
 
@@ -602,57 +643,115 @@ No paths to report.
 +------------+-------------+--------+--------+--------+--------+
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
-; A[5]       ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
-; A[5]       ; CSWn        ; 10.000 ;        ;        ; 10.000 ;
-; A[5]       ; SND_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; A[6]       ; CSRn        ;        ; 10.000 ; 10.000 ;        ;
-; A[6]       ; CSWn        ;        ; 10.000 ; 10.000 ;        ;
-; A[6]       ; SND_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; A[7]       ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
-; A[7]       ; CSWn        ; 10.000 ;        ;        ; 10.000 ;
-; A[7]       ; SND_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; CS_h8000n   ;        ; 10.000 ; 10.000 ;        ;
-; A[13]      ; CS_hA000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; CS_hC000n   ;        ; 10.000 ; 10.000 ;        ;
-; A[13]      ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; RAM_CSn     ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; RAM_OEn     ; 10.000 ;        ;        ; 10.000 ;
-; A[13]      ; ROM_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; A[14]      ; CS_h8000n   ;        ; 10.000 ; 10.000 ;        ;
-; A[14]      ; CS_hA000n   ;        ; 10.000 ; 10.000 ;        ;
-; A[14]      ; CS_hC000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[14]      ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[14]      ; RAM_CSn     ; 10.000 ;        ;        ; 10.000 ;
-; A[14]      ; RAM_OEn     ; 10.000 ;        ;        ; 10.000 ;
-; A[14]      ; ROM_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; A[15]      ; CS_h8000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[15]      ; CS_hA000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[15]      ; CS_hC000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[15]      ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
-; A[15]      ; RAM_CSn     ;        ; 10.000 ; 10.000 ;        ;
-; A[15]      ; RAM_OEn     ;        ; 10.000 ; 10.000 ;        ;
-; A[15]      ; ROM_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; IORQn      ; CSRn        ;        ; 10.000 ; 10.000 ;        ;
-; IORQn      ; CSWn        ;        ; 10.000 ; 10.000 ;        ;
-; IORQn      ; SND_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; CS_h8000n   ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; CS_hA000n   ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; CS_hC000n   ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; CS_hE000n   ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; RAM_CSn     ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; RAM_OEn     ;        ; 10.000 ; 10.000 ;        ;
-; MREQn      ; ROM_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
-; RDn        ; RAM_OEn     ;        ; 10.000 ; 10.000 ;        ;
-; RFSHn      ; CS_h8000n   ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; CS_hA000n   ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; CS_hC000n   ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; CS_hE000n   ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; RAM_CSn     ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; RAM_OEn     ; 10.000 ;        ;        ; 10.000 ;
-; RFSHn      ; ROM_ENABLEn ; 10.000 ;        ;        ; 10.000 ;
-; WRn        ; CSRn        ; 10.000 ;        ;        ; 10.000 ;
-; WRn        ; CSWn        ;        ; 10.000 ; 10.000 ;        ;
-; WRn        ; SND_ENABLEn ;        ; 10.000 ; 10.000 ;        ;
+; A[1]       ; D[0]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[1]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[2]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[3]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[5]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[1]       ; D[6]        ; 14.000 ; 14.000 ; 14.000 ; 14.000 ;
+; A[5]       ; CSRn        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; CSWn        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; D[0]        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; D[1]        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; D[2]        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; D[3]        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; D[4]        ; 28.500 ;        ;        ; 28.500 ;
+; A[5]       ; D[5]        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; D[6]        ; 14.000 ;        ;        ; 14.000 ;
+; A[5]       ; D[7]        ; 10.000 ;        ;        ; 10.000 ;
+; A[5]       ; SND_ENABLEn ; 14.000 ;        ;        ; 14.000 ;
+; A[6]       ; CSRn        ;        ; 14.000 ; 14.000 ;        ;
+; A[6]       ; CSWn        ;        ; 14.000 ; 14.000 ;        ;
+; A[6]       ; D[0]        ; 14.000 ;        ;        ; 14.000 ;
+; A[6]       ; D[1]        ; 14.000 ;        ;        ; 14.000 ;
+; A[6]       ; D[2]        ; 14.000 ;        ;        ; 14.000 ;
+; A[6]       ; D[3]        ; 14.000 ;        ;        ; 14.000 ;
+; A[6]       ; D[4]        ; 28.500 ;        ;        ; 28.500 ;
+; A[6]       ; D[5]        ; 14.000 ;        ;        ; 14.000 ;
+; A[6]       ; D[6]        ; 14.000 ;        ;        ; 14.000 ;
+; A[6]       ; D[7]        ; 10.000 ;        ;        ; 10.000 ;
+; A[6]       ; SND_ENABLEn ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; CSRn        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; CSWn        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; D[0]        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; D[1]        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; D[2]        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; D[3]        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; D[4]        ; 28.500 ;        ;        ; 28.500 ;
+; A[7]       ; D[5]        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; D[6]        ; 14.000 ;        ;        ; 14.000 ;
+; A[7]       ; D[7]        ; 10.000 ;        ;        ; 10.000 ;
+; A[7]       ; SND_ENABLEn ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; CS_h8000n   ;        ; 14.000 ; 14.000 ;        ;
+; A[13]      ; CS_hA000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; CS_hC000n   ;        ; 14.000 ; 14.000 ;        ;
+; A[13]      ; CS_hE000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; RAM_CSn     ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; RAM_OEn     ; 14.000 ;        ;        ; 14.000 ;
+; A[13]      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; A[14]      ; CS_h8000n   ;        ; 14.000 ; 14.000 ;        ;
+; A[14]      ; CS_hA000n   ;        ; 14.000 ; 14.000 ;        ;
+; A[14]      ; CS_hC000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[14]      ; CS_hE000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[14]      ; RAM_CSn     ; 14.000 ;        ;        ; 14.000 ;
+; A[14]      ; RAM_OEn     ; 14.000 ;        ;        ; 14.000 ;
+; A[14]      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; A[15]      ; CS_h8000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[15]      ; CS_hA000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[15]      ; CS_hC000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[15]      ; CS_hE000n   ; 14.000 ;        ;        ; 14.000 ;
+; A[15]      ; RAM_CSn     ;        ; 14.000 ; 14.000 ;        ;
+; A[15]      ; RAM_OEn     ;        ; 14.000 ; 14.000 ;        ;
+; A[15]      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; C1_0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; C1_6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_0       ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_1       ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_2       ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_3       ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_5       ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; C2_6       ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; CSRn        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; CSWn        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; D[0]        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; D[1]        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; D[2]        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; D[3]        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; D[4]        ;        ; 28.500 ; 28.500 ;        ;
+; IORQn      ; D[5]        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; D[6]        ;        ; 14.000 ; 14.000 ;        ;
+; IORQn      ; D[7]        ;        ; 10.000 ; 10.000 ;        ;
+; IORQn      ; SND_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; CS_h8000n   ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; CS_hA000n   ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; CS_hC000n   ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; CS_hE000n   ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; RAM_CSn     ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; RAM_OEn     ;        ; 14.000 ; 14.000 ;        ;
+; MREQn      ; ROM_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
+; RDn        ; RAM_OEn     ;        ; 14.000 ; 14.000 ;        ;
+; RFSHn      ; CS_h8000n   ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; CS_hA000n   ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; CS_hC000n   ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; CS_hE000n   ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; RAM_CSn     ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; RAM_OEn     ; 14.000 ;        ;        ; 14.000 ;
+; RFSHn      ; ROM_ENABLEn ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; CSRn        ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; CSWn        ;        ; 14.000 ; 14.000 ;        ;
+; WRn        ; D[0]        ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; D[1]        ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; D[2]        ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; D[3]        ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; D[4]        ; 28.500 ;        ;        ; 28.500 ;
+; WRn        ; D[5]        ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; D[6]        ; 14.000 ;        ;        ; 14.000 ;
+; WRn        ; D[7]        ; 10.000 ;        ;        ; 10.000 ;
+; WRn        ; SND_ENABLEn ;        ; 14.000 ; 14.000 ;        ;
 +------------+-------------+--------+--------+--------+--------+
 
 
@@ -661,7 +760,7 @@ No paths to report.
 +------------+------------+----------+----------+----------+----------+
 ; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------+----------+----------+----------+----------+
-; ntsc_clock ; ntsc_clock ; 51       ; 7        ; 69       ; 307      ;
+; ntsc_clock ; ntsc_clock ; 175      ; 5        ; 57       ; 178      ;
 +------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -671,7 +770,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+------------+----------+----------+----------+----------+
 ; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------+----------+----------+----------+----------+
-; ntsc_clock ; ntsc_clock ; 51       ; 7        ; 69       ; 307      ;
+; ntsc_clock ; ntsc_clock ; 175      ; 5        ; 57       ; 178      ;
 +------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -708,7 +807,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Feb  2 19:03:57 2024
+    Info: Processing started: Sat Feb  3 09:12:02 2024
 Info: Command: quartus_sta portable_coleco -c portable_coleco
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -716,42 +815,9 @@ Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
 Info (332104): Reading SDC File: '../portable_coleco/constr/porta_glue_coleco.sdc'
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(23): C1_0 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(23): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_0}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(24): C1_1 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(24): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_1}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(25): C1_2 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(25): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_2}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(26): C1_3 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(26): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_3}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(27): C1_5 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(27): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_5}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(28): C1_6 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(28): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1_6}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(31): C2_0 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(31): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_0}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(32): C2_1 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(32): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_1}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(33): C2_2 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(33): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_2}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(34): C2_3 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(34): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_3}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(35): C2_5 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(35): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_5}]
-Warning (332174): Ignored filter at porta_glue_coleco.sdc(36): C2_6 could not be matched with a port
-Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(36): Argument <targets> is an empty collection
-    Info (332050): set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2_6}]
+Warning (332174): Ignored filter at porta_glue_coleco.sdc(57): RX could not be matched with a port
+Warning (332049): Ignored set_input_delay at porta_glue_coleco.sdc(57): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -clock "baud_clock" 1.000us [get_ports {RX}]
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info (332146): Worst-case setup slack is 26.683
     Info (332119):     Slack End Point TNS Clock 
@@ -770,10 +836,10 @@ Info (332146): Worst-case minimum pulse width slack is 135.682
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 25 warnings
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 477 megabytes
-    Info: Processing ended: Fri Feb  2 19:03:58 2024
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sat Feb  3 09:12:02 2024
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 
