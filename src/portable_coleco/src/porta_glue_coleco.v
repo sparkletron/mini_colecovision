@@ -86,7 +86,7 @@ module porta_glue_coleco
   assign BUSREQn  = 1'bz;
 
   //****************************************************************************
-  /// RAM Output enable when read is needed.
+  /// RAM Output enable when read is requested.
   //****************************************************************************
   assign RAM_OEn = RDn | s_ram_csn;
 
