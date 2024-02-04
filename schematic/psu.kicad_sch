@@ -682,6 +682,68 @@
     )
   )
 
+  (symbol (lib_id "power:GNDD") (at 140.589 75.184 0) (mirror y) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 25c46e40-8309-4f4f-81b7-cf51c20c8fe0)
+    (property "Reference" "#PWR02" (at 140.589 81.534 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GNDD" (at 141.732 79.121 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 140.589 75.184 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 140.589 75.184 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 79c8cf96-e8c7-4f3f-8457-2de964214ce7))
+    (instances
+      (project "coleco_original"
+        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624797"
+          (reference "#PWR02") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector_Generic:Conn_01x02") (at 138.049 70.104 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 38cc66fb-7a75-4dc3-b71a-9828ad31699f)
+    (property "Reference" "J2" (at 138.2522 68.072 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Conn_01x02" (at 140.5636 68.072 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" (at 138.049 70.104 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 138.049 70.104 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 450b1c81-97a6-4591-b082-86ff14c81943))
+    (pin "2" (uuid 00fba745-ca54-4bef-a44a-9341f7cccdbc))
+    (instances
+      (project "coleco_original"
+        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624749"
+          (reference "J2") (unit 1)
+        )
+        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101"
+          (reference "J9") (unit 1)
+        )
+        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624797"
+          (reference "J11") (unit 1)
+        )
+      )
+      (project "picerino_sn76489AN"
+        (path "/b5352a33-563a-4ffe-a231-2e68fb54afa3"
+          (reference "J2") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "power:GNDD") (at 110.871 99.314 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5b17c2bc-64d0-4f2f-91d7-85d631502ecf)
@@ -702,6 +764,31 @@
       (project "coleco_original"
         (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624797"
           (reference "#PWR07") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+5V") (at 138.049 75.184 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 6962b7a6-3de5-4b18-ad5c-4a13a30da60e)
+    (property "Reference" "#PWR01" (at 138.049 71.374 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (at 136.652 79.121 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 138.049 75.184 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 138.049 75.184 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 60b83fac-93aa-4dd1-8821-ef4bec33e5a5))
+    (instances
+      (project "coleco_original"
+        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624797"
+          (reference "#PWR01") (unit 1)
         )
       )
     )

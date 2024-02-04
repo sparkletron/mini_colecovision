@@ -906,7 +906,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 364778f0-4ba3-44a6-8e92-9550c295dbf4)
   )
-  (hierarchical_label "SND_CLK" (shape input) (at 169.291 95.25 180) (fields_autoplaced)
+  (hierarchical_label "CLK" (shape input) (at 169.291 95.25 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid d0b6142c-0ecd-45f8-a582-c182648348db)
   )
