@@ -1,5 +1,5 @@
 Analysis & Synthesis report for portable_coleco
-Sat Feb  3 12:29:55 2024
+Sun Mar 24 09:47:14 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,7 +14,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0
-  9. Analysis & Synthesis Messages
+  9. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1
+ 10. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add2
+ 11. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add3
+ 12. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add4
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -40,12 +44,12 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Feb  3 12:29:55 2024           ;
+; Analysis & Synthesis Status ; Successful - Sun Mar 24 09:47:14 2024           ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name               ; portable_coleco                                 ;
 ; Top-level Entity Name       ; porta_glue_coleco                               ;
 ; Family                      ; MAX7000S                                        ;
-; Total macrocells            ; 43                                              ;
+; Total macrocells            ; 105                                             ;
 ; Total pins                  ; 64                                              ;
 +-----------------------------+-------------------------------------------------+
 
@@ -114,21 +118,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+-------------------+-----------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -137,18 +135,18 @@ applicable agreement for further details.
 ; File Name with User-Entered Path           ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                 ; Library ;
 +--------------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------+---------+
 ; ../portable_coleco/src/porta_glue_coleco.v ; yes             ; User Verilog HDL File  ; /home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/portable_coleco/src/porta_glue_coleco.v ;         ;
-; lpm_add_sub.tdf                            ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                    ;         ;
-; addcore.inc                                ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/addcore.inc                                        ;         ;
-; look_add.inc                               ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/look_add.inc                                       ;         ;
-; bypassff.inc                               ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/bypassff.inc                                       ;         ;
-; altshift.inc                               ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/altshift.inc                                       ;         ;
-; alt_stratix_add_sub.inc                    ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                            ;         ;
-; aglobal130.inc                             ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/aglobal130.inc                                     ;         ;
-; addcore.tdf                                ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/addcore.tdf                                        ;         ;
-; a_csnbuffer.inc                            ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/a_csnbuffer.inc                                    ;         ;
-; a_csnbuffer.tdf                            ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/a_csnbuffer.tdf                                    ;         ;
-; look_add.tdf                               ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/look_add.tdf                                       ;         ;
-; altshift.tdf                               ; yes             ; Megafunction           ; /opt/usr/altera/web/13sp1/quartus/libraries/megafunctions/altshift.tdf                                       ;         ;
+; lpm_add_sub.tdf                            ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf                           ;         ;
+; addcore.inc                                ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/addcore.inc                               ;         ;
+; look_add.inc                               ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/look_add.inc                              ;         ;
+; bypassff.inc                               ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                              ;         ;
+; altshift.inc                               ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/altshift.inc                              ;         ;
+; alt_stratix_add_sub.inc                    ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                   ;         ;
+; aglobal130.inc                             ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                            ;         ;
+; addcore.tdf                                ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/addcore.tdf                               ;         ;
+; a_csnbuffer.inc                            ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/a_csnbuffer.inc                           ;         ;
+; a_csnbuffer.tdf                            ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/a_csnbuffer.tdf                           ;         ;
+; look_add.tdf                               ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/look_add.tdf                              ;         ;
+; altshift.tdf                               ; yes             ; Megafunction           ; /opt/usr/intel/quartus/web/13.0sp1/quartus/libraries/megafunctions/altshift.tdf                              ;         ;
 +--------------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -157,13 +155,14 @@ applicable agreement for further details.
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 43                   ;
-; Total registers      ; 21                   ;
+; Logic cells          ; 105                  ;
+; Total registers      ; 79                   ;
 ; I/O pins             ; 64                   ;
+; Shareable expanders  ; 14                   ;
 ; Maximum fan-out node ; clk                  ;
-; Maximum fan-out      ; 21                   ;
-; Total fan-out        ; 346                  ;
-; Average fan-out      ; 3.23                 ;
+; Maximum fan-out      ; 79                   ;
+; Total fan-out        ; 918                  ;
+; Average fan-out      ; 5.02                 ;
 +----------------------+----------------------+
 
 
@@ -172,7 +171,7 @@ applicable agreement for further details.
 +----------------------------+------------+------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+------------+------+---------------------+--------------+
-; |porta_glue_coleco         ; 43         ; 64   ; |porta_glue_coleco  ; work         ;
+; |porta_glue_coleco         ; 105        ; 64   ; |porta_glue_coleco  ; work         ;
 +----------------------------+------------+------+---------------------+--------------+
 
 
@@ -204,22 +203,143 @@ applicable agreement for further details.
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1 ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; LPM_WIDTH              ; 7           ; Untyped                    ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                    ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
+; DEVICE_FAMILY          ; MAX7000S    ; Untyped                    ;
+; USE_WYS                ; OFF         ; Untyped                    ;
+; STYLE                  ; FAST        ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_qnh ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add2 ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; LPM_WIDTH              ; 7           ; Untyped                    ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                    ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
+; DEVICE_FAMILY          ; MAX7000S    ; Untyped                    ;
+; USE_WYS                ; OFF         ; Untyped                    ;
+; STYLE                  ; FAST        ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_qnh ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add3 ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; LPM_WIDTH              ; 12          ; Untyped                    ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                    ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
+; DEVICE_FAMILY          ; MAX7000S    ; Untyped                    ;
+; USE_WYS                ; OFF         ; Untyped                    ;
+; STYLE                  ; FAST        ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_6ph ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add4 ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; LPM_WIDTH              ; 12          ; Untyped                    ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                    ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
+; DEVICE_FAMILY          ; MAX7000S    ; Untyped                    ;
+; USE_WYS                ; OFF         ; Untyped                    ;
+; STYLE                  ; FAST        ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_6ph ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Feb  3 12:29:55 2024
+    Info: Processing started: Sun Mar 24 09:47:12 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off portable_coleco -c portable_coleco
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/portable_coleco/src/porta_glue_coleco.v
     Info (12023): Found entity 1: porta_glue_coleco
 Info (12127): Elaborating entity "porta_glue_coleco" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at porta_glue_coleco.v(150): truncated value with size 32 to match size of target (16)
-Info (10264): Verilog HDL Case Statement information at porta_glue_coleco.v(207): all case item expressions in this case statement are onehot
-Info (278001): Inferred 1 megafunctions from design logic
+Warning (10230): Verilog HDL assignment warning at porta_glue_coleco.v(94): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at porta_glue_coleco.v(95): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at porta_glue_coleco.v(167): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at porta_glue_coleco.v(235): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at porta_glue_coleco.v(254): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at porta_glue_coleco.v(288): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at porta_glue_coleco.v(305): truncated value with size 32 to match size of target (12)
+Info (278001): Inferred 5 megafunctions from design logic
     Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add0"
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add1"
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add2"
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add3"
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add4"
 Info (12130): Elaborated megafunction instantiation "lpm_add_sub:Add0"
 Info (12133): Instantiated megafunction "lpm_add_sub:Add0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "16"
@@ -232,11 +352,32 @@ Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:ad
 Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add0|look_add:look_ahead_unit", which is child of megafunction instantiation "lpm_add_sub:Add0"
 Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
 Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
-Info (13014): Ignored 16 buffer(s)
-    Info (13019): Ignored 16 SOFT buffer(s)
+Info (12130): Elaborated megafunction instantiation "lpm_add_sub:Add1"
+Info (12133): Instantiated megafunction "lpm_add_sub:Add1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "7"
+    Info (12134): Parameter "LPM_DIRECTION" = "ADD"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add1|addcore:adder", which is child of megafunction instantiation "lpm_add_sub:Add1"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add1|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "lpm_add_sub:Add1"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_add_sub:Add1"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add1|addcore:adder|addcore:adder[0]", which is child of megafunction instantiation "lpm_add_sub:Add1"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add1|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add1"
+Info (12130): Elaborated megafunction instantiation "lpm_add_sub:Add3"
+Info (12133): Instantiated megafunction "lpm_add_sub:Add3" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "12"
+    Info (12134): Parameter "LPM_DIRECTION" = "ADD"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add3|addcore:adder[1]", which is child of megafunction instantiation "lpm_add_sub:Add3"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add3|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add3"
+Info (13014): Ignored 56 buffer(s)
+    Info (13019): Ignored 56 SOFT buffer(s)
 Info (280013): Promoted pin-driven signal(s) to global signal
     Info (280014): Promoted clock signal driven by pin "clk" to global clock signal
-Warning (21074): Design contains 11 input pin(s) that do not drive logic
+Info (280013): Promoted pin-driven signal(s) to global signal
+    Info (280014): Promoted clock signal driven by pin "clk" to global clock signal
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "A[0]"
     Warning (15610): No output dependent on input pin "A[2]"
     Warning (15610): No output dependent on input pin "A[3]"
@@ -246,16 +387,16 @@ Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "A[10]"
     Warning (15610): No output dependent on input pin "A[11]"
     Warning (15610): No output dependent on input pin "A[12]"
-    Warning (15610): No output dependent on input pin "RX"
     Warning (15610): No output dependent on input pin "BUSAKn"
-Info (21057): Implemented 107 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 38 input pins
-    Info (21059): Implemented 26 output pins
-    Info (21063): Implemented 43 macrocells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 568 megabytes
-    Info: Processing ended: Sat Feb  3 12:29:55 2024
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+Info (21057): Implemented 183 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 39 input pins
+    Info (21059): Implemented 25 output pins
+    Info (21063): Implemented 105 macrocells
+    Info (21073): Implemented 14 shareable expanders
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 584 megabytes
+    Info: Processing ended: Sun Mar 24 09:47:14 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

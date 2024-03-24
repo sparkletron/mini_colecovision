@@ -15,28 +15,26 @@
 # Clock constraints
 # 3.579545 MHz
 create_clock -name "ntsc_clock" -period 279.365ns [get_ports {clk}]
-#baud rate clock for 115200
-create_clock -name "baud_clock" -period 8.680us
 
 # Automatically constrain PLL and other generated clocks
 derive_pll_clocks -create_base_clocks
 
 # input delays
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P0}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P1}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P2}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P3}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P5}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P4}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P6}]
-# set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P8}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P7}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C1P9}]
 
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P0}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P1}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P2}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P3}]
-set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P5}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P4}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P6}]
-# set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P8}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P7}]
+set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P9}]
 
 set_input_delay -clock "ntsc_clock" 65.000ns [get_ports {A*}]
 
@@ -54,14 +52,14 @@ set_input_delay -clock "ntsc_clock" 40.000ns [get_ports {RESETn_SW}]
 
 set_input_delay -clock "ntsc_clock" 80.000ns [get_ports {RFSHn}]
 
-set_input_delay -clock "baud_clock" 1.000us [get_ports {RX}]
+set_input_delay -clock "ntsc_clock" 55.000ns [get_ports {BUSAKn}]
 
 # output delays
 set_output_delay -clock "ntsc_clock" -min 10.000ns  [get_ports {D[*]}]
 set_output_delay -clock "ntsc_clock" -max 100.000ns [get_ports {D[*]}]
 
-set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {C4_ARM}]
-set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {C7_FIRE}]
+set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {CP5_ARM}]
+set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {CP8_FIRE}]
 
 set_output_delay -clock "ntsc_clock" -min 30.000ns [get_ports {CSWn}]
 set_output_delay -clock "ntsc_clock" -max 100.000ns [get_ports {CSWn}]
@@ -87,4 +85,6 @@ set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {SND_ENABLEn}]
 
 set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {WAITn}]
 
-set_output_delay -clock "baud_clock" 1.000us [get_ports {TX}]
+set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {INTn}]
+
+set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {BUSREQn}]

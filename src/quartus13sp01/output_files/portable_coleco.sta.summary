@@ -3,7 +3,7 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Setup 'ntsc_clock'
-Slack : 26.683
+Slack : 14.683
 TNS   : 0.000
 
 Type  : Hold 'ntsc_clock'

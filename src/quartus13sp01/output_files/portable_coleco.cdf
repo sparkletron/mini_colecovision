@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPM7128SL84) Path("/home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/quartus13sp01/output_files/") File("portable_coleco.pof") MfrSpec(OpMask(3));
+		Device PartName(EPM7128SL84) Path("/home/jconvertino/JDC/Electronics/Projects/portable_colecovision/src/quartus13sp01/output_files/") File("portable_coleco.pof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

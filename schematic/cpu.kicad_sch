@@ -992,7 +992,7 @@
   (symbol (lib_id "power:+5V") (at 96.774 33.909 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1b35d041-4b4e-42b2-911f-cf706baa9e34)
-    (property "Reference" "#PWR021" (at 96.774 37.719 0)
+    (property "Reference" "#PWR018" (at 96.774 37.719 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 96.774 28.575 0)
@@ -1007,9 +1007,6 @@
     (pin "1" (uuid 6e198ccb-b9d7-4581-b81c-b96690d2eba5))
     (instances
       (project "coleco_original"
-        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-00006262cd34"
-          (reference "#PWR021") (unit 1)
-        )
         (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-00006262471e"
           (reference "#PWR018") (unit 1)
         )
@@ -1020,7 +1017,7 @@
   (symbol (lib_id "power:GNDD") (at 96.774 41.529 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 38058ddf-84a1-4b52-b667-77bd5c46722c)
-    (property "Reference" "#PWR022" (at 96.774 47.879 0)
+    (property "Reference" "#PWR019" (at 96.774 47.879 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDD" (at 96.774 50.419 90)
@@ -1035,9 +1032,6 @@
     (pin "1" (uuid 63f456c7-c10c-4dfa-acb4-4a9a89462671))
     (instances
       (project "coleco_original"
-        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-00006262cd34"
-          (reference "#PWR022") (unit 1)
-        )
         (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-00006262471e"
           (reference "#PWR019") (unit 1)
         )
@@ -1124,7 +1118,7 @@
   (symbol (lib_id "Device:C") (at 96.774 37.719 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 80648ec5-a6e8-4bae-9fe4-271f71cc9044)
-    (property "Reference" "C4" (at 89.662 38.989 0)
+    (property "Reference" "C9" (at 89.662 38.989 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100nF" (at 89.662 36.449 0)
@@ -1140,9 +1134,6 @@
     (pin "2" (uuid 39121cd7-50a4-4877-9193-453b47a780ac))
     (instances
       (project "coleco_original"
-        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-00006262cd34"
-          (reference "C4") (unit 1)
-        )
         (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-00006262471e"
           (reference "C9") (unit 1)
         )

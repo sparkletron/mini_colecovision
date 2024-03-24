@@ -569,7 +569,7 @@
     (stroke (width 0) (type default))
     (uuid f0b469da-7d3d-4f71-958f-2d112a1c9ae8)
   )
-  (wire (pts (xy 129.794 91.694) (xy 131.064 91.694))
+  (wire (pts (xy 129.794 96.774) (xy 131.064 96.774))
     (stroke (width 0) (type default))
     (uuid f1ccbeca-829d-4947-ac06-61c381ec41ad)
   )
@@ -710,7 +710,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 138.049 70.104 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 38cc66fb-7a75-4dc3-b71a-9828ad31699f)
-    (property "Reference" "J2" (at 138.2522 68.072 0)
+    (property "Reference" "J11" (at 138.2522 68.072 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 140.5636 68.072 0)
@@ -726,12 +726,6 @@
     (pin "2" (uuid 00fba745-ca54-4bef-a44a-9341f7cccdbc))
     (instances
       (project "coleco_original"
-        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624749"
-          (reference "J2") (unit 1)
-        )
-        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101"
-          (reference "J9") (unit 1)
-        )
         (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624797"
           (reference "J11") (unit 1)
         )
@@ -935,19 +929,19 @@
     )
   )
 
-  (symbol (lib_id "power:+5V") (at 131.064 91.694 270) (unit 1)
+  (symbol (lib_id "power:+5V") (at 131.064 96.774 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bf163e11-355b-451a-8c6c-d1a38314fca0)
-    (property "Reference" "#PWR06" (at 127.254 91.694 0)
+    (property "Reference" "#PWR06" (at 127.254 96.774 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+5V" (at 135.255 91.694 90)
+    (property "Value" "+5V" (at 135.255 96.774 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 131.064 91.694 0)
+    (property "Footprint" "" (at 131.064 96.774 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 131.064 91.694 0)
+    (property "Datasheet" "" (at 131.064 96.774 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 52be1b56-5848-4759-8fe6-4b4c1df37607))
@@ -963,7 +957,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 126.619 110.871 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c374fa42-bcc5-47ab-8d87-0637c0487fbf)
-    (property "Reference" "J2" (at 126.4158 112.903 0)
+    (property "Reference" "J10" (at 126.4158 112.903 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 124.1044 112.903 0)
@@ -979,12 +973,6 @@
     (pin "2" (uuid 6b39db08-375f-43ab-843e-ec7eed115e17))
     (instances
       (project "coleco_original"
-        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624749"
-          (reference "J2") (unit 1)
-        )
-        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101"
-          (reference "J9") (unit 1)
-        )
         (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-000062624797"
           (reference "J10") (unit 1)
         )

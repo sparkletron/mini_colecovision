@@ -1,4 +1,4 @@
-// test bench
+// test bench, very basic and does no validation.
 
 `define DEF_NTSC_MHZ 140
 
@@ -18,8 +18,8 @@ module tb_porta_glue_console
   reg       A13 = 1'b0;
   reg       A14 = 1'b0;
   reg       A15 = 1'b0;
-  reg [5:0] C1 = 0;
-  reg [5:0] C2 = 0;
+  reg [6:0] C1 = 0;
+  reg [6:0] C2 = 0;
   reg       MREQn = 1'b1;
   reg       IORQn = 1'b1;
   reg       RFSHn = 1'b0;
@@ -28,10 +28,8 @@ module tb_porta_glue_console
   reg       RDn   = 1'b0;
 
   wire [7:0]  data_bus;
-  wire        ctrl1_fire;
-  wire        ctrl1_arm;
-  wire        ctrl2_fire;
-  wire        ctrl2_arm;
+  wire        ctrl_fire;
+  wire        ctrl_arm;
   wire        rom_bank0;
   wire        rom_bank1;
   wire        rom_bank2;
@@ -49,31 +47,30 @@ module tb_porta_glue_console
   (
     .clk(clkv),
     .A({A15,A14,A13,{5{1'b0}},A7,A6,A5,{3{1'b0}},A1,1'b0}),
-    .RDn(RDn),
-    .C1P0(C1[0]),
-    .C1P1(C1[1]),
-    .C1P2(C1[2]),
-    .C1P3(C1[3]),
-    .C1P5(C1[4]),
-    .C1P6(C1[5]),
-    .C2P0(C2[0]),
-    .C2P1(C2[1]),
-    .C2P2(C2[2]),
-    .C2P3(C2[3]),
-    .C2P5(C2[4]),
-    .C2P6(C2[5]),
+    .C1P1(C1[0]),
+    .C1P2(C1[1]),
+    .C1P3(C1[2]),
+    .C1P4(C1[3]),
+    .C1P6(C1[4]),
+    .C1P7(C1[5]),
+    .C1P9(C1[6]),
+    .C2P1(C2[0]),
+    .C2P2(C2[1]),
+    .C2P3(C2[2]),
+    .C2P4(C2[3]),
+    .C2P6(C2[4]),
+    .C2P7(C2[5]),
+    .C2P9(C2[6]),
     .MREQn(MREQn),
     .IORQn(IORQn),
     .RFSHn(RFSHn),
+    .RDn(1'b0),
     .M1n(M1n),
     .WRn(WRn),
     .RESETn_SW(resetn_sw),
-    .C1P4(ctrl1_arm),
-    .C1P7(ctrl1_fire),
-    .C4_ARM(ctrl2_arm),
-    .C2_FIRE(ctrl2_fire),
-    .RX(1'b1),
-    .BUSAK(1'b1),
+    .CP5_ARM(ctrl_arm),
+    .CP8_FIRE(ctrl_fire),
+    .BUSAKn(1'b1),
     .D(data_bus),
     .CS_h8000n(rom_bank0),
     .CS_hA000n(rom_bank1),
@@ -88,7 +85,8 @@ module tb_porta_glue_console
     .RESETn(cpu_resetn),
     .VDP_RESETn(vdp_resetn),
     .RAM_OEn(),
-    .TX()
+    .INTn(),
+    .BUSREQn()
   );
 
     // fst dump command
@@ -109,6 +107,8 @@ module tb_porta_glue_console
 
   initial
   begin
+    C2[6] <= 1'b1;
+    C1[6] <= 1'b1;
     //hold in reset, and then release
     #50000;
     resetn_sw <= 1'b1;
@@ -191,14 +191,15 @@ module tb_porta_glue_console
     WRn <= 1'b1;
     for(index = 0; index < 256; index = index + 1)
     begin
-      C1  <= index%64;
+      C1  <= index%128;
+      // C1[6] <= 1'b0;
       #5000;
     end
     //player 2
     A1 <= 1'b1;
     for(index = 0; index < 256; index = index + 1)
     begin
-      C2  <= index%64;
+      C2  <= index%128;
       #5000;
     end
     A1    <= 1'b0;
