@@ -3,4 +3,5 @@ src/quartus13sp01/db/
 src/quartus13sp01/incremental_db/
 src/quartus13sp01/output_files/
 src/quartus13sp01/simulation/
+src/quartus13sp01/*.qws
 schematic/*-backups/
