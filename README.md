@@ -87,4 +87,6 @@
 
 ## PCB IMAGE
 
-![pcb_3D_img|300](pics/3D/coleco_original_both.png)
+![pcb_3D_img_front|300](pics/3D/coleco_original_front.png)
+
+![pcb_3D_img_back|300](pics/3D/coleco_original_back.png)
