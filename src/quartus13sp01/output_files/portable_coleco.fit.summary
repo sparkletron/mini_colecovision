@@ -1,9 +1,0 @@
-Fitter Status : Successful - Sun Mar 24 09:47:16 2024
-Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
-Revision Name : portable_coleco
-Top-level Entity Name : porta_glue_coleco
-Family : MAX7000S
-Device : EPM7128SLC84-10
-Timing Models : Final
-Total macrocells : 105 / 128 ( 82 % )
-Total pins : 68 / 68 ( 100 % )
