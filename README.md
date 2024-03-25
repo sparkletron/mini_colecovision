@@ -38,7 +38,7 @@
 
 ## SOURCES
 ### Schematic Check
-  - Atari HQ Schematic : https://wiki.console5.com/wiki/Colecovision : Dan Boris
+  - Righteous Tentacle Colecovision : https://github.com/sparkletron/righteous_tentacle_colecovision : Jay Convertino
 
 ## REQUIREMENTS
   - KiCAD v7.X
@@ -63,6 +63,7 @@
   - src, Verilog source for CPLD
     - protable_coleco, contains verilog source, test bench and fusesoc core file.
     - quartus13sp01, contains quartus project for MAX7000 series CPLD
+      - bin, contains CPLD firmware for varous compatible chips.
   - schematic, contains KiCAD schematic files.
     - coleco_original.kicad_pro, this file is the main project file that contains EVERTHING.
     - gerber, containts all exports from KiCAD
