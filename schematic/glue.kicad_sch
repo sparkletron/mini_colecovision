@@ -2,7 +2,17 @@
 
   (uuid e2d50a6d-73e8-4ebc-a7a1-a217d79a23b3)
 
-  (paper "A4")
+  (paper "USLetter")
+
+  (title_block
+    (title "Mini Colecovision")
+    (date "2024-03-25")
+    (rev "1.0.0")
+    (company "sparkletron")
+    (comment 1 "Jay Convertino")
+    (comment 2 "MIT LICENSE")
+    (comment 3 "TARGET: Portable")
+  )
 
   (lib_symbols
     (symbol "CPLD:MAX7000_84_PLCC" (in_bom yes) (on_board yes)

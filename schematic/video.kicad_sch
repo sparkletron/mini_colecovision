@@ -5,13 +5,13 @@
   (paper "USLetter")
 
   (title_block
-    (title "Righteous Tentacle, Colecovision Reverse Engineering Project")
-    (date "2023-06-18")
-    (rev "1.0.0.F")
+    (title "Mini Colecovision")
+    (date "2024-03-25")
+    (rev "1.0.0")
     (company "sparkletron")
     (comment 1 "Jay Convertino")
     (comment 2 "MIT LICENSE")
-    (comment 3 "PCB: 75743 REV F")
+    (comment 3 "TARGET: Portable")
   )
 
   (lib_symbols
