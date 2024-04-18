@@ -998,7 +998,7 @@
     (property "Value" "100nF" (at 141.478 115.951 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Capacitor_THT:C_Disc_D7.0mm_W2.5mm_P5.00mm" (at 137.668 121.3612 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (at 137.668 121.3612 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 141.478 120.396 0)
