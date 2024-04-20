@@ -3,6 +3,7 @@
 /// author: Jay Convertino (electrobs@gmail.com)
 /// date:   2023/27/12
 /// brief:  TTL Glue logic of the coleco reduced for a 2 player portable.
+/// details: Support added for super game module
 ///
 /// @TODO
 ///  - Cleanup code
@@ -60,10 +61,9 @@ module porta_glue_coleco
     input         WRn,
     input         RESETn_SW,
     input         RDn,
-    input         BUSAKn,
+    inout [7:0]   D,
     output        CP5_ARM,
     output        CP8_FIRE,
-    output [7:0]  D,
     output        CS_h8000n,
     output        CS_hA000n,
     output        CS_hC000n,
@@ -78,7 +78,8 @@ module porta_glue_coleco
     output        RESETn,
     output        VDP_RESETn,
     output        INTn,
-    output        BUSREQn
+    output        AS,
+    output        AY_SND_ENABLEn
   );
 
   //wires
@@ -89,22 +90,32 @@ module porta_glue_coleco
   wire s_ctrl_en_2n;
   wire s_ctrl_readn;
   wire s_ram_csn;
+  wire s_ram0_csn;
+  wire s_ram1_csn;
+  wire s_ram2_csn;
+  wire s_y0_seln;
 
   //int logic
   wire s_int_p1;
   wire s_int_p2;
 
   //registers
+  //sgm
+  reg [ 7:0]  r_24k_ena         = 0;
+  reg [ 7:0]  r_swap_ena        = 8'h0F;
+  //sound cache last write
+  reg [ 7:0]  r_snd_cache       = 0;
+
   //int trigger
-  reg         r_int_p1        = 1'b0;
-  reg         r_int_p2        = 1'b0;
+  reg         r_int_p1          = 1'b0;
+  reg         r_int_p2          = 1'b0;
   //wait d flip flop
-  reg         r_wait          = 1'b0;
+  reg         r_wait            = 1'b0;
 
   //timed reset circuit counter
-  reg [15:0]  r_reset_counter = 0;
-  reg         r_resetn        = 0;
-  reg         r_vdp_resetn    = 0;
+  reg [15:0]  r_reset_counter   = 0;
+  reg         r_resetn          = 0;
+  reg         r_vdp_resetn      = 0;
 
   //monostable circuit counters
   reg [11:0]  r_mono_count_p1     = 0;
@@ -123,27 +134,31 @@ module porta_glue_coleco
   reg         r_ctrl_fire     = 1'b0;
   reg         r_ctrl_arm      = 1'b1;
 
-  //dangling outputs
-  assign BUSREQn  = 1'bz;
-
   //****************************************************************************
   /// RAM Output enable when read is requested.
   //****************************************************************************
+  assign s_ram_csn = (s_y0_seln | r_swap_ena[1]) & (s_ram2_csn  | ~r_24k_ena[0]) & (s_ram1_csn | ~r_24k_ena[0]) & s_ram0_csn;
+
   assign RAM_OEn = RDn | s_ram_csn;
+  assign RAM_CSn = s_ram_csn;
+
+  //****************************************************************************
+  // Disable BIOS ROM when requested and use ram instead.
+  //****************************************************************************
+  assign ROM_ENABLEn = (s_y0_seln | ~r_swap_ena[1]);
 
   //****************************************************************************
   /// decoder for address selection.
   /// No clock, based on AND from TI 74138 datasheet.
   //****************************************************************************
 
-  assign RAM_CSn = s_ram_csn;
   //AUX_DECODE always 1, RFSH is a double inversion on coleco (inverter + 138 internal)
-  assign s_enable_u5 = (RFSHn & ~MREQn); //add AUX_DECODE_1 for CS_h2000n/CS_h4000n on the expansion port.
+  assign s_enable_u5 = (RFSHn & ~MREQn);
 
-  assign ROM_ENABLEn    = ~(s_enable_u5 & ~A[15] & ~A[14] & ~A[13]); //Y0
-  // assign CS_h2000n   = ~(s_enable_u5 & ~A15 & ~A14 &  A13); //Y1
-  // assign CS_h4000n   = ~(s_enable_u5 & ~A15 &  A14 & ~A13); //Y2
-  assign s_ram_csn      = ~(s_enable_u5 & ~A[15] &  A[14] &  A[13]); //Y3
+  assign s_y0_seln      = ~(s_enable_u5 & ~A[15] & ~A[14] & ~A[13]); //Y0
+  assign s_ram2_csn     = ~(s_enable_u5 & ~A[15] & ~A[14] &  A[13]); //Y1
+  assign s_ram1_csn     = ~(s_enable_u5 & ~A[15] &  A[14] & ~A[13]); //Y2
+  assign s_ram0_csn     = ~(s_enable_u5 & ~A[15] &  A[14] &  A[13]); //Y3
   assign CS_h8000n      = ~(s_enable_u5 &  A[15] & ~A[14] & ~A[13]); //Y4
   assign CS_hA000n      = ~(s_enable_u5 &  A[15] & ~A[14] &  A[13]); //Y5
   assign CS_hC000n      = ~(s_enable_u5 &  A[15] &  A[14] & ~A[13]); //Y6
@@ -160,6 +175,37 @@ module porta_glue_coleco
   assign SND_ENABLEn    = ~(s_enable_u6 &  A[6] &  A[5] & ~WRn); //Y6
   assign s_ctrl_readn   = ~(s_enable_u6 &  A[6] &  A[5] &  WRn); //Y7
 
+  //****************************************************************************
+  /// decoder for super game module
+  //****************************************************************************
+
+  assign AS             = (A[7:0] == 8'h50 & ~IORQn & ~WRn ? 1'b0 : 1'b1);
+  assign AY_SND_ENABLEn = ((A[7:0] == 8'h50 | A[7:0] == 8'h51) & ~IORQn & ~WRn ? 1'b0 : 1'b1);
+  assign D              = (A[7:0] == 8'h52 & ~IORQn & WRn ? r_snd_cache : 1'bz);
+
+  //IO registers
+  //This logic is registered
+  always @(negedge clk)
+  begin
+    r_24k_ena   <= r_24k_ena;
+    r_swap_ena  <= r_swap_ena;
+    r_snd_cache <= r_snd_cache;
+
+    if(~IORQn & ~WRn)
+    begin
+      case (A[7:0])
+        // on write to sound chip, cache data.
+        8'h51: r_snd_cache <= D;
+        //exapand ram to 24k by setting bit 0 to 1
+        8'h53: r_24k_ena  <= D;
+        //swap out bios for ram by setting bit 1 to 0
+        8'h7F: r_swap_ena <= D;
+        default:
+        begin
+        end
+      endcase
+    end
+  end
 
   //****************************************************************************
   /// wait generate

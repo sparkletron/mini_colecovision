@@ -36,7 +36,7 @@ set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P6}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P7}]
 set_input_delay -clock "ntsc_clock" 100.000ns [get_ports {C2P9}]
 
-set_input_delay -clock "ntsc_clock" 65.000ns [get_ports {A*}]
+set_input_delay -clock "ntsc_clock" 65.000ns [get_ports {A[*]}]
 
 set_input_delay -clock "ntsc_clock" 65.000ns [get_ports {MREQn}]
  
@@ -52,7 +52,7 @@ set_input_delay -clock "ntsc_clock" 40.000ns [get_ports {RESETn_SW}]
 
 set_input_delay -clock "ntsc_clock" 80.000ns [get_ports {RFSHn}]
 
-set_input_delay -clock "ntsc_clock" 55.000ns [get_ports {BUSAKn}]
+set_input_delay -clock "ntsc_clock" 10.000ns [get_ports {D[*]}]
 
 # output delays
 set_output_delay -clock "ntsc_clock" -min 10.000ns  [get_ports {D[*]}]
@@ -77,7 +77,7 @@ set_output_delay -clock "ntsc_clock" -max 40.000ns [get_ports {RESETn}]
 set_output_delay -clock "ntsc_clock" -min 10.000ns [get_ports {VDP_RESETn}]
 set_output_delay -clock "ntsc_clock" -max 40.000ns [get_ports {VDP_RESETn}]
 
-set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {ROM_ENABLEn}]
+set_output_delay -clock "ntsc_clock" 50.000ns [get_ports {ROM_ENABLEn}]
 
 set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {CS_*}]
 
@@ -87,4 +87,6 @@ set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {WAITn}]
 
 set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {INTn}]
 
-set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {BUSREQn}]
+set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {AS}]
+
+set_output_delay -clock "ntsc_clock" 150.000ns [get_ports {AY_SND_ENABLEn}]

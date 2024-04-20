@@ -9,23 +9,17 @@ module tb_porta_glue_console
 
   integer   index = 0;
 
-  reg       clkv = 1'b0;
-  reg       resetn_sw = 1'b0;
-  reg       A1 = 1'b0;
-  reg       A5 = 1'b0;
-  reg       A6 = 1'b0;
-  reg       A7 = 1'b0;
-  reg       A13 = 1'b0;
-  reg       A14 = 1'b0;
-  reg       A15 = 1'b0;
-  reg [6:0] C1 = 0;
-  reg [6:0] C2 = 0;
-  reg       MREQn = 1'b1;
-  reg       IORQn = 1'b1;
-  reg       RFSHn = 1'b0;
-  reg       M1n   = 1'b1;
-  reg       WRn   = 1'b1;
-  reg       RDn   = 1'b0;
+  reg         clkv = 1'b0;
+  reg         resetn_sw = 1'b0;
+  reg [15:0]  addr = 0;
+  reg [6:0]   C1 = 0;
+  reg [6:0]   C2 = 0;
+  reg         MREQn = 1'b1;
+  reg         IORQn = 1'b1;
+  reg         RFSHn = 1'b0;
+  reg         M1n   = 1'b1;
+  reg         WRn   = 1'b1;
+  reg         RDn   = 1'b0;
 
   wire [7:0]  data_bus;
   wire        ctrl_fire;
@@ -46,7 +40,7 @@ module tb_porta_glue_console
   porta_glue_coleco dut
   (
     .clk(clkv),
-    .A({A15,A14,A13,{5{1'b0}},A7,A6,A5,{3{1'b0}},A1,1'b0}),
+    .A(addr),
     .C1P1(C1[0]),
     .C1P2(C1[1]),
     .C1P3(C1[2]),
@@ -70,7 +64,6 @@ module tb_porta_glue_console
     .RESETn_SW(resetn_sw),
     .CP5_ARM(ctrl_arm),
     .CP8_FIRE(ctrl_fire),
-    .BUSAKn(1'b1),
     .D(data_bus),
     .CS_h8000n(rom_bank0),
     .CS_hA000n(rom_bank1),
@@ -86,7 +79,8 @@ module tb_porta_glue_console
     .VDP_RESETn(vdp_resetn),
     .RAM_OEn(),
     .INTn(),
-    .BUSREQn()
+    .AS(),
+    .AY_SND_ENABLEn()
   );
 
     // fst dump command
@@ -125,61 +119,61 @@ module tb_porta_glue_console
     MREQn <= 1'b0;
     #50000;
     //ROM
-    A13 <= 1'b0;
-    A14 <= 1'b0;
-    A15 <= 1'b0;
+    addr[13] <= 1'b0;
+    addr[14] <= 1'b0;
+    addr[15] <= 1'b0;
     #50000;
     //RAM
-    A13 <= 1'b1;
-    A14 <= 1'b1;
+    addr[13] <= 1'b1;
+    addr[14] <= 1'b1;
     #50000;
     //rom_bank0
-    A13 <= 1'b0;
-    A14 <= 1'b0;
-    A15 <= 1'b1;
+    addr[13] <= 1'b0;
+    addr[14] <= 1'b0;
+    addr[15] <= 1'b1;
     #50000;
     //rom_bank1
-    A13 <= 1'b1;
+    addr[13] <= 1'b1;
     #50000;
     //rom_bank2
-    A13 <= 1'b0;
-    A14 <= 1'b1;
+    addr[13] <= 1'b0;
+    addr[14] <= 1'b1;
     #50000;
     //rom_bank3
-    A13 <= 1'b1;
+    addr[13] <= 1'b1;
     #50000;
     //disable
     RFSHn <= 1'b0;
     MREQn <= 1'b1;
     #50000;
     //deassert address lines
-    A13 <= 1'b0;
-    A14 <= 1'b0;
-    A15 <= 1'b0;
+    addr[13] <= 1'b0;
+    addr[14] <= 1'b0;
+    addr[15] <= 1'b0;
     #50000;
     //check decoder U6
     //enable
     IORQn <= 1'b0;
-    A7    <= 1'b1;
+    addr[7] <= 1'b1;
     #50000;
     //control enable 2 (FIRE)
     WRn <= 1'b0;
-    A5  <= 1'b0;
-    A6  <= 1'b0;
+    addr[5]  <= 1'b0;
+    addr[6]  <= 1'b0;
     #50000;
     //vdp write enable (CSWn)
-    A5  <= 1'b1;
+    addr[5]  <= 1'b1;
     #50000;
     //vdp read enable (CSRn)
     WRn <= 1'b1;
     #50000;
     //control enable 1 (ARM)
     WRn <= 1'b0;
-    A5  <= 1'b0;
-    A6  <= 1'b1;
+    addr[5]  <= 1'b0;
+    addr[6]  <= 1'b1;
     #50000;
     //sound enable
-    A5  <= 1'b1;
+    addr[5]  <= 1'b1;
     #50000;
     //control read enable
     WRn <= 1'b1;
@@ -196,21 +190,41 @@ module tb_porta_glue_console
       #5000;
     end
     //player 2
-    A1 <= 1'b1;
+    addr[1] <= 1'b1;
     for(index = 0; index < 256; index = index + 1)
     begin
       C2  <= index%128;
       #5000;
     end
-    A1    <= 1'b0;
+    addr[1]    <= 1'b0;
     WRn   <= 1'b0;
     IORQn <= 1'b1;
-    A7    <= 1'b0;
+    addr[7]    <= 1'b0;
     #5000;
     //assert M1n to test cpu_wait
     M1n <= 1'b0;
     #5000;
     M1n <= 1'b1;
+    #5000
+    //IO TEST ALL PORTS FOR WRITE
+    WRn <= 1'b0;
+    IORQn <= 1'b0;
+    addr <= 0;
+    for(index = 0; index < 256; index = index + 1)
+    begin
+      addr[7:0]  <= index;
+      #5000;
+    end
+    #5000
+    //IO TEST ALL PORTS FOR READ
+    WRn <= 1'b1;
+    IORQn <= 1'b0;
+    addr <= 0;
+    for(index = 0; index < 256; index = index + 1)
+    begin
+      addr[7:0]  <= index;
+      #5000;
+    end
     #500000;
     $finish;
   end

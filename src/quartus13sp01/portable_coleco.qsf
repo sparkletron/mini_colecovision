@@ -112,11 +112,9 @@ set_location_assignment PIN_83 -to clk
 set_location_assignment PIN_60 -to VDP_RESETn
 set_location_assignment PIN_41 -to RAM_OEn
 set_location_assignment PIN_40 -to RDn
-
-set_global_assignment -name SLOW_SLEW_RATE ON
-
-
 set_location_assignment PIN_11 -to CP5_ARM
 set_location_assignment PIN_12 -to CP8_FIRE
-set_location_assignment PIN_79 -to BUSAKn
-set_location_assignment PIN_10 -to BUSREQn
+set_location_assignment PIN_79 -to AY_SND_ENABLEn
+set_location_assignment PIN_10 -to AS
+
+set_global_assignment -name SLOW_SLEW_RATE ON
