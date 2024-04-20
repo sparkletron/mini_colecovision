@@ -180,7 +180,8 @@ module porta_glue_coleco
   //****************************************************************************
 
   assign AS             = (A[7:0] == 8'h50 & ~IORQn & ~WRn ? 1'b0 : 1'b1);
-  assign AY_SND_ENABLEn = ((A[7:0] == 8'h50 | A[7:0] == 8'h51) & ~IORQn & ~WRn ? 1'b0 : 1'b1);
+  //match both h50 and h51 by ignoring bit 0.
+  assign AY_SND_ENABLEn = (A[7:1] == 7'b0101000 & ~IORQn & ~WRn ? 1'b0 : 1'b1);
   assign D              = (A[7:0] == 8'h52 & ~IORQn & WRn ? r_snd_cache : 1'bz);
 
   //IO registers
