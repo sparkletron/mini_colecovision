@@ -13,4 +13,5 @@
   (lib (name "ROM_EXT")(type "KiCad")(uri "${KIPRJMOD}/lib/ROM_EXT/ROM_EXT.kicad_sym")(options "")(descr ""))
   (lib (name "Logic_Level_Translator")(type "KiCad")(uri "${KIPRJMOD}/lib/LOGIC_LEVEL_TRANS/Logic_Level_Translator.kicad_sym")(options "")(descr ""))
   (lib (name "jacks")(type "KiCad")(uri "${KIPRJMOD}/lib/JACKS/jacks.kicad_sym")(options "")(descr ""))
+  (lib (name "SJ-63053A")(type "KiCad")(uri "${KIPRJMOD}/lib/SJ-63053A/SJ-63053A.kicad_sym")(options "")(descr ""))
 )

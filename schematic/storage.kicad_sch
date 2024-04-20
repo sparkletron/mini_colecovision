@@ -1558,6 +1558,31 @@
     )
   )
 
+  (symbol (lib_id "power:+5V") (at 184.15 119.38 90) (mirror x) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid bf5635de-b537-438b-974b-f7622ffcd2ce)
+    (property "Reference" "#PWR088" (at 187.96 119.38 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (at 180.848 119.38 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 184.15 119.38 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 184.15 119.38 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ad3d4e26-fb42-4503-ac6e-44b811f10e87))
+    (instances
+      (project "coleco_original"
+        (path "/970e0f64-111f-41e3-9f5a-fb0d0f6fa101/00000000-0000-0000-0000-00006262cd34"
+          (reference "#PWR088") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "power:GNDD") (at 123.19 123.825 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e43f4b9e-2cea-4ecf-b09d-0b1512b847ec)
