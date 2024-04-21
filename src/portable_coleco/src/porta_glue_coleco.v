@@ -164,7 +164,7 @@ module porta_glue_coleco
   assign CS_hC000n      = ~(s_enable_u5 &  A[15] &  A[14] & ~A[13]); //Y6
   assign CS_hE000n      = ~(s_enable_u5 &  A[15] &  A[14] &  A[13]); //Y7
 
-  assign s_enable_u6 = (A[7] & ~IORQn); //add ~AUX_DECODE_2 for expansion port
+  assign s_enable_u6 = (A[7] & ~IORQn);
 
   assign s_ctrl_en_2n   = ~(s_enable_u6 & ~A[6] & ~A[5] & ~WRn); //Y0, FIRE
   // assign NOTHING     = ~(s_enable_u6 & ~A6 & ~A5 &  WRn); //Y1, NOT USED IN COLECO
@@ -179,10 +179,12 @@ module porta_glue_coleco
   /// decoder for super game module
   //****************************************************************************
 
-  assign AS             = (A[7:0] == 8'h50 & ~IORQn & ~WRn ? 1'b0 : 1'b1);
-  //match both h50 and h51 by ignoring bit 0.
+  //0 for address, 1 for data
+  assign AS             = (A[7:0] == 8'h50 & ~IORQn & ~WRn      ? 1'b0 : 1'b1);
+  //match both h50 and h51 by ignoring bit 0. Enable AY sound chip.
   assign AY_SND_ENABLEn = (A[7:1] == 7'b0101000 & ~IORQn & ~WRn ? 1'b0 : 1'b1);
-  assign D              = (A[7:0] == 8'h52 & ~IORQn & WRn ? r_snd_cache : 1'bz);
+  //read cached register from previous write (AY emulation).
+  assign D              = (A[7:0] == 8'h52 & ~IORQn & WRn       ? r_snd_cache : 8'bzzzzzzzz);
 
   //IO registers
   //This logic is registered
@@ -220,7 +222,8 @@ module porta_glue_coleco
   begin
     r_wait <= ~r_wait;
 
-    if(M1n == 1'b1)
+    //when not in machine cycle 1, hold r_wait at 0.
+    if(M1n)
     begin
       r_wait <= 1'b0;
     end
@@ -248,7 +251,8 @@ module porta_glue_coleco
       r_reset_counter <= r_reset_counter;
     end
 
-    if(RESETn_SW == 1'b0)
+    //when 0, reset is asserted
+    if(~RESETn_SW)
     begin
       r_resetn        <= 1'b0;
       r_vdp_resetn    <= 1'b0;
@@ -305,7 +309,7 @@ module porta_glue_coleco
     r_mono_count_int_p1 <= 0;
     r_int_p1 <= 1'b0;
 
-    if(s_int_p1 == 1'b1)
+    if(s_int_p1)
     begin
       r_mono_count_int_p1 <= r_mono_count_int_p1 + 1;
       r_int_p1 <= 1'b1;
@@ -324,7 +328,7 @@ module porta_glue_coleco
     r_mono_count_int_p2 <= 0;
     r_int_p2 <= 1'b0;
 
-    if(s_int_p2 == 1'b1)
+    if(s_int_p2)
     begin
       r_mono_count_int_p2 <= r_mono_count_int_p2 + 1;
       r_int_p2 <= 1'b1;
@@ -348,7 +352,7 @@ module porta_glue_coleco
     r_ctrl_arm  <= r_ctrl_arm;
     r_ctrl_fire <= r_ctrl_fire;
 
-    if((s_ctrl_en_1n ^ s_ctrl_en_2n) == 1'b1)
+    if(s_ctrl_en_1n ^ s_ctrl_en_2n)
     begin
       r_ctrl_arm  <= ~s_ctrl_en_1n;
       r_ctrl_fire <= ~s_ctrl_en_2n;
@@ -364,7 +368,7 @@ module porta_glue_coleco
     r_mono_count_p1 <= 0;
     r_mono_p1 <= ~s_int_p1;
 
-    if(s_int_p1 == 1'b1)
+    if(s_int_p1)
     begin
       r_mono_count_p1 <= r_mono_count_p1 + 1;
       if(r_mono_count_p1 >= `DEF_FB_MONOSTABLE_COUNT)
@@ -381,7 +385,7 @@ module porta_glue_coleco
     r_mono_count_p2 <= 0;
     r_mono_p2 <= ~s_int_p2;
 
-    if(s_int_p2 == 1'b1)
+    if(s_int_p2)
     begin
       r_mono_count_p2 <= r_mono_count_p2 + 1;
       if(r_mono_count_p2 >= `DEF_FB_MONOSTABLE_COUNT)
