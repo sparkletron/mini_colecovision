@@ -2070,6 +2070,11 @@
     (pad "8" thru_hole circle (at -5 0) (size 1.7018 1.7018) (drill 1.1938) (layers "*.Cu" "*.Mask") (tstamp 9501a086-bd7a-4a78-8e5a-562ce48bf7f9))
     (pad "9" thru_hole circle (at 5 0) (size 1.7018 1.7018) (drill 1.1938) (layers "*.Cu" "*.Mask") (tstamp ed81095c-4600-422d-8ad8-d247d4c73447))
     (pad "10" thru_hole circle (at 0 4.999997) (size 1.7018 1.7018) (drill 1.1938) (layers "*.Cu" "*.Mask") (tstamp 02175e27-f278-4bc0-a8a5-990e47a1d3f3))
+    (model "${KIPRJMOD}/lib/MODELS/SJ1-3524NG(SPC21348)/CUI_DEVICES_SJ1-3524NG.step"
+      (offset (xyz 0 6.35 2.54))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 -90))
+    )
   )
 
   (footprint "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" (layer "F.Cu")
@@ -2291,7 +2296,7 @@
     (property "ki_keywords" "resistor variable")
     (path "/00000000-0000-0000-0000-000062624749/83a381ac-c2d3-4477-b898-66f7f4a9eaf2")
     (attr through_hole)
-    (fp_text reference "RV1" (at -5.037 -5.99 -180) (layer "F.SilkS")
+    (fp_text reference "RV1" (at -5.037 -5.99) (layer "F.SilkS")
         (effects (font (size 1.27 1.27) (thickness 0.254)))
       (tstamp 8b538102-8ad4-47e2-92ce-0e5d4a366bf5)
     )
@@ -2335,8 +2340,8 @@
       (net 120 "Net-(R4-Pad2)") (pinfunction "3") (pintype "passive") (tstamp 7c7e1167-6e2e-4712-ba86-099458727bf6))
     (pad "MH1" thru_hole circle (at -1 -10 270) (size 2.1 2.1) (drill 1.4) (layers "*.Cu" "*.Mask") (tstamp 9a33c0b0-0f75-431b-bcb8-9a72969695ba))
     (pad "MH2" thru_hole circle (at 9 -10 270) (size 2.1 2.1) (drill 1.4) (layers "*.Cu" "*.Mask") (tstamp c05557cb-2186-4b85-9a51-bd418ba27e26))
-    (model "RV100F-30-4K1-B50K.stp"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/lib/MODELS/RV100/RK10J1_E.STEP"
+      (offset (xyz 3.81 7.62 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -2363,7 +2368,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp b975d34f-ca2e-4145-aa19-8115c6f20c93)
     )
-    (fp_text user "*" (at -2.54 0 -90) (layer "F.Fab")
+    (fp_text user "*" (at -2.54 0 90) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp edefdcf5-d5a0-4b9b-b9a4-d7f709674a19)
     )
@@ -2430,6 +2435,11 @@
     (pad "8" thru_hole circle (at -5 0 270) (size 1.7018 1.7018) (drill 1.1938) (layers "*.Cu" "*.Mask") (tstamp 0d3d25d6-338e-47c1-a7d5-330701202b5e))
     (pad "9" thru_hole circle (at 5 0 270) (size 1.7018 1.7018) (drill 1.1938) (layers "*.Cu" "*.Mask") (tstamp 66d580ce-c2ed-4728-89e8-5d7418a99d27))
     (pad "10" thru_hole circle (at 0 4.999997 270) (size 1.7018 1.7018) (drill 1.1938) (layers "*.Cu" "*.Mask") (tstamp 1f3b8d97-888c-42f7-9fe0-65204117daa4))
+    (model "${KIPRJMOD}/lib/MODELS/SJ1-3524NG(SPC21348)/CUI_DEVICES_SJ1-3524NG.step"
+      (offset (xyz 0 6.35 2.54))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 -90))
+    )
   )
 
   (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" (layer "F.Cu")
@@ -3249,7 +3259,7 @@
       (net 28 "/GLUE/CLK") (pinfunction "INPUT/GCLK1") (pintype "input") (tstamp 0201c5b2-0fde-47ed-b7ca-190707602ce4))
     (pad "84" thru_hole circle (at 2.54 2.54) (size 1.4224 1.4224) (drill 0.8) (layers "*.Cu" "*.Mask")
       (net 31 "/GLUE/~{WR}") (pinfunction "INPUT/OE1") (pintype "input") (tstamp 4225595c-7821-4816-9dd0-5dcc923f2a84))
-    (model "${KICAD6_3DMODEL_DIR}/Package_LCC.3dshapes/PLCC-84_THT-Socket.wrl"
+    (model "${KIPRJMOD}/lib/MODELS/PLCC84ATN/PLCC84ATN.stp"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -3801,7 +3811,7 @@
       (net 1 "Net-(C1-Pad1)") (pinfunction "1") (pintype "passive") (tstamp 3ec83f52-6373-4ecc-9b02-56ea2d77c2b1))
     (pad "2" thru_hole circle (at 4.5 0 270) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask")
       (net 2 "GNDD") (pinfunction "2") (pintype "passive") (tstamp 54e47cb4-af14-4a9e-9986-48fe729b748c))
-    (model "${KICAD6_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_Tactile_SKHH_Angled.wrl"
+    (model ":KICAD7_3DMODEL_DIR:Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx39-2LFS.wrl"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -4570,7 +4580,7 @@
     (property "ki_keywords" "switch single-pole double-throw spdt ON-ON")
     (path "/ebfedf81-c577-48d2-9dda-bc832656750a/ad0d98e9-9997-4051-8a57-7a38e8cd18cd")
     (attr through_hole)
-    (fp_text reference "SW3" (at -4.4516 -0.159 -180) (layer "F.SilkS")
+    (fp_text reference "SW3" (at -4.4516 -0.159) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 4f4d23c0-324b-4f8f-9be0-1b84d9806b70)
     )
@@ -4618,10 +4628,10 @@
       (net 135 "Net-(SW3-B)") (pinfunction "B") (pintype "passive") (tstamp 4164d1f4-14a2-4620-8927-5705f6749eee))
     (pad "3" thru_hole oval (at 4 0 270) (size 1.5 2.5) (drill 0.9) (layers "*.Cu" "*.Mask")
       (net 2 "GNDD") (pinfunction "C") (pintype "passive") (tstamp 3dbd2d5f-b473-4880-8f43-7971b47e3539))
-    (model "${KICAD6_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_CuK_OS102011MA1QN1_SPDT_Angled.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/lib/MODELS/OS102011MA1QN1/OS102011MA1QN1.stp"
+      (offset (xyz 21.59 -9.525 -20.32))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
@@ -6325,6 +6335,11 @@
       (net 5 "+5V") (pinfunction "C") (pintype "passive") (tstamp 56fef071-9036-4d83-af3f-8ef625e8a377))
     (pad "4" thru_hole circle (at -11.305 9.53) (size 2.775 2.775) (drill 1.85) (layers "*.Cu" "*.Mask") (tstamp ee86f1b3-ceb3-4675-88c7-389bc401a1de))
     (pad "4" thru_hole circle (at 1.905 9.53) (size 2.775 2.775) (drill 1.85) (layers "*.Cu" "*.Mask") (tstamp 90f6afee-3fa3-45fb-a3a9-4e83004fc03f))
+    (model "${KIPRJMOD}/lib/MODELS/1101M2S3AQE2/1101M2S3AQE2.stp"
+      (offset (xyz -4.445 -3.81 3.175))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 180 180))
+    )
   )
 
   (footprint "Package_DIP:DIP-18_W7.62mm" (layer "F.Cu")
