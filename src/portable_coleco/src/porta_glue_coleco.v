@@ -184,29 +184,34 @@ module porta_glue_coleco
   //match both h50 and h51 by ignoring bit 0. Enable AY sound chip.
   assign AY_SND_ENABLEn = (A[7:1] == 7'b0101000 & ~IORQn & ~WRn ? 1'b0 : 1'b1);
   //read cached register from previous write (AY emulation).
-  assign D              = (A[7:0] == 8'h52 & ~IORQn & WRn       ? r_snd_cache : 8'bzzzzzzzz);
+  assign D              = (A[7:0] == 8'h52 & ~IORQn & ~RDn       ? r_snd_cache : 8'bzzzzzzzz);
 
   //IO registers
   //This logic is registered
   always @(negedge clk)
   begin
-    r_24k_ena   <= r_24k_ena;
-    r_swap_ena  <= r_swap_ena;
-    r_snd_cache <= r_snd_cache;
-
-    if(~IORQn & ~WRn)
+    if(~r_vdp_resetn)
     begin
-      case (A[7:0])
-        // on write to sound chip, cache data.
-        8'h51: r_snd_cache <= D;
-        //exapand ram to 24k by setting bit 0 to 1
-        8'h53: r_24k_ena  <= D;
-        //swap out bios for ram by setting bit 1 to 0
-        8'h7F: r_swap_ena <= D;
-        default:
-        begin
-        end
-      endcase
+      r_swap_ena  <= 8'h0F;
+      r_24k_ena   <= 0;
+      r_snd_cache <= 0;
+    end else begin
+      r_snd_cache <= r_snd_cache;
+
+      if(~IORQn & ~WRn)
+      begin
+        case (A[7:0])
+          // on write to sound chip, cache data.
+          8'h51: r_snd_cache <= D;
+          //exapand ram to 24k by setting bit 0 to 1
+          8'h53: r_24k_ena  <= D;
+          //swap out bios for ram by setting bit 1 to 0
+          8'h7F: r_swap_ena <= D;
+          default:
+          begin
+          end
+        endcase
+      end
     end
   end
 
