@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "7.0.11-7.0.11~ubuntu22.04.1"
     },
-    "CreationDate": "2024-05-25T12:47:59-04:00"
+    "CreationDate": "2024-08-01T20:44:47-04:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -17,19 +17,26 @@
       "X": 88.7968,
       "Y": 143.4576
     },
-    "LayerNumber": 2,
+    "LayerNumber": 4,
     "BoardThickness": 1.6,
     "Finish": "None"
   },
   "DesignRules": [
     {
       "Layers": "Outer",
-      "PadToPad": 0.0,
-      "PadToTrack": 0.0,
+      "PadToPad": 0.2032,
+      "PadToTrack": 0.2032,
       "TrackToTrack": 0.2032,
-      "MinLineWidth": 0.2032,
-      "TrackToRegion": 0.2032,
-      "RegionToRegion": 0.2032
+      "MinLineWidth": 0.2032
+    },
+    {
+      "Layers": "Inner",
+      "PadToPad": 0.2032,
+      "PadToTrack": 0.2032,
+      "TrackToTrack": 0.2032,
+      "MinLineWidth": 0.4572,
+      "TrackToRegion": 0.254,
+      "RegionToRegion": 0.254
     }
   ],
   "FilesAttributes": [
@@ -39,8 +46,18 @@
       "FilePolarity": "Positive"
     },
     {
+      "Path": "coleco_original-power_Cu.gbr",
+      "FileFunction": "Copper,L2,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "coleco_original-ground_Cu.gbr",
+      "FileFunction": "Copper,L3,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
       "Path": "coleco_original-B_Cu.gbr",
-      "FileFunction": "Copper,L2,Bot",
+      "FileFunction": "Copper,L4,Bot",
       "FilePolarity": "Positive"
     },
     {
@@ -140,10 +157,34 @@
     },
     {
       "Type": "Dielectric",
-      "Thickness": 1.51,
+      "Thickness": 0.1,
       "Material": "FR4",
-      "Name": "F.Cu/B.Cu",
-      "Notes": "Type: dielectric layer 1 (from F.Cu to B.Cu)"
+      "Name": "F.Cu/power.Cu",
+      "Notes": "Type: dielectric layer 1 (from F.Cu to power.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "power.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 1.24,
+      "Material": "FR4",
+      "Name": "power.Cu/ground.Cu",
+      "Notes": "Type: dielectric layer 2 (from power.Cu to ground.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "ground.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.1,
+      "Material": "FR4",
+      "Name": "ground.Cu/B.Cu",
+      "Notes": "Type: dielectric layer 3 (from ground.Cu to B.Cu)"
     },
     {
       "Type": "Copper",
