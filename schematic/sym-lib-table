@@ -14,4 +14,5 @@
   (lib (name "Logic_Level_Translator")(type "KiCad")(uri "${KIPRJMOD}/lib/LOGIC_LEVEL_TRANS/Logic_Level_Translator.kicad_sym")(options "")(descr ""))
   (lib (name "jacks")(type "KiCad")(uri "${KIPRJMOD}/lib/JACKS/jacks.kicad_sym")(options "")(descr ""))
   (lib (name "SJ-63053A")(type "KiCad")(uri "${KIPRJMOD}/lib/SJ-63053A/SJ-63053A.kicad_sym")(options "")(descr ""))
+  (lib (name "TPA711D")(type "KiCad")(uri "${KIPRJMOD}/lib/LIB_TPA711D/KiCad/TPA711D.kicad_sym")(options "")(descr ""))
 )

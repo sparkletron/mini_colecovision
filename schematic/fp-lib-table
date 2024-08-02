@@ -14,4 +14,5 @@
   (lib (name "RV100F-30")(type "KiCad")(uri "${KIPRJMOD}/lib/RV100F-30")(options "")(descr ""))
   (lib (name "jacks")(type "KiCad")(uri "${KIPRJMOD}/lib/JACKS/jacks.pretty")(options "")(descr ""))
   (lib (name "jacks2")(type "KiCad")(uri "${KIPRJMOD}/lib/SJ-63053A/footprints.pretty")(options "")(descr ""))
+  (lib (name "TPA")(type "KiCad")(uri "${KIPRJMOD}/lib/LIB_TPA711D/KiCad")(options "")(descr ""))
 )

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TPA711D
+D Texas Instruments TPA711D Headphone Audio Amplifier, Class-AB Mono/Stereo 1.4MHz, 8-Pin SOIC
+K
+F http://uk.rs-online.com/web/p/products/6606310
+$ENDCMP
+#
+#End Doc Library
