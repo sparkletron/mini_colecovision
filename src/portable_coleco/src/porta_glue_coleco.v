@@ -184,7 +184,7 @@ module porta_glue_coleco
   //match both h50 and h51 by ignoring bit 0. Enable AY sound chip.
   assign AY_SND_ENABLEn = (A[7:1] == 7'b0101000 & ~IORQn & ~WRn ? 1'b0 : 1'b1);
   //read cached register from previous write (AY emulation).
-  assign D              = (A[7:0] == 8'h52 & ~IORQn & ~RDn       ? r_snd_cache : 8'bzzzzzzzz);
+  assign D              = (A[7:0] == 8'h52 & ~IORQn & ~RDn      ? r_snd_cache : 8'bzzzzzzzz);
 
   //IO registers
   //This logic is registered
