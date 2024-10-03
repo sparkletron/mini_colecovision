@@ -2514,7 +2514,7 @@
     (property "Reference" "U9" (at 117.8911 45.72 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "EPM7064SLC" (at 101.6 141.859 0)
+    (property "Value" "EPM7128SLC" (at 101.6 141.859 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Package_LCC:PLCC-84_THT-Socket" (at 100.457 82.042 0)
