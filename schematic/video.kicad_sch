@@ -2403,7 +2403,7 @@
     (property "Reference" "Y1" (at 112.3442 112.522 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Crystal" (at 110.0328 112.522 0)
+    (property "Value" "10.738635 MHz" (at 105.537 126.492 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Crystal:Crystal_HC49-4H_Vertical" (at 105.537 112.522 0)

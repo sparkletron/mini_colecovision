@@ -5,19 +5,19 @@
       "Application": "Pcbnew",
       "Version": "7.0.11-7.0.11~ubuntu22.04.1"
     },
-    "CreationDate": "2024-10-05T18:33:04-04:00"
+    "CreationDate": "2024-10-05T18:33:47-04:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "coleco_original",
-      "GUID": "636f6c65-636f-45f6-9f72-6967696e616c",
+      "Name": "right_angle",
+      "GUID": "72696768-745f-4616-9e67-6c652e6b6963",
       "Revision": "DEV"
     },
     "Size": {
-      "X": 88.7968,
-      "Y": 143.4576
+      "X": 82.5492,
+      "Y": 28.2944
     },
-    "LayerNumber": 4,
+    "LayerNumber": 2,
     "BoardThickness": 1.6,
     "Finish": "None"
   },
@@ -26,112 +26,93 @@
       "Layers": "Outer",
       "PadToPad": 0.0,
       "PadToTrack": 0.0,
-      "TrackToTrack": 0.2032,
-      "MinLineWidth": 0.2032
-    },
-    {
-      "Layers": "Inner",
-      "PadToPad": 0.0,
-      "PadToTrack": 0.0,
-      "TrackToTrack": 0.2032,
-      "MinLineWidth": 0.4572,
-      "TrackToRegion": 0.254,
-      "RegionToRegion": 0.254
+      "TrackToTrack": 0.3048,
+      "MinLineWidth": 0.381
     }
   ],
   "FilesAttributes": [
     {
-      "Path": "coleco_original-F_Cu.gbr",
+      "Path": "right_angle-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-power_Cu.gbr",
-      "FileFunction": "Copper,L2,Inr",
+      "Path": "right_angle-B_Cu.gbr",
+      "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-ground_Cu.gbr",
-      "FileFunction": "Copper,L3,Inr",
-      "FilePolarity": "Positive"
-    },
-    {
-      "Path": "coleco_original-B_Cu.gbr",
-      "FileFunction": "Copper,L4,Bot",
-      "FilePolarity": "Positive"
-    },
-    {
-      "Path": "coleco_original-F_Adhesive.gbr",
+      "Path": "right_angle-F_Adhesive.gbr",
       "FileFunction": "Glue,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-B_Adhesive.gbr",
+      "Path": "right_angle-B_Adhesive.gbr",
       "FileFunction": "Glue,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-F_Paste.gbr",
+      "Path": "right_angle-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-B_Paste.gbr",
+      "Path": "right_angle-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-F_Silkscreen.gbr",
+      "Path": "right_angle-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-B_Silkscreen.gbr",
+      "Path": "right_angle-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-F_Mask.gbr",
+      "Path": "right_angle-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "coleco_original-B_Mask.gbr",
+      "Path": "right_angle-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "coleco_original-User_Drawings.gbr",
+      "Path": "right_angle-User_Drawings.gbr",
       "FileFunction": "Other,User",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-User_Comments.gbr",
+      "Path": "right_angle-User_Comments.gbr",
       "FileFunction": "Other,User",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-User_Eco1.gbr",
+      "Path": "right_angle-User_Eco1.gbr",
       "FileFunction": "Other,User",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-User_Eco2.gbr",
+      "Path": "right_angle-User_Eco2.gbr",
       "FileFunction": "Other,User",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-Edge_Cuts.gbr",
+      "Path": "right_angle-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-F_Fab.gbr",
+      "Path": "right_angle-F_Fab.gbr",
       "FileFunction": "AssemblyDrawing,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "coleco_original-B_Fab.gbr",
+      "Path": "right_angle-B_Fab.gbr",
       "FileFunction": "AssemblyDrawing,Bot",
       "FilePolarity": "Positive"
     }
@@ -157,34 +138,10 @@
     },
     {
       "Type": "Dielectric",
-      "Thickness": 0.1,
+      "Thickness": 1.51,
       "Material": "FR4",
-      "Name": "F.Cu/power.Cu",
-      "Notes": "Type: dielectric layer 1 (from F.Cu to power.Cu)"
-    },
-    {
-      "Type": "Copper",
-      "Thickness": 0.035,
-      "Name": "power.Cu"
-    },
-    {
-      "Type": "Dielectric",
-      "Thickness": 1.24,
-      "Material": "FR4",
-      "Name": "power.Cu/ground.Cu",
-      "Notes": "Type: dielectric layer 2 (from power.Cu to ground.Cu)"
-    },
-    {
-      "Type": "Copper",
-      "Thickness": 0.035,
-      "Name": "ground.Cu"
-    },
-    {
-      "Type": "Dielectric",
-      "Thickness": 0.1,
-      "Material": "FR4",
-      "Name": "ground.Cu/B.Cu",
-      "Notes": "Type: dielectric layer 3 (from ground.Cu to B.Cu)"
+      "Name": "F.Cu/B.Cu",
+      "Notes": "Type: dielectric layer 1 (from F.Cu to B.Cu)"
     },
     {
       "Type": "Copper",
