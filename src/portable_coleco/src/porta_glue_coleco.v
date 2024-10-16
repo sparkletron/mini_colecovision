@@ -31,10 +31,10 @@
 /// IN THE SOFTWARE.
 ///*****************************************************************************
 
-`define DEF_RESET_DELAY_BIT       15
-`define DEF_VDP_RESET_DELAY_BIT   4
+`define DEF_RESET_DELAY_BIT       9
+// `define DEF_VDP_RESET_DELAY_BIT   4
 `define DEF_FB_MONOSTABLE_COUNT   4000
-`define DEF_IRQ_MONOSTABLE_COUNT  80
+`define DEF_IRQ_MONOSTABLE_COUNT  63
 
 module porta_glue_coleco
   (
@@ -76,7 +76,7 @@ module porta_glue_coleco
     output        CSRn,
     output        WAITn,
     output        RESETn,
-    output        VDP_RESETn,
+    output        RAM_MIRRORn,
     output        INTn,
     output        AS,
     output        AY_SND_ENABLEn
@@ -113,26 +113,22 @@ module porta_glue_coleco
   reg         r_wait            = 1'b0;
 
   //timed reset circuit counter
-  reg [15:0]  r_reset_counter   = 0;
+  reg [ 9:0]  r_reset_counter   = 0;
   reg         r_resetn          = 0;
-  reg         r_vdp_resetn      = 0;
+  // reg         r_vdp_resetn      = 0;
 
   //monostable circuit counters
   reg [11:0]  r_mono_count_p1     = 0;
   reg [11:0]  r_mono_count_p2     = 0;
-  reg [ 6:0]  r_mono_count_int_p1 = 0;
-  reg [ 6:0]  r_mono_count_int_p2 = 0;
+  reg [ 5:0]  r_mono_count_int_p1 = 0;
+  reg [ 5:0]  r_mono_count_int_p2 = 0;
   //reg for feedback signal
-  reg         r_mono_p1       = 1'b1;
-  reg         r_mono_p2       = 1'b1;
-
-  //filters for controller input
-  reg [7:0] r_c1p9   = ~0;
-  reg [7:0] r_c2p9   = ~0;
+  reg         r_mono_p1       = 1'b0;
+  reg         r_mono_p2       = 1'b0;
 
   //emulate feedback nand circuit
-  reg         r_ctrl_fire     = 1'b0;
-  reg         r_ctrl_arm      = 1'b1;
+  reg         r_ctrl_fire     = 1'b1;
+  reg         r_ctrl_arm      = 1'b0;
 
   //****************************************************************************
   /// RAM Output enable when read is requested.
@@ -141,6 +137,7 @@ module porta_glue_coleco
 
   assign RAM_OEn = RDn | s_ram_csn;
   assign RAM_CSn = s_ram_csn;
+  assign RAM_MIRRORn = (r_24k_ena[0] | ~r_swap_ena[1]);
 
   //****************************************************************************
   // Disable BIOS ROM when requested and use ram instead.
@@ -190,7 +187,7 @@ module porta_glue_coleco
   //This logic is registered
   always @(negedge clk)
   begin
-    if(~r_vdp_resetn)
+    if(~r_resetn)
     begin
       r_swap_ena  <= 8'h0F;
       r_24k_ena   <= 0;
@@ -238,17 +235,11 @@ module porta_glue_coleco
   /// Reset circuit based on number of cycle count, replace cap/resistor.
   //****************************************************************************
   assign RESETn     = r_resetn;
-  assign VDP_RESETn = r_vdp_resetn;
 
   always @(negedge clk)
   begin
 
     r_reset_counter <= r_reset_counter + 1;
-
-    if(r_reset_counter[`DEF_VDP_RESET_DELAY_BIT] == 1'b1)
-    begin
-      r_vdp_resetn <= 1'b1;
-    end
 
     if(r_reset_counter[`DEF_RESET_DELAY_BIT] == 1'b1)
     begin
@@ -260,7 +251,6 @@ module porta_glue_coleco
     if(~RESETn_SW)
     begin
       r_resetn        <= 1'b0;
-      r_vdp_resetn    <= 1'b0;
       r_reset_counter <= 0;
     end
   end
@@ -276,30 +266,30 @@ module porta_glue_coleco
 
   //data lines asserted when controller port read requested
   //player 1
-  assign D[0] = (~s_ctrl_readn & ~A[1] ? C1P1       : 1'bz);
-  assign D[1] = (~s_ctrl_readn & ~A[1] ? C1P4       : 1'bz);
-  assign D[2] = (~s_ctrl_readn & ~A[1] ? C1P2       : 1'bz);
-  assign D[3] = (~s_ctrl_readn & ~A[1] ? C1P3       : 1'bz);
-  assign D[4] = (~s_ctrl_readn & ~A[1] ? r_mono_p1  : 1'bz);
-  assign D[5] = (~s_ctrl_readn & ~A[1] ? C1P7       : 1'bz);
-  assign D[6] = (~s_ctrl_readn & ~A[1] ? C1P6       : 1'bz);
-  assign D[7] = (~s_ctrl_readn & ~A[1] ? s_int_p1   : 1'bz);
+  assign D[0] = (~s_ctrl_readn & ~A[1] ? C1P1        : 1'bz);
+  assign D[1] = (~s_ctrl_readn & ~A[1] ? C1P4        : 1'bz);
+  assign D[2] = (~s_ctrl_readn & ~A[1] ? C1P2        : 1'bz);
+  assign D[3] = (~s_ctrl_readn & ~A[1] ? C1P3        : 1'bz);
+  assign D[4] = (~s_ctrl_readn & ~A[1] ? r_mono_p1   : 1'bz);
+  assign D[5] = (~s_ctrl_readn & ~A[1] ? C1P7        : 1'bz);
+  assign D[6] = (~s_ctrl_readn & ~A[1] ? C1P6        : 1'bz);
+  assign D[7] = (~s_ctrl_readn & ~A[1] ? s_int_p1    : 1'bz);
 
   //int used in data port and mono trigger to cpu.
-  assign s_int_p1 = ~(r_mono_p1 & &r_c1p9) & r_resetn;
+  assign s_int_p1 = ~(r_mono_p1 & C1P9);
 
   //player 2
-  assign D[0] = (~s_ctrl_readn & A[1] ? C2P1      : 1'bz);
-  assign D[1] = (~s_ctrl_readn & A[1] ? C2P4      : 1'bz);
-  assign D[2] = (~s_ctrl_readn & A[1] ? C2P2      : 1'bz);
-  assign D[3] = (~s_ctrl_readn & A[1] ? C2P3      : 1'bz);
-  assign D[4] = (~s_ctrl_readn & A[1] ? r_mono_p2 : 1'bz);
-  assign D[5] = (~s_ctrl_readn & A[1] ? C2P7      : 1'bz);
-  assign D[6] = (~s_ctrl_readn & A[1] ? C2P6      : 1'bz);
-  assign D[7] = (~s_ctrl_readn & A[1] ? s_int_p2  : 1'bz);
+  assign D[0] = (~s_ctrl_readn & A[1] ? C2P1       : 1'bz);
+  assign D[1] = (~s_ctrl_readn & A[1] ? C2P4       : 1'bz);
+  assign D[2] = (~s_ctrl_readn & A[1] ? C2P2       : 1'bz);
+  assign D[3] = (~s_ctrl_readn & A[1] ? C2P3       : 1'bz);
+  assign D[4] = (~s_ctrl_readn & A[1] ? r_mono_p2  : 1'bz);
+  assign D[5] = (~s_ctrl_readn & A[1] ? C2P7       : 1'bz);
+  assign D[6] = (~s_ctrl_readn & A[1] ? C2P6       : 1'bz);
+  assign D[7] = (~s_ctrl_readn & A[1] ? s_int_p2   : 1'bz);
 
   //int used in data port and mono trigger to cpu.
-  assign s_int_p2 = ~(r_mono_p2 & &r_c2p9) & r_resetn;
+  assign s_int_p2 = ~(r_mono_p2 & C2P9);
 
   //INTn is generated by monostable circuit based on NAND outputs.
   assign INTn = ~(r_int_p1 | r_int_p2);
@@ -321,7 +311,7 @@ module porta_glue_coleco
 
       if(r_mono_count_int_p1 >= `DEF_IRQ_MONOSTABLE_COUNT)
       begin
-        r_mono_count_int_p1 <= r_mono_count_int_p1;
+        r_mono_count_int_p1 <= `DEF_IRQ_MONOSTABLE_COUNT;
         r_int_p1 <= 1'b0;
       end
     end
@@ -340,7 +330,7 @@ module porta_glue_coleco
 
       if(r_mono_count_int_p2 >= `DEF_IRQ_MONOSTABLE_COUNT)
       begin
-        r_mono_count_int_p2 <= r_mono_count_int_p2;
+        r_mono_count_int_p2 <= `DEF_IRQ_MONOSTABLE_COUNT;
         r_int_p2 <= 1'b0;
       end
     end
@@ -399,13 +389,6 @@ module porta_glue_coleco
         r_mono_p2 <= 1'b1;
       end
     end
-  end
-
-  //filter for controller input p1 and p2
-  always @(negedge clk)
-  begin
-    r_c1p9  <= {C1P9, r_c1p9[7:1]};
-    r_c2p9  <= {C2P9, r_c2p9[7:1]};
   end
 
 endmodule

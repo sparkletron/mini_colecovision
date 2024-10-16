@@ -74,8 +74,7 @@ set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {RAM_OEn}]
 set_output_delay -clock "ntsc_clock" -min 10.000ns [get_ports {RESETn}]
 set_output_delay -clock "ntsc_clock" -max 40.000ns [get_ports {RESETn}]
 
-set_output_delay -clock "ntsc_clock" -min 10.000ns [get_ports {VDP_RESETn}]
-set_output_delay -clock "ntsc_clock" -max 40.000ns [get_ports {VDP_RESETn}]
+set_output_delay -clock "ntsc_clock" 100.000ns [get_ports {RAM_MIRRORn}]
 
 set_output_delay -clock "ntsc_clock" 50.000ns [get_ports {ROM_ENABLEn}]
 

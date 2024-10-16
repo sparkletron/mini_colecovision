@@ -100,7 +100,7 @@ set_location_assignment PIN_44 -to IORQn
 set_location_assignment PIN_35 -to M1n
 set_location_assignment PIN_45 -to MREQn
 set_location_assignment PIN_57 -to RAM_CSn
-set_location_assignment PIN_37 -to RESETn
+set_location_assignment PIN_37 -to RAM_MIRROR
 set_location_assignment PIN_1  -to RESETn_SW
 set_location_assignment PIN_36 -to RFSHn
 set_location_assignment PIN_56 -to ROM_ENABLEn
@@ -109,7 +109,7 @@ set_location_assignment PIN_61 -to INTn
 set_location_assignment PIN_39 -to WAITn
 set_location_assignment PIN_84 -to WRn
 set_location_assignment PIN_83 -to clk
-set_location_assignment PIN_60 -to VDP_RESETn
+set_location_assignment PIN_60 -to RESETn
 set_location_assignment PIN_41 -to RAM_OEn
 set_location_assignment PIN_40 -to RDn
 set_location_assignment PIN_11 -to CP5_ARM

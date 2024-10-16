@@ -35,7 +35,7 @@ module tb_porta_glue_console
   wire        vdp_rn;
   wire        cpu_waitn;
   wire        cpu_resetn;
-  wire        vdp_resetn;
+  wire        ram_mirror;
 
   porta_glue_coleco dut
   (
@@ -76,7 +76,7 @@ module tb_porta_glue_console
     .CSRn(vdp_rn),
     .WAITn(cpu_waitn),
     .RESETn(cpu_resetn),
-    .VDP_RESETn(vdp_resetn),
+    .RAM_MIRRORn(ram_mirror),
     .RAM_OEn(),
     .INTn(),
     .AS(),
@@ -106,13 +106,13 @@ module tb_porta_glue_console
     //hold in reset, and then release
     #50000;
     resetn_sw <= 1'b1;
-    #1000000000;
+    #10000;
     //should be out of reset, reassert
     resetn_sw <= 1'b0;
-    #1000000000;
+    #10000;
     //take out of reset
     resetn_sw <= 1'b1;
-    #1000000000;
+    #10000;
     //check decoder U5
     //enable
     RFSHn <= 1'b1;

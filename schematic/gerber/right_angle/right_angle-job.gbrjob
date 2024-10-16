@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "7.0.11-7.0.11~ubuntu22.04.1"
     },
-    "CreationDate": "2024-10-05T18:33:47-04:00"
+    "CreationDate": "2024-10-06T05:31:22-04:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -114,6 +114,11 @@
     {
       "Path": "right_angle-B_Fab.gbr",
       "FileFunction": "AssemblyDrawing,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "right_angle-Edge_Cuts_Mill.gbr",
+      "FileFunction": "Other,User",
       "FilePolarity": "Positive"
     }
   ],
