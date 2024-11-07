@@ -1,6 +1,8 @@
 # Mini Colecovision Project with Super Game Module Support
 ### Schematic, PCB, and CPLD design.
 
+![image](docs/manual/img/SPARKLETRON.png)
+
 ---
 
   author: Jay Convertino
