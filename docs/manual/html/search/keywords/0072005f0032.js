@@ -1,1 +1,0 @@
-﻿NDSearch.OnPrefixDataLoaded("r_2",["Variable"],[["r_24k_ena",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.r_24k_ena","SystemVerilogModule:porta_glue_coleco:r_24k_ena"]]]]);

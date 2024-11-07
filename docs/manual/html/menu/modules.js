@@ -1,1 +1,0 @@
-﻿NDMenu.OnSectionLoaded("modules.js",[[1,"porta_glue_coleco"]]);

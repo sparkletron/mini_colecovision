@@ -1,1 +1,0 @@
-﻿NDSearch.OnPrefixDataLoaded("bri",["Information"],[["Brief",,[[,,,,0,"File:porta_glue_coleco.v:Brief"]]]]);

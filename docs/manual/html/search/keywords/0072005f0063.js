@@ -1,1 +1,0 @@
-﻿NDSearch.OnPrefixDataLoaded("r_c",["Variable"],[["r_ctrl_arm",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.r_ctrl_arm","SystemVerilogModule:porta_glue_coleco:r_ctrl_arm"]]],["r_ctrl_fire",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.r_ctrl_fire","SystemVerilogModule:porta_glue_coleco:r_ctrl_fire"]]]]);

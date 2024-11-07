@@ -1,1 +1,0 @@
-﻿NDSearch.OnPrefixDataLoaded("def",["Constant"],[["DEF_FB_MONOSTABLE_COUNT",,[[,,,,0,"File:porta_glue_coleco.v:DEF_FB_MONOSTABLE_COUNT"]]],["DEF_IRQ_MONOSTABLE_COUNT",,[[,,,,0,"File:porta_glue_coleco.v:DEF_IRQ_MONOSTABLE_COUNT"]]],["DEF_RESET_DELAY_BIT",,[[,,,,0,"File:porta_glue_coleco.v:DEF_RESET_DELAY_BIT"]]]]);

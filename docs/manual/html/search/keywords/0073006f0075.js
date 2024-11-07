@@ -1,1 +1,0 @@
-﻿NDSearch.OnPrefixDataLoaded("sou",["RegisterAddress"],[["SOUND_CACHE",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.SOUND_CACHE","SystemVerilogModule:porta_glue_coleco:SOUND_CACHE"]]]]);

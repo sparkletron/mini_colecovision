@@ -1,1 +1,0 @@
-﻿NDSearch.OnPrefixDataLoaded("r_w",["Variable"],[["r_wait",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.r_wait","SystemVerilogModule:porta_glue_coleco:r_wait"]]]]);
