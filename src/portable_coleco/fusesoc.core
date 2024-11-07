@@ -19,9 +19,11 @@ filesets:
 
 targets:
   default: &default
+    description: Default IP target for future tool intergration.
     filesets: [src, constr]
 
   sim:
+    description: Simulation target for basic test bench.
     default_tool: icarus
     filesets_append: [src, tb]
     toplevel: tb_porta_glue_console

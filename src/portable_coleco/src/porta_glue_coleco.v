@@ -1,41 +1,96 @@
 //******************************************************************************
-/// file:   porta_glue_coleco.v
-/// author: Jay Convertino (electrobs@gmail.com)
-/// date:   2023/27/12
-/// brief:  TTL Glue logic of the coleco reduced for a 2 player portable.
-/// details: Support added for super game module
-///
-/// @TODO
-///  - Cleanup code
-///
-/// @license mit
-///
-/// Copyright 2024 Johnathan Convertino
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the "Software"), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in
-/// all copies or substantial portions of the Software.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-/// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-/// IN THE SOFTWARE.
-///*****************************************************************************
+// file:    porta_glue_coleco.v
+//
+// author:  JAY CONVERTINO
+//
+// date:    2024/11/06
+//
+// about:   Brief
+// Colecovision SGM glue logic chip
+//
+// license: License MIT
+// Copyright 2024 Jay Convertino
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+//
+//******************************************************************************
 
+// Constant: DEF_RESET_DELAY_BIT
+// Number of bits for reset delay register
 `define DEF_RESET_DELAY_BIT       9
-// `define DEF_VDP_RESET_DELAY_BIT   4
+// Constant: DEF_FB_MONOSTABLE_COUNT
+// delay till state is at 1 instead of 0 (its stable state) for feedback stable circuit
 `define DEF_FB_MONOSTABLE_COUNT   4000
+// Constant: DEF_IRQ_MONOSTABLE_COUNT
+// delay till state is at 1 instead of 0 (its stable state) for the controller (spinner) generated interrupt.
 `define DEF_IRQ_MONOSTABLE_COUNT  63
 
+/*
+ * Module: porta_glue_coleco
+ *
+ * Colecovision Super Game Module Glue Logic
+ *
+ * Ports:
+ *
+ *   clk            - Clock for all devices in the core
+ *   A              - Address input bus from Z80
+ *   C1P1           - DB9 Controller 1 Pin 1
+ *   C1P2           - DB9 Controller 1 Pin 2
+ *   C1P3           - DB9 Controller 1 Pin 3
+ *   C1P4           - DB9 Controller 1 Pin 4
+ *   C1P6           - DB9 Controller 1 Pin 6
+ *   C1P7           - DB9 Controller 1 Pin 7
+ *   C1P9           - DB9 Controller 1 Pin 9
+ *   C2P1           - DB9 Controller 2 Pin 1
+ *   C2P2           - DB9 Controller 2 Pin 2
+ *   C2P3           - DB9 Controller 2 Pin 3
+ *   C2P4           - DB9 Controller 2 Pin 4
+ *   C2P6           - DB9 Controller 2 Pin 6
+ *   C2P7           - DB9 Controller 2 Pin 7
+ *   C2P9           - DB9 Controller 2 Pin 9
+ *   MREQn          - Z80 memory request input, active low
+ *   IORQn          - Z80 IO request input, active low
+ *   RFSHn          - Z80 Refresh input, active low
+ *   M1n            - Z80 M1 state, active low
+ *   WRn            - Z80 Write to bus, active low
+ *   RESETn_SW      - Input for reset switch
+ *   RDn            - Z80 Read from bus, active low
+ *   D              - Z80 8 bit data bus, tristate IN/OUT
+ *   CP5_ARM        - DB9 Controller 1&2 ARM Select
+ *   CP8_FIRE       - DB9 Controller 1&2 FIRE Select
+ *   CS_h8000n      - Select when Z80 requests memory at h8000 (GAME CART), active low
+ *   CS_hA000n      - Select when Z80 requests memory at hA000 (GAME CART), active low
+ *   CS_hC000n      - Select when Z80 requests memory at hC000 (GAME CART), active low
+ *   CS_hE000n      - Select when Z80 requests memory at hE000 (GAME CART), active low
+ *   SND_ENABLEn    - SN76489 Sound chip enable, active low
+ *   ROM_ENABLEn    - Enable BIOS ROM, active low
+ *   RAM_CSn        - RAM chip select, active low
+ *   RAM_OEn        - RAM Ouput enable, active low
+ *   CSWn           - Chip Select Write for VDP, active low
+ *   CSRn           - Chip Select Read for VDP, active low
+ *   WAITn          - Wait state generator for Z80, active low
+ *   RESETn         - Timed reset generated by Logic, active low
+ *   RAM_MIRRORn    - Extended RAM, high is extended RAM, active low is mirrored.
+ *   INTn           - Interrupt generator for Z80, active low
+ *   AS             - AY sound chip address(0)/data(1) select
+ *   AY_SND_ENABLEn - AY sound enable, active low
+ */
 module porta_glue_coleco
   (
     input         clk,
@@ -82,8 +137,30 @@ module porta_glue_coleco
     output        AY_SND_ENABLEn
   );
 
-  //wires
-  //decoder logic
+  // Group: Register Information
+  // Core has 3 registers at the addresses that follow.
+  //
+  //  <SOUND_CACHE>       - h51
+  //  <RAM_24K_ENABLE>    - h53
+  //  <SWAP_BIOS_TO_RAM>  - h7F
+
+  // Register Address: SOUND_CACHE
+  // Defines the address of r_snd_cache
+  // (see diagrams/reg_sound_cache.jpg)
+  // Cache Sound Chip as the SGM games read from it (Yamaha chip does not have a read like a GI does).
+  localparam SOUND_CACHE = 8'h51;
+  // Register Address: RAM_24K_ENABLE
+  // Defines the address of r_24k_ena
+  // (see diagrams/reg_24k_ram_enable.jpg)
+  // Super Game Module 24K RAM enable using bit 0 (Active High)
+  localparam RAM_24K_ENABLE = 8'h53;
+  // Register Address: SWAP_BIOS_TO_RAM
+  // Defines the address of r_swap_ena
+  // (see diagrams/reg_swap_bios_enable.jpg)
+  // Super Game Module BIOS to RAM swap on bit 1 (Active Low)
+  localparam SWAP_BIOS_TO_RAM = 8'h7F;
+
+  //internal wires
   wire s_enable_u5;
   wire s_enable_u6;
   wire s_ctrl_en_1n;
@@ -99,35 +176,61 @@ module porta_glue_coleco
   wire s_int_p1;
   wire s_int_p2;
 
-  //registers
-  //sgm
+  // var: r_24k_ena
+  // register for RAM_24K_ENABLE
+  // See Also: <RAM_24K_ENABLE>
   reg [ 7:0]  r_24k_ena         = 0;
+  // var: r_swap_ena
+  // register for 8K RAM/ROM swap
+  // See Also: <SWAP_BIOS_TO_RAM>
   reg [ 7:0]  r_swap_ena        = 8'h0F;
-  //sound cache last write
+  // var: r_snd_cache
+  // register for SOUND_CACHE
+  // See Also: <SOUND_CACHE>
   reg [ 7:0]  r_snd_cache       = 0;
 
-  //int trigger
+  // var: r_int_p1
+  // Interrupt from player one control
   reg         r_int_p1          = 1'b0;
+  // var: r_int_p2
+  // Interrupt from player two control
   reg         r_int_p2          = 1'b0;
-  //wait d flip flop
+  // var: r_wait
+  // Wait state generated register
   reg         r_wait            = 1'b0;
 
-  //timed reset circuit counter
+  // var: r_reset_counter
+  // Timed reset counter
   reg [ 9:0]  r_reset_counter   = 0;
+  // var: r_resetn
+  // Registered reset output, active low
   reg         r_resetn          = 0;
-  // reg         r_vdp_resetn      = 0;
 
-  //monostable circuit counters
+  // var: r_mono_count_p1
+  // monostable circuit counters, player 1 AND
   reg [11:0]  r_mono_count_p1     = 0;
+  // var: r_mono_count_p2
+  // monostable circuit counters, player 2 AND
   reg [11:0]  r_mono_count_p2     = 0;
+  // var: r_mono_count_int_p1
+  // monostable circuit counters, player 1 interrupt
   reg [ 5:0]  r_mono_count_int_p1 = 0;
+  // var: r_mono_count_int_p2
+  // monostable circuit counters, player 2 interrupt
   reg [ 5:0]  r_mono_count_int_p2 = 0;
-  //reg for feedback signal
+
+  // var: r_mono_p1
+  // Feedback from IRQ to controller 1 register
   reg         r_mono_p1       = 1'b0;
+  // var: r_mono_p2
+  // Feedback from IRQ to controller 2 register
   reg         r_mono_p2       = 1'b0;
 
-  //emulate feedback nand circuit
+  // var: r_ctrl_fire
+  // NAND Feedback Flip Flop FIRE select.
   reg         r_ctrl_fire     = 1'b1;
+  // var: r_ctrl_arm
+  // NAND Feedback Flip Flop ARM select.
   reg         r_ctrl_arm      = 1'b0;
 
   //****************************************************************************
@@ -199,11 +302,11 @@ module porta_glue_coleco
       begin
         case (A[7:0])
           // on write to sound chip, cache data.
-          8'h51: r_snd_cache <= D;
+          SOUND_CACHE: r_snd_cache <= D;
           //exapand ram to 24k by setting bit 0 to 1
-          8'h53: r_24k_ena  <= D;
+          RAM_24K_ENABLE: r_24k_ena  <= D;
           //swap out bios for ram by setting bit 1 to 0
-          8'h7F: r_swap_ena <= D;
+          SWAP_BIOS_TO_RAM: r_swap_ena <= D;
           default:
           begin
           end
