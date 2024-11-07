@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("swa",["RegisterAddress"],[["SWAP_BIOS_TO_RAM",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.SWAP_BIOS_TO_RAM","SystemVerilogModule:porta_glue_coleco:SWAP_BIOS_TO_RAM"]]]]);

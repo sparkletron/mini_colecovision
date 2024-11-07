@@ -1,0 +1,17 @@
+\documentclass[usletter]{article}
+\usepackage{DejaVuSans}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+\begin{document}
+
+  \include{src/common.tex}
+
+  %module documentation section
+
+  \includepdf[pages=-, addtotoc={1,subsection,1,porta\_glue\_coleco,p1}, pagecommand={}]{porta_glue_coleco-v.pdf}
+
+\end{document}
