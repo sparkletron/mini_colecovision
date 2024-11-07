@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("lic",["Information"],[["License",,[[,"License MIT",,,0,"File:porta_glue_coleco.v:License_MIT"]]]]);

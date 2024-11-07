@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("r_r",["Variable"],[["r_reset_counter",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.r_reset_counter","SystemVerilogModule:porta_glue_coleco:r_reset_counter"]]],["r_resetn",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.r_resetn","SystemVerilogModule:porta_glue_coleco:r_resetn"]]]]);
