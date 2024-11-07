@@ -9,7 +9,7 @@ DIAGRAM_DIR=$(SRCDIR)/diagrams
 DIAGRAM_OUT_DIR=img/diagrams
 DIAGRAM_LAT=$(wildcard $(DIAGRAM_DIR)/*.tex)
 DIAGRAM_PDF=$(notdir $(DIAGRAM_LAT:.tex=.pdf))
-DIAGRAM_JPG=$(DIAGRAM_PDF:.pdf=.jpg)
+DIAGRAM_JPG=$(DIAGRAM_PDF:.pdf=.png)
 
 .PHONY: clean
 
@@ -17,8 +17,8 @@ DIAGRAM_JPG=$(DIAGRAM_PDF:.pdf=.jpg)
 all: $(DIAGRAM_JPG)
 
 #-r 300
-%.jpg: %.pdf
-	pdftoppm -gray -r 300 -jpeg $^ > $@
+%.png: %.pdf
+	pdftoppm -gray -r 300 -png $^ > $@
 	rm $^
 	convert -trim $@ $@
 	rm $(basename $@).log $(basename $@).aux

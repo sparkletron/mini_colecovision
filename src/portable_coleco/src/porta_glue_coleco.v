@@ -146,17 +146,17 @@ module porta_glue_coleco
 
   // Register Address: SOUND_CACHE
   // Defines the address of r_snd_cache
-  // (see diagrams/reg_sound_cache.jpg)
+  // (see diagrams/reg_sound_cache.png)
   // Cache Sound Chip as the SGM games read from it (Yamaha chip does not have a read like a GI does).
   localparam SOUND_CACHE = 8'h51;
   // Register Address: RAM_24K_ENABLE
   // Defines the address of r_24k_ena
-  // (see diagrams/reg_24k_ram_enable.jpg)
+  // (see diagrams/reg_24k_ram_enable.png)
   // Super Game Module 24K RAM enable using bit 0 (Active High)
   localparam RAM_24K_ENABLE = 8'h53;
   // Register Address: SWAP_BIOS_TO_RAM
   // Defines the address of r_swap_ena
-  // (see diagrams/reg_swap_bios_enable.jpg)
+  // (see diagrams/reg_swap_bios_enable.png)
   // Super Game Module BIOS to RAM swap on bit 1 (Active Low)
   localparam SWAP_BIOS_TO_RAM = 8'h7F;
 

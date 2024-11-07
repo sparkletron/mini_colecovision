@@ -71,43 +71,43 @@
 
 <a name="porta_glue_coleco.Register_Information"></a><a name="Topic15"></a><div class="CTopic TGroup LSystemVerilog">
  <div class="CTitle">Register Information</div>
- <div class="CBody"><p>Core has 3 registers at the addresses that follow.</p><table class="CDefinitionList"><tr><td class="CDLEntry"><a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.SOUND_CACHE" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,16);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >SOUND_CACHE</a></td><td class="CDLDefinition"><p>h51</p></td></tr><tr><td class="CDLEntry"><a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.RAM_24K_ENABLE" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,17);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >RAM_24K_ENABLE</a></td><td class="CDLDefinition"><p>h53</p></td></tr><tr><td class="CDLEntry"><a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.SWAP_BIOS_TO_RAM" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,34);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >SWAP_BIOS_TO_RAM</a></td><td class="CDLDefinition"><p>h7F</p></td></tr></table></div>
+ <div class="CBody"><p>Core has 3 registers at the addresses that follow.</p><table class="CDefinitionList"><tr><td class="CDLEntry"><a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.SOUND_CACHE" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,14);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >SOUND_CACHE</a></td><td class="CDLDefinition"><p>h51</p></td></tr><tr><td class="CDLEntry"><a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.RAM_24K_ENABLE" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,31);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >RAM_24K_ENABLE</a></td><td class="CDLDefinition"><p>h53</p></td></tr><tr><td class="CDLEntry"><a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.SWAP_BIOS_TO_RAM" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,32);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >SWAP_BIOS_TO_RAM</a></td><td class="CDLDefinition"><p>h7F</p></td></tr></table></div>
 </div>
 
-<a name="porta_glue_coleco.SOUND_CACHE"></a><a name="Topic16"></a><div class="CTopic TRegisterAddress LSystemVerilog">
+<a name="porta_glue_coleco.SOUND_CACHE"></a><a name="Topic14"></a><div class="CTopic TRegisterAddress LSystemVerilog">
  <div class="CTitle">SOUND_CACHE</div>
- <div id="NDPrototype16" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">localparam</span> SOUND_CACHE = <span class="SHNumber">8'h51</span></div></div>
- <div class="CBody"><p>Defines the address of r_snd_cache</p><div class="CImage"><a href="../images/diagrams/reg_sound_cache.jpg" target="_blank" class="ZoomLink"><img src="../images/diagrams/reg_sound_cache.jpg" loading="lazy" class="KnownDimensions" width="880" height="160" style="max-width: 880px" alt="reg_sound_cache" /></a></div><p>Cache Sound Chip as the SGM games read from it (Yamaha chip does not have a read like a GI does).</p></div>
+ <div id="NDPrototype14" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">localparam</span> SOUND_CACHE = <span class="SHNumber">8'h51</span></div></div>
+ <div class="CBody"><p>Defines the address of r_snd_cache</p><div class="CImage"><a href="../images/diagrams/reg_sound_cache.png" target="_blank" class="ZoomLink"><img src="../images/diagrams/reg_sound_cache.png" loading="lazy" class="KnownDimensions" width="870" height="156" style="max-width: 870px" alt="reg_sound_cache" /></a></div><p>Cache Sound Chip as the SGM games read from it (Yamaha chip does not have a read like a GI does).</p></div>
 </div>
 
-<a name="porta_glue_coleco.RAM_24K_ENABLE"></a><a name="Topic17"></a><div class="CTopic TRegisterAddress LSystemVerilog">
+<a name="porta_glue_coleco.RAM_24K_ENABLE"></a><a name="Topic31"></a><div class="CTopic TRegisterAddress LSystemVerilog">
  <div class="CTitle">RAM_24K_ENABLE</div>
- <div id="NDPrototype17" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">localparam</span> RAM_24K_ENABLE = <span class="SHNumber">8'h53</span></div></div>
- <div class="CBody"><p>Defines the address of r_24k_ena</p><div class="CImage"><a href="../images/diagrams/reg_24k_ram_enable.jpg" target="_blank" class="ZoomLink"><img src="../images/diagrams/reg_24k_ram_enable.jpg" loading="lazy" class="KnownDimensions" width="880" height="160" style="max-width: 880px" alt="reg_24k_ram_enable" /></a></div><p>Super Game Module 24K RAM enable using bit 0 (Active High)</p></div>
+ <div id="NDPrototype31" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">localparam</span> RAM_24K_ENABLE = <span class="SHNumber">8'h53</span></div></div>
+ <div class="CBody"><p>Defines the address of r_24k_ena</p><div class="CImage"><a href="../images/diagrams/reg_24k_ram_enable.png" target="_blank" class="ZoomLink"><img src="../images/diagrams/reg_24k_ram_enable.png" loading="lazy" class="KnownDimensions" width="874" height="156" style="max-width: 874px" alt="reg_24k_ram_enable" /></a></div><p>Super Game Module 24K RAM enable using bit 0 (Active High)</p></div>
 </div>
 
-<a name="porta_glue_coleco.SWAP_BIOS_TO_RAM"></a><a name="Topic34"></a><div class="CTopic TRegisterAddress LSystemVerilog">
+<a name="porta_glue_coleco.SWAP_BIOS_TO_RAM"></a><a name="Topic32"></a><div class="CTopic TRegisterAddress LSystemVerilog">
  <div class="CTitle">SWAP_BIOS_TO_RAM</div>
- <div id="NDPrototype34" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">localparam</span> SWAP_BIOS_TO_RAM = <span class="SHNumber">8'h7F</span></div></div>
- <div class="CBody"><p>Defines the address of r_swap_ena</p><div class="CImage"><a href="images/diagrams/reg_swap_bios_enable.jpg" target="_blank" class="ZoomLink"><img src="../images/diagrams/reg_swap_bios_enable.jpg" loading="lazy" class="KnownDimensions" width="1168" height="160" style="max-width: 1168px" alt="reg_swap_bios_enable" /></a></div><p>Super Game Module BIOS to RAM swap on bit 1 (Active Low)</p></div>
+ <div id="NDPrototype32" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">localparam</span> SWAP_BIOS_TO_RAM = <span class="SHNumber">8'h7F</span></div></div>
+ <div class="CBody"><p>Defines the address of r_swap_ena</p><div class="CImage"><a href="../images/diagrams/reg_swap_bios_enable.png" target="_blank" class="ZoomLink"><img src="../images/diagrams/reg_swap_bios_enable.png" loading="lazy" class="KnownDimensions" width="1162" height="156" style="max-width: 1162px" alt="reg_swap_bios_enable" /></a></div><p>Super Game Module BIOS to RAM swap on bit 1 (Active Low)</p></div>
 </div>
 
 <a name="porta_glue_coleco.r_24k_ena"></a><a name="Topic35"></a><div class="CTopic TVariable LSystemVerilog">
  <div class="CTitle">r_24k_ena</div>
  <div id="NDPrototype35" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">reg</span> [ <span class="SHNumber">7</span>:<span class="SHNumber">0</span>] r_24k_ena = <span class="SHNumber">0</span></div></div>
- <div class="CBody"><p>register for RAM_24K_ENABLE See Also: <a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.RAM_24K_ENABLE" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,17);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >RAM_24K_ENABLE</a></p></div>
+ <div class="CBody"><p>register for RAM_24K_ENABLE See Also: <a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.RAM_24K_ENABLE" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,31);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >RAM_24K_ENABLE</a></p></div>
 </div>
 
 <a name="porta_glue_coleco.r_swap_ena"></a><a name="Topic36"></a><div class="CTopic TVariable LSystemVerilog">
  <div class="CTitle">r_swap_ena</div>
  <div id="NDPrototype36" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">reg</span> [ <span class="SHNumber">7</span>:<span class="SHNumber">0</span>] r_swap_ena = <span class="SHNumber">8'h0F</span></div></div>
- <div class="CBody"><p>register for 8K RAM/ROM swap See Also: <a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.SWAP_BIOS_TO_RAM" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,34);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >SWAP_BIOS_TO_RAM</a></p></div>
+ <div class="CBody"><p>register for 8K RAM/ROM swap See Also: <a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.SWAP_BIOS_TO_RAM" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,32);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >SWAP_BIOS_TO_RAM</a></p></div>
 </div>
 
 <a name="porta_glue_coleco.r_snd_cache"></a><a name="Topic37"></a><div class="CTopic TVariable LSystemVerilog">
  <div class="CTitle">r_snd_cache</div>
  <div id="NDPrototype37" class="NDPrototype"><div class="PSection PPlainSection"><span class="SHKeyword">reg</span> [ <span class="SHNumber">7</span>:<span class="SHNumber">0</span>] r_snd_cache = <span class="SHNumber">0</span></div></div>
- <div class="CBody"><p>register for SOUND_CACHE See Also: <a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.SOUND_CACHE" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,16);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >SOUND_CACHE</a></p></div>
+ <div class="CBody"><p>register for SOUND_CACHE See Also: <a href="../index.html#File:porta_glue_coleco.v:porta_glue_coleco.SOUND_CACHE" target="_top" onmouseover="NDContentPage.OnLinkMouseOver(event,14);" onmouseout="NDContentPage.OnLinkMouseOut(event);" >SOUND_CACHE</a></p></div>
 </div>
 
 <a name="porta_glue_coleco.r_int_p1"></a><a name="Topic18"></a><div class="CTopic TVariable LSystemVerilog">
