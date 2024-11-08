@@ -600,7 +600,7 @@ module porta_glue_coleco
 
   //player 2
   /* assign: D[0]
-   * Data bit zero for P1
+   * Data bit zero for P2
    *
    * s_ctrl_readn - See Also: <s_ctrl_readn>, read when active low
    * A[1]         - Address bit 1 is 1, read
@@ -608,7 +608,7 @@ module porta_glue_coleco
   assign D[0] = (~s_ctrl_readn & A[1] ? C2P1       : 1'bz);
 
   /* assign: D[1]
-   * Data bit one for P1
+   * Data bit one for P2
    *
    * s_ctrl_readn - See Also: <s_ctrl_readn>, read when active low
    * A[1]         - Address bit 1 is 1, read
@@ -616,7 +616,7 @@ module porta_glue_coleco
   assign D[1] = (~s_ctrl_readn & A[1] ? C2P4       : 1'bz);
 
   /* assign: D[2]
-   * Data bit two for P1
+   * Data bit two for P2
    *
    * s_ctrl_readn - See Also: <s_ctrl_readn>, read when active low
    * A[1]         - Address bit 1 is 1, read
@@ -624,7 +624,7 @@ module porta_glue_coleco
   assign D[2] = (~s_ctrl_readn & A[1] ? C2P2       : 1'bz);
 
   /* assign: D[3]
-   * Data bit three for P1
+   * Data bit three for P2
    *
    * s_ctrl_readn - See Also: <s_ctrl_readn>, read when active low
    * A[1]         - Address bit 1 is 1, read
@@ -632,7 +632,7 @@ module porta_glue_coleco
   assign D[3] = (~s_ctrl_readn & A[1] ? C2P3       : 1'bz);
 
   /* assign: D[4]
-   * Data bit four for P1
+   * Data bit four for P2
    *
    * s_ctrl_readn - See Also: <s_ctrl_readn>, read when active low
    * A[1]         - Address bit 1 is 1, read
@@ -640,7 +640,7 @@ module porta_glue_coleco
   assign D[4] = (~s_ctrl_readn & A[1] ? r_mono_p2  : 1'bz);
 
   /* assign: D[5]
-   * Data bit five for P1
+   * Data bit five for P2
    *
    * s_ctrl_readn - See Also: <s_ctrl_readn>, read when active low
    * A[1]         - Address bit 1 is 1, read
@@ -648,7 +648,7 @@ module porta_glue_coleco
   assign D[5] = (~s_ctrl_readn & A[1] ? C2P7       : 1'bz);
 
   /* assign: D[6]
-   * Data bit six for P1
+   * Data bit six for P2
    *
    * s_ctrl_readn - See Also: <s_ctrl_readn>, read when active low
    * A[1]         - Address bit 1 is 1, read
@@ -656,7 +656,7 @@ module porta_glue_coleco
   assign D[6] = (~s_ctrl_readn & A[1] ? C2P6       : 1'bz);
 
   /* assign: D[7]
-   * Data bit seven for P1
+   * Data bit seven for P2
    *
    * s_ctrl_readn - See Also: <s_ctrl_readn>, read when active low
    * A[1]         - Address bit 1 is 1, read
