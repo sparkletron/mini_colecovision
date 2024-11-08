@@ -32,9 +32,10 @@ all: $(ND_PDF) $(LAT_PDF_PDF)
 	mv $@ $(DIAGRAM_OUT_DIR)/$@
 
 $(LAT_PDF_PDF): $(LAT_PDF_SRC) $(LAT_COM_SRC)
+	rm -f $(AUX) $(LOG) $(TOC) $(OUT) $(LAT_COM_AUX)
 	pdflatex -jobname $(basename $@) -shell-escape -interaction=batchmode $<
 	pdflatex -jobname $(basename $@) -shell-escape -interaction=batchmode $<
-	rm $(AUX) $(LOG) $(TOC) $(OUT) $(LAT_COM_AUX)
+	rm -f $(AUX) $(LOG) $(TOC) $(OUT) $(LAT_COM_AUX)
 
 clean:
-	rm -rf *.pdf
+	rm -rf *.pdf $(AUX) $(LOG) $(TOC) $(OUT) $(LAT_COM_AUX)
