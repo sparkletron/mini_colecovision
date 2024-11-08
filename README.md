@@ -55,6 +55,10 @@
 
   This is a 4 layer board, also no CAD files for the case will be released in this repository.
 
+## Completed Project Image
+
+![coleco|300](img/case/PXL_20241008_020323802.jpg)
+
 ## PCB IMAGE
 
 ![pcb_3D_img_front|300](img/3D/coleco_original_front.jpg)

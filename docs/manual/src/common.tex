@@ -25,9 +25,10 @@
 \section{Introduction}
 
 \par
-This project creates a mini colecovision for a portable console. Much of the TTL and Analog Monostable circuits
+Mini Colecovision is a portable console version of the original Colecovision. Much of the TTL and Analog Monostable circuits
 are emulated by a CPLD. The full PCB and CPLD code is in this repository. It emulates the original Colecovision
-with the additional super game module.
+with the additional super game module. No 3D printed case is included at the moment, but has been designed and tested. This
+manual is not at step by step document of how to build the unit, more of a highlight of aspects of the project.
 
 \subsection{Specifications}
 
@@ -35,13 +36,18 @@ with the additional super game module.
 \begin{itemize}
   \item Z80 CPU
   \item 32 KiB of RAM
-  \item 32 kiB of ROM
+  \item 32 KiB of ROM
   \item SN76489 Sound Chip
   \item YMZ284 Sound Chip
   \item TMS9118 Video Display Processor with 16 KiB of VRAM
+  \item MAX7000S CPLD (EPM7128SLC)
+  \item Main PCB, four layer
+  \item Right Angle PCB, two layer
 \end{itemize}
 
 \subsection{Parts List}
+
+\begin{footnotesize}
 \begin{longtable}{ |*{4}{c|} }
 \hline
 {Item} & {Qty} & {Reference(s)} & {Value} \\
@@ -70,8 +76,6 @@ with the additional super game module.
 \hline
 {12} & {1} & {D1} & {LED} \\
 \hline
-{13} & {5} & {H1, H2, H4, H6, H7} & {MountingHole\_Pad} \\
-\hline
 {14} & {1} & {J1} & {Conn\_01x07} \\
 \hline
 {15} & {3} & {J2, J10, J11} & {Conn\_01x02} \\
@@ -80,11 +84,11 @@ with the additional super game module.
 \hline
 {17} & {1} & {J4} & {Cartridge Port} \\
 \hline
-{18} & {1} & {J5} & {Player 1} \\
+{18} & {1} & {J5} & {DB9 Male} \\
 \hline
 {19} & {1} & {J6} & {Conn\_02x05\_Odd\_Even} \\
 \hline
-{20} & {1} & {J7} & {Player 2} \\
+{20} & {1} & {J7} & {DB9 Male} \\
 \hline
 {21} & {1} & {J9} & {SJ1-3525NG} \\
 \hline
@@ -163,27 +167,29 @@ with the additional super game module.
 {59} & {1} & {Y1} & {10.738635 MHz} \\
 \hline
 \end{longtable}
+\end{footnotesize}
 
 \section{Building}
 
 \par
-Steps to build the mini Colecovision
+This document assumes some Electrical Engineering knowledge. Building circuits is not
+trivial due to the mix of SMD and through hole components. What follow are general
+steps to build the Mini Colecovision
 
 \begin{itemize}
-  \item Create main PCB schematic/gerber/coleco\_original.zip
-  \item Create Right Angle PCB schematic/gerber/right\_angle/right\_angle.zip
+  \item Create main PCB from schematic/gerber/coleco\_original.zip
+  \item Create Right Angle PCB from schematic/gerber/right\_angle/right\_angle.zip
   \item Program ROM with BIOS
   \item Populate main PCB
   \item Populate right angle PCB
   \item Power up and program CPLD
   \item Build your own case
 \end{itemize}
-\par
 
-\subsection{Dependecies}
+\subsection{Dependencies}
 
 \par
-The following are the dependecies needed to build the firmware and PCB for the system.
+The following are the dependencies needed to build the firmware and PCB for the system.
 
 \begin{itemize}
   \item Quartus 13.0 sp1
@@ -197,18 +203,23 @@ The following are the dependecies needed to build the firmware and PCB for the s
 \input{src/fusesoc/targets_fusesoc.tex}
 
 \par
-Fusesoc is used for the simulation target only. There are no build targets due to the use of Quartus 13.0sp1
+Fusesoc is used for the simulation target only. There are no build targets due to the use of Quartus 13.0sp1.
+This makes the use of it a bit silly. It does make it easier to use in future projects where the RAM,ROM,CPU,VDP,
+and Sound chips are also IP cores.
 
 \subsubsection{Quartus}
 \par
-This project uses the last version that supports the MAX7000S series. The version is 13.0sp1 for quartus.
-The project is located at src/quartus13sp01/.
+This project uses the last version of Quartus that supports the MAX7000S series. The version is 13.0sp1.
+The project is located at src/quartus13sp01/. Once you have the project open please follow the softwares steps
+for building and programming the CPLD bitfile.
 
 \subsection{PCB}
 
 \par
 The four layer PCB is fairly easy to populate. The right angle PCB is a dual layer PCB which is even easier.
 I recommend starting with resistors, then IC's, and then the rest. Surface mount parts should be done last.
+This is a fairly complex project to build, take great caution in making sure your CPU and CPLD are installed
+correctly. Its easy to rotate square packages these come in.
 
 \subsection{3D Printed Case}
 
@@ -218,19 +229,26 @@ A 3D printed case model is not included. I've kept this for release in the futur
 \subsection{Programming}
 
 \par
-There are two devices that need to be programmed.
+There are two devices that need to be programmed. ROM (read only memory) and the CPLD (complex programmable logic device).
+They use two different methods to be programmed. The ROM is done off the board and then installed. The CPLD is installed
+and the JTAG header is used to upload the bitfile.
 
 \subsubsection{ROM}
 
 \par
-A minipro TL866A+ is an execelent device for programming the ROM with a BIOS.
+A TL866 is an excellent device for programming the ROM with a BIOS. The open source minipro application works well with it and
+its clones. Below is a example command to use to program the ROM with a bios.
+
+  \begin{lstlisting}[language=bash]
+$ minipro -p ST27C256 -w coleco_bios.bin
+  \end{lstlisting}
 
 \subsubsection{CPLD}
 
 \par
 Quartus 13.0sp1 is the easiest way to build and program the MAX7000 CPLD. You will need an altera blaster.
 I recommend the chinese clone blasters, they actually worked the best. While the worst was the Terasic blaster
-which did not work at all.
+which did not work at all. As for instructions on how to program it in Quartus, please see the software for details.
 
 \newpage
 
@@ -259,5 +277,3 @@ Below highlights important folders from the root of mini\_colecovision.
       \item \textbf{quartus13sp01} Quartus project to use to generate firmware file.
     \end{itemize}
 \end{enumerate}
-
-\section{Module Documentation}
