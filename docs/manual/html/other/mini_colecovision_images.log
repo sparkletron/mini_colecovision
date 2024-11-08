@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.26)  8 NOV 2024 09:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.26)  8 NOV 2024 09:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -324,9 +324,9 @@ File: img/SPARKLETRON.png Graphic file (type png)
 Package pdftex.def Info: img/SPARKLETRON.png  used on input line 123.
 (pdftex.def)             Requested size: 310.4899pt x 25.20105pt.
 
-:tex2html_wrap444:lthtmlCropMarkHeight:=31.20105pt
+:tex2html_wrap446:lthtmlCropMarkHeight:=31.20105pt
 
-:tex2html_wrap444:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap446:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 Preview: Tightpage -65781 -65781 65781 65781
 [1 </home/jconvertino/Projects/mini_colecovision/docs/manual/img/SPARKLETRON.pn
 g>]
