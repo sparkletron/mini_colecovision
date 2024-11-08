@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("snd",["Assignment"],[["SND_ENABLEn",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.SND_ENABLEn","SystemVerilogModule:porta_glue_coleco:SND_ENABLEn"]]]]);

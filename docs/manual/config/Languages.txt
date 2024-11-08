@@ -25,6 +25,7 @@ Alter Language: SystemVerilog
 
    Register Address Prototype Ender: ;
    Register Bit Prototype Ender: ;
+   Assignment Prototype Ender: ;
 
 
 # These settings define the languages Natural Docs knows how to parse.  You

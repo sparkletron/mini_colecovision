@@ -70,6 +70,17 @@ Comment Type: Register Bit
       register bit, register bits
 
 
+Comment Type: Assignment
+
+   Plural Display Name: Assignments
+
+   Scope: Normal
+   Flags: Code
+
+   Keywords:
+      assign, assigns
+
+
 # Each Natural Docs comment has a corresponding type which determine its
 # behavior.  You can define your own here or override the settings of the
 # existing ones.

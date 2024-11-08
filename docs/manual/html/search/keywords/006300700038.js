@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("cp8",["Assignment"],[["CP8_FIRE",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.CP8_FIRE","SystemVerilogModule:porta_glue_coleco:CP8_FIRE"]]]]);

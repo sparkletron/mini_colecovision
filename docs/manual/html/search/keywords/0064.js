@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("d",["Assignment"],[["D",,[["porta_glue_coleco",,,,0,"File:porta_glue_coleco.v:porta_glue_coleco.D","SystemVerilogModule:porta_glue_coleco:D"]]]]);
