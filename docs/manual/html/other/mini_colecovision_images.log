@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.26)  8 NOV 2024 08:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.26)  8 NOV 2024 09:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -82,8 +82,6 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \c@LT@tables=\count270
 \c@LT@chunks=\count271
 \LT@p@ftn=\toks18
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
 (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
@@ -232,24 +230,24 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 No file mini_colecovision_images.aux.
 \openout1 = `mini_colecovision_images.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count284
@@ -279,7 +277,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count290
-Package hyperref Info: Link coloring OFF on input line 101.
+Package hyperref Info: Link coloring OFF on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -289,9 +287,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count291
 )
-LaTeX Info: Redefining \ref on input line 101.
-LaTeX Info: Redefining \pageref on input line 101.
-LaTeX Info: Redefining \nameref on input line 101.
+LaTeX Info: Redefining \ref on input line 99.
+LaTeX Info: Redefining \pageref on input line 99.
+LaTeX Info: Redefining \nameref on input line 99.
 \@outlinefile=\write4
 \openout4 = `mini_colecovision_images.out'.
 
@@ -323,28 +321,23 @@ latex2htmlLength evensidemargin=62.0pt
 <img/SPARKLETRON.png, id=4, 964.60374pt x 78.2925pt>
 File: img/SPARKLETRON.png Graphic file (type png)
 <use img/SPARKLETRON.png>
-Package pdftex.def Info: img/SPARKLETRON.png  used on input line 125.
-(pdftex.def)             Requested size: 310.4979pt x 25.20105pt.
+Package pdftex.def Info: img/SPARKLETRON.png  used on input line 123.
+(pdftex.def)             Requested size: 310.4899pt x 25.20105pt.
 
-Overfull \hbox (34.3869pt too wide) in paragraph at lines 125--126
-[]\OT1/cmr/m/n/10 heightheight[] 
- []
+:tex2html_wrap444:lthtmlCropMarkHeight:=31.20105pt
 
-
-:tex2html_wrap446:lthtmlCropMarkHeight:=31.20105pt
-
-:tex2html_wrap446:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+:tex2html_wrap444:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 Preview: Tightpage -65781 -65781 65781 65781
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/jconvertino/Projec
-ts/mini_colecovision/docs/manual/img/SPARKLETRON.png>]
+[1 </home/jconvertino/Projects/mini_colecovision/docs/manual/img/SPARKLETRON.pn
+g>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 140.
+(Font)              <7> on input line 138.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 140.
+(Font)              <5> on input line 138.
 
-:tex2html_wrap_inline334:lthtmlCropMarkHeight:=6.0pt
+:tex2html_wrap_inline332:lthtmlCropMarkHeight:=6.0pt
 
-:tex2html_wrap_inline334:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline332:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [2] (./mini_colecovision_images.aux)
 
 Package rerunfilecheck Warning: File `mini_colecovision_images.out' has changed
@@ -357,18 +350,18 @@ Package rerunfilecheck Info: Checksums for `mini_colecovision_images.out':
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10308 strings out of 480247
- 159867 string characters out of 5896150
- 446177 words of memory out of 5000000
- 28151 multiletter control sequences out of 15000+600000
+ 10278 strings out of 480247
+ 159154 string characters out of 5896150
+ 446004 words of memory out of 5000000
+ 28125 multiletter control sequences out of 15000+600000
  469259 words of font info for 28 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,5n,63p,224b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on mini_colecovision_images.pdf (2 pages, 43357 bytes).
+ 60i,5n,63p,224b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on mini_colecovision_images.pdf (2 pages, 32493 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 15 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 12 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
