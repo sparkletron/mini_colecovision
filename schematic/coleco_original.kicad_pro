@@ -514,6 +514,14 @@
       {
         "netclass": "power",
         "pattern": "+5VP"
+      },
+      {
+        "netclass": "power",
+        "pattern": "+5P"
+      },
+      {
+        "netclass": "power",
+        "pattern": "Net-(L1*"
       }
     ]
   },
