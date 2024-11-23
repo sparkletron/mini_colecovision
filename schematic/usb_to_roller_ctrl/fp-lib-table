@@ -1,4 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "Connector_Vintage")(type "KiCad")(uri "/home/jconvertino/Projects/mini_colecovision/schematic/lib/CONNECTOR_Vintage/Connector_Vintage.pretty")(options "")(descr ""))
-)
