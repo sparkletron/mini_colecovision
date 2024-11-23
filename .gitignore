@@ -6,3 +6,4 @@ src/quartus13sp01/simulation/
 src/quartus13sp01/*.qws
 schematic/*.*.lck
 schematic/*-backups/
+schematic/usb_to_roller_ctrl/*-backups/
