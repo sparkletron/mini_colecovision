@@ -1,7 +1,7 @@
 \begin{titlepage}
   \begin{center}
 
-  {\Huge Mini Colecovision}
+  {\Huge Mini Colecovision Compatible Portable}
 
   \vspace{25mm}
 
@@ -25,7 +25,7 @@
 \section{Introduction}
 
 \par
-Mini Colecovision is a portable console version of the original Colecovision. Much of the TTL and Analog Monostable circuits
+Mini Colecovision Compatible Portable is a portable console version of the original Colecovision. Much of the TTL and Analog Monostable circuits
 are emulated by a CPLD. The full PCB and CPLD code is in this repository. It emulates the original Colecovision
 with the additional super game module. No 3D printed case is included at the moment, but has been designed and tested. This
 manual is not at step by step document of how to build the unit, more of a highlight of aspects of the project.
@@ -47,6 +47,7 @@ manual is not at step by step document of how to build the unit, more of a highl
 
 \subsection{Parts List}
 
+\subsubsection{main pcb}
 \begin{footnotesize}
 \begin{longtable}{ |*{4}{c|} }
 \hline
@@ -169,6 +170,66 @@ manual is not at step by step document of how to build the unit, more of a highl
 \end{longtable}
 \end{footnotesize}
 
+\subsubsection{right angle adaptor}
+\begin{footnotesize}
+\begin{longtable}{ |*{4}{c|} }
+\hline
+{Item} & {Qty} & {Reference(s)} & {Value} \\
+\hline
+{1} & {1} & {J} & {Cartridge Port} \\
+\hline
+\end{longtable}
+\end{footnotesize}
+
+\subsubsection{misc electronics}
+\begin{footnotesize}
+\begin{longtable}{ |*{4}{c|} }
+\hline
+{Item} & {Qty} & {Reference(s)} & {Value} \\
+\hline
+{1} & {1} & {C1} & {Colecovision Controller, github.com/sparkletron/Colecovision\_Controller} \\
+\hline
+{2} & {1} & {LS1} & {LCD, LQ035NC111} \\
+\hline
+{3} & {1} & {LC1} & {LCD Controller, VS\-D1612\-N3 type with SS0101 controller chip or BIT1612} \\
+\hline
+{4} & {1} & {Battery} & {3 Cell 10050 mAh Adafruit 5035} \\
+\hline
+{5} & {1} & {Battery Charger} & {500 mA charger Adafruit 1944} \\
+\hline
+{6} & {1} & {Speaker} & {CMS\-4049\-28S} \\
+\hline
+\end{longtable}
+\end{footnotesize}
+
+\subsubsection{hardware}
+\begin{footnotesize}
+\begin{longtable}{ |*{4}{c|} }
+\hline
+{Item} & {Qty} & {Reference(s)} & {Value} \\
+\hline
+{1} & {22} & {S1} & {\#4-24 x 1/4 Fastenal 0142972, screw} \\
+\hline
+{2} & {9} & {S2} & {\#4-24 x 1/2 Fastenal 0173613, screw} \\
+\hline
+{3} & {4} & {S3} & {\#2-32 x 1/4 Fastenal 0148209, screw} \\
+\hline
+{4} & {8} & {S4} & {\#4-24 x 1/2 Fastenal 0149046, screw black} \\
+\hline
+\end{longtable}
+\end{footnotesize}
+
+\subsubsection{3D printed hardware}
+\begin{footnotesize}
+\begin{longtable}{ |*{4}{c|} }
+\hline
+{Item} & {Qty} & {Reference(s)} & {Value} \\
+\hline
+{1} & {1} & {P1} & {Comming Soon!} \\
+\hline
+\end{longtable}
+\end{footnotesize}
+
 \section{Building}
 
 \par
@@ -224,7 +285,7 @@ correctly. Its easy to rotate square packages these come in.
 \subsection{3D Printed Case}
 
 \par
-A 3D printed case model is not included. I've kept this for release in the future.
+A 3D printed case will be included and documented here in a future release.
 
 \subsection{Programming}
 
@@ -274,6 +335,6 @@ Below highlights important folders from the root of mini\_colecovision.
   \item \textbf{src} CPLD firmware source
     \begin{itemize}
       \item \textbf{protable\_coleco} Contains verilog source code and constraits
-      \item \textbf{quartus13sp01} Quartus project to use to generate firmware file.
+      \item \textbf{quartus13sp01} Quartus project used to generate firmware.
     \end{itemize}
 \end{enumerate}

@@ -28,11 +28,13 @@
 ### Past
   - DEV
 
+### MISC
+  - std_v1 - A branch that contains the first version with standard colecovision compatibility only.
+
 ## Intro
   This is a miniturization of the original colecovision. All logic is simplified to a single CPLD.
 
 ## Documentation
-  !!!STILL IN PROGRESS!!!
   For detailed usage information, please navigate to one of the following sources. They are the same, just in a different format.
   - [mini_colecovision.pdf](docs/manual/mini_colecovision.pdf)
   - [github page](https://sparkletron.github.io/mini_colecovision/)
@@ -53,7 +55,9 @@
   Recommend populating the SMD parts first, then moving on to the through hole parts from passive to active. If you do not plan
   on using a battery pack the shotkey diodes can be omitted.
 
-  This is a 4 layer board, also no CAD files for the case will be released in this repository.
+  This is a 4 layer board, power and ground planes are run on the two internal planes.
+
+  All case parts are ABS Plastic.
 
 ## Completed Project Image
 
