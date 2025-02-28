@@ -43,7 +43,7 @@
 ### Schematic Check
   - Righteous Tentacle Colecovision : https://github.com/sparkletron/righteous_tentacle_colecovision : Jay Convertino
 
-## REQUIREMENTS
+## SOFTWARE REQUIREMENTS
   - KiCAD v7.X
   - Quartus v13.0.1sp1 web edition
   - Altera USB Blaster
