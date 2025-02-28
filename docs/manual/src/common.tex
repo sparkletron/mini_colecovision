@@ -225,7 +225,27 @@ manual is not at step by step document of how to build the unit, more of a highl
 \hline
 {Item} & {Qty} & {Reference(s)} & {Value} \\
 \hline
-{1} & {1} & {P1} & {Comming Soon!} \\
+{1} & {1} & {P1} & {back.stl 100.5} \\
+\hline
+{2} & {4} & {P2} & {button.stl 100} \\
+\hline
+{3} & {1} & {P3} & {cart\_back.stl 100.5} \\
+\hline
+{4} & {1} & {P4} & {dpad\_large.stl 100} \\
+\hline
+{5} & {2} & {P5} & {firebutton.stl 100} \\
+\hline
+{6} & {1} & {P6} & {front.stl 100.5} \\
+\hline
+{7} & {1} & {P7} & {lcd\_hold\_mount.stl 100.5} \\
+\hline
+{8} & {12} & {P8} & {numpad.stl 100} \\
+\hline
+{9} & {4} & {P9} & {serial\_strip.stl 100} \\
+\hline
+{10} & {1} & {P10} & {speaker\_mount.stl 100.5} \\
+\hline
+{11} & {1} & {P11} & {speaker\_spacer.stl 100} \\
 \hline
 \end{longtable}
 \end{footnotesize}
@@ -285,7 +305,30 @@ correctly. Its easy to rotate square packages these come in.
 \subsection{3D Printed Case}
 
 \par
-A 3D printed case will be included and documented here in a future release.
+The 3D printed case has been tested on two different printers. It has only been tested with ABS filament.
+The parts list for the 3D printed case has the STL file name in the value and the XXX.X value is the scale size.
+In general I recommend the following steps for assembly.
+
+\begin{enumerate}
+  \item Front, populate side controls w/buttons. PCB will need to be cut down to fit height wise.
+  \item Front, populate LCD screen.
+  \item Front, Insert Power LED
+  \item Front, Route LCD screen wires under gamepad. Glue LED wires to side of case to keep out of DPAD.
+  \item Front, Mount colecovision\_controller with buttons.
+  \item Front, Insert speaker with spacer.
+  \item Front, Glue or use speaker\_mount to hold speaker.
+  \item Front, Mount USB battery charger.
+  \item Cart\_back, insert battery, check for wire crimping.
+  \item Cart\_back, mount right angle adaptor.
+  \item Back, mount cart\_back to back.
+  \item Back, run battery wire to charger
+  \item Back, run wires from front to main PCB
+  \item Back, hot glue any wires that seem like they may come off.
+  \item Back, Mount PCB by inserting the top with the power switch first. Then press it in and watch the reset switch and cart port for binding.
+  \item Back, Mount serial strips over PCB ports.
+  \item Finish, mate the back to the front. It should fold together and not give much resistance.
+\end{enumerate}
+
 
 \subsection{Programming}
 
