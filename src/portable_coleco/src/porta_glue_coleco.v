@@ -31,9 +31,9 @@
 //
 //******************************************************************************
 
-// Constant: DEF_RESET_DELAY_BIT
-// Number of bits for reset delay register
-`define DEF_RESET_DELAY_BIT       9
+// Constant: DEF_RESET_DELAY
+// Number ticks for reset delay register
+`define DEF_RESET_DELAY 255
 // Constant: DEF_FB_MONOSTABLE_COUNT
 // delay till state is at 1 instead of 0 (its stable state) for feedback stable circuit
 `define DEF_FB_MONOSTABLE_COUNT   4000
@@ -141,11 +141,18 @@ module porta_glue_coleco
   // Group: Register Information
   // Core has 3 registers at the addresses that follow.
   //
+  //  <SOUND_ADDR_CACHE>  - h50
   //  <SOUND_CACHE>       - h51
   //  <RAM_24K_ENABLE>    - h53
   //  <SWAP_BIOS_TO_RAM>  - h7F
   //****************************************************************************
 
+  // Register Address: SOUND_ADDR_CACHE
+  // Defines the address of r_snd_addr_cache
+  // (see diagrams/reg_sound_addr_cache.png)
+  // Setup an address for cache the sound address so each write will be to a proper address (opcode games need to write multiple and read multiple addresses)
+  // The resister is only 2 bits, and is set to data line bits 2:1 to create a shift to divide all address by 2. Reducing the number of registers in r_snd_cache to 4.
+  localparam SOUND_ADDR_CACHE = 8'h50;
   // Register Address: SOUND_CACHE
   // Defines the address of r_snd_cache
   // (see diagrams/reg_sound_cache.png)
@@ -178,6 +185,10 @@ module porta_glue_coleco
   wire s_int_p1;
   wire s_int_p2;
 
+  // var: r_snd_addr_cache
+  // register for SOUND_ADDR_CACHE
+  // See Also: <SOUND_ADDR_CACHE>
+  reg [ 1:0]  r_snd_addr_cache         = 0;
   // var: r_24k_ena
   // register for RAM_24K_ENABLE
   // See Also: <RAM_24K_ENABLE>
@@ -189,7 +200,7 @@ module porta_glue_coleco
   // var: r_snd_cache
   // register for SOUND_CACHE
   // See Also: <SOUND_CACHE>
-  reg [ 7:0]  r_snd_cache       = 0;
+  reg [ 7:0]  r_snd_cache[3:0];
 
   // var: r_int_p1
   // Interrupt from player one control
@@ -203,7 +214,7 @@ module porta_glue_coleco
 
   // var: r_reset_counter
   // Timed reset counter
-  reg [ 9:0]  r_reset_counter   = 0;
+  reg [ 7:0]  r_reset_counter   = 0;
   // var: r_resetn
   // Registered reset output, active low
   reg         r_resetn          = 0;
@@ -461,13 +472,13 @@ module porta_glue_coleco
   assign AY_SND_ENABLEn = (A[7:1] == 7'b0101000 & ~IORQn & ~WRn ? 1'b0 : 1'b1);
 
   /* assign: AY_SND_ENABLEn
-   * read cached register from previous write (AY emulation).
+   * read cached register from previous write (AY emulation), at set address location (0=0,1=0,2=1,3=1,4=2,5=2,6=3,7=3).
    *
    * A[7:0] - If address matches h52, enable
    * IORQn  - Active IO request, enable
    * RDn    - Z80 read is active, enable
    */
-  assign D              = (A[7:0] == 8'h52 & ~IORQn & ~RDn      ? r_snd_cache : 8'bzzzzzzzz);
+  assign D              = (A[7:0] == 8'h52 & ~IORQn & ~RDn      ? r_snd_cache[{6'b0, r_snd_addr_cache}]  : 8'bzzzzzzzz);
 
   //IO registers
   //This logic is registered
@@ -482,15 +493,19 @@ module porta_glue_coleco
     begin
       r_swap_ena  <= 8'h0F;
       r_24k_ena   <= 0;
-      r_snd_cache <= 0;
+      r_snd_cache[0] <= 0;
+      r_snd_cache[1] <= 0;
+      r_snd_cache[2] <= 0;
+      r_snd_cache[3] <= 0;
     end else begin
-      r_snd_cache <= r_snd_cache;
 
       if(~IORQn & ~WRn)
       begin
         case (A[7:0])
-          // on write to sound chip, cache data.
-          SOUND_CACHE: r_snd_cache <= D;
+          // on write to sound chip address reg, cache address. Get bits 2:1 into 1:0 create a right shift by 1 (divide by 2).
+          SOUND_ADDR_CACHE: r_snd_addr_cache <= D[2:1];
+          // on write to sound chip data reg, cache data. Write to cached address location.
+          SOUND_CACHE: r_snd_cache[{6'b0, r_snd_addr_cache}] <= D;
           //exapand ram to 24k by setting bit 0 to 1
           RAM_24K_ENABLE: r_24k_ena  <= D;
           //swap out bios for ram by setting bit 1 to 0
@@ -723,10 +738,10 @@ module porta_glue_coleco
 
     r_reset_counter <= r_reset_counter + 1;
 
-    if(r_reset_counter[`DEF_RESET_DELAY_BIT] == 1'b1)
+    if(r_reset_counter >= `DEF_RESET_DELAY)
     begin
       r_resetn        <= 1'b1;
-      r_reset_counter <= r_reset_counter;
+      r_reset_counter <= `DEF_RESET_DELAY;
     end
 
     //when 0, reset is asserted
@@ -814,7 +829,7 @@ module porta_glue_coleco
       r_mono_count_p1 <= r_mono_count_p1 + 1;
       if(r_mono_count_p1 >= `DEF_FB_MONOSTABLE_COUNT)
       begin
-        r_mono_count_p1 <= r_mono_count_p1;
+        r_mono_count_p1 <= `DEF_FB_MONOSTABLE_COUNT;
         r_mono_p1 <= 1'b1;
       end
     end
@@ -831,7 +846,7 @@ module porta_glue_coleco
       r_mono_count_p2 <= r_mono_count_p2 + 1;
       if(r_mono_count_p2 >= `DEF_FB_MONOSTABLE_COUNT)
       begin
-        r_mono_count_p2 <= r_mono_count_p2;
+        r_mono_count_p2 <= `DEF_FB_MONOSTABLE_COUNT;
         r_mono_p2 <= 1'b1;
       end
     end

@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>CPLD</TITLE>
-<META NAME="description" CONTENT="CPLD">
+<TITLE>ROM</TITLE>
+<META NAME="description" CONTENT="ROM">
 <META NAME="keywords" CONTENT="html">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,6 +15,7 @@
 
 <LINK REL="STYLESHEET" HREF="html.css">
 
+<LINK REL="next" HREF="mini_colecovision_node21.html">
 <LINK REL="previous" HREF="mini_colecovision_node19.html">
 <LINK REL="next" HREF="mini_colecovision_node21.html">
 </HEAD>
@@ -26,37 +27,41 @@
  HREF="mini_colecovision_node21.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="mini_colecovision_node18.html">
+ HREF="mini_colecovision_node19.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="mini_colecovision_node19.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html110"
+<A ID="tex2html113"
   HREF="mini_colecovision_node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
 <BR>
 <B> Next:</B> <A
- HREF="mini_colecovision_node21.html">Usage</A>
+ HREF="mini_colecovision_node21.html">CPLD</A>
 <B> Up:</B> <A
- HREF="mini_colecovision_node18.html">Programming</A>
+ HREF="mini_colecovision_node19.html">Programming</A>
 <B> Previous:</B> <A
- HREF="mini_colecovision_node19.html">ROM</A>
- &nbsp; <B>  <A ID="tex2html111"
+ HREF="mini_colecovision_node19.html">Programming</A>
+ &nbsp; <B>  <A ID="tex2html114"
   HREF="mini_colecovision_node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A ID="SECTION00034200000000000000">
-CPLD</A>
+<H3><A ID="SECTION00034100000000000000">
+ROM</A>
 </H3>
 
 <P>
-Quartus 13.0sp1 is the easiest way to build and program the MAX7000 CPLD. You will need an altera blaster.
-I recommend the chinese clone blasters, they actually worked the best. While the worst was the Terasic blaster
-which did not work at all. As for instructions on how to program it in Quartus, please see the software for details.
+A TL866 is an excellent device for programming the ROM with a BIOS. The open source minipro application works well with it and
+its clones. Below is a example command to use to program the ROM with a bios.
 
 <P>
+<TABLE FRAME="VOID" CELLPADDING="4"><TR><TD>
+<PRE>
+$ minipro -p ST27C256 -w coleco_bios.bin
+</PRE>
+</TD></TR></TABLE>
 
 <P>
 <BR><HR>

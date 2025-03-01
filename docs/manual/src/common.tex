@@ -30,6 +30,37 @@ are emulated by a CPLD. The full PCB and CPLD code is in this repository. It emu
 with the additional super game module. No 3D printed case is included at the moment, but has been designed and tested. This
 manual is not at step by step document of how to build the unit, more of a highlight of aspects of the project.
 
+\subsection{Fix for opcode games}
+
+Opcode super game module mega cart games have a particular check for the sound chip in there startup routine.
+
+\begin{enumerate}
+  \item Set AY register address to 0x00
+  \item Write the value 0xAA to AY (register 0x00).
+  \item Set AY register address to 0x02
+  \item Write the value 0x55 to AY (register 0x02).
+  \item Set AY register address to 0x00
+  \item Read the value from AY (register 0x00).
+  \item Compare to value originally written (0xAA), fail if not matching
+  \item Set AY register address to 0x02
+  \item Read the value from AY (register 0x02).
+  \item Compare to value originally written (0x55), fail if not matching.
+\end{enumerate}
+
+The hack fix for my setup is to only have 4 8 bit regiters for 0,1,2,3,4,5,6, and 7. The mapping is
+AY Software Register ADDRESS => Cache Register ADDRESS
+
+\begin{itemize}
+  \item 0 => 0
+  \item 1 => 0
+  \item 2 => 1
+  \item 3 => 1
+  \item 4 => 2
+  \item 5 => 2
+  \item 6 => 3
+  \item 7 => 3
+\end{itemize}
+
 \subsection{Specifications}
 
 \par
