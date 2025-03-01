@@ -23,9 +23,10 @@
 
 ## RELEASE VERSIONS
 ### Current
-  - 1.0.0 - First working version
+  - 1.0.1 - Fixed opcode games AY check for super game module.
 
 ### Past
+  - 1.0.0 - First working version
   - DEV
 
 ### MISC
